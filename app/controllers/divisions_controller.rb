@@ -25,15 +25,6 @@ class DivisionsController < ApplicationController
     end
     #END CONCAT
 
-    if params[:"500"] == "Select"
-      print_number = 500
-    elsif params[:"250"] == "Select"
-      print_number = 250
-    elsif params[:"-1000"] == "Select"
-      print_number = -1000
-    else
-      print_number = 0
-    end
 
     #PSEUDOCODE FOR CHECKING P.O NUMBER 
     #if params is 10 chars and number, then continue, else redirect
@@ -45,8 +36,6 @@ class DivisionsController < ApplicationController
       # redirect_to preview_division_path(:returning => true)
       
     end
-
-
           render :pdf => "filename.pdf",
                 :template => 'divisions/create_pdf.html.erb',#, :show_as_html => true
                  :dpi => '300',
@@ -71,14 +60,14 @@ class DivisionsController < ApplicationController
      `pdftk "#{Rails.root}/tmp/filename.pdf" cat 1-"#{final_page}" output "#{@file2.path}"`
     #CUT OFF LAST BLANK PAGE FINISHED    
 
-    PdfMailer.tester(@file2.path,@division, print_number, card_holder_name, card_holder_email, purchase_order_number).deliver
-    redirect_to created_business_card_division_path
+    PdfMailer.tester(@file2.path,@division, card_holder_name, card_holder_email, purchase_order_number).deliver
+    redirect_to completed_job_division_path
     
   end
 
 
 
-  def created_business_card
+  def completed_job
     #WHEN AN ORDER HAS BEEN PROCESSED...
   end
 

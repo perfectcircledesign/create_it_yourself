@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :companies, :only => [:index, :show]
+  resources :companies, :only => [:show]
 
   resources :divisions, :only => [:index, :new, :create, :show, :destroy, :edit] do
 
@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 		  get "generate"
       post "preview"
       get "preview"
-      get "created_business_card"
+      get "completed_job"
   	end  
   end
 

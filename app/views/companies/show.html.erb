@@ -3,8 +3,16 @@
 	<img src="/assets/logo.jpg">
 		<h1>Business Card Generator</h1>
 		<h2>Welcome to our online business card generator. To start off, select the Function that would be responsible for the approval of your card.<br> Once selected, please wait for the next page to load.</h2>
+		<%# raise %>
+		
+
 			<div class="row" style= "padding: 40px 214px 0;">
 	  			<ul class="list-group">
+
+	  				<%= link_to "Business Card Creator", divisions_path(@company, function: :business_card) %>
+	  				<%= link_to "Email Signature Creator", division_path(@company, function: :email_sig) %>
+	  				
+	  				<br><br><br>
     				<% @company.divisions.order(:order).each do |division| %>  
     					<li class="list-group-item"><%= link_to "#{division.name}", generate_division_path(division) %></li>      
   					<% end if @company.present? %>

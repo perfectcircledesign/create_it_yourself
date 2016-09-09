@@ -4,5 +4,11 @@ class Company < ApplicationRecord
 	extend FriendlyId
 	friendly_id :name, use: :slugged
 
+	extend Dragonfly::Model
+  	extend Dragonfly::Model::Validations
+
+  	dragonfly_accessor :company_logo
+
+
 	
 end
