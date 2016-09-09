@@ -40,6 +40,7 @@ gem 'nprogress-rails'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 gem 'rename'
+gem 'paperclip'
 
 # group :production do
 

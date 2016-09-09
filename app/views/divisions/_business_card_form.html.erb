@@ -64,20 +64,20 @@
 
 
 <div class="bgimg zoom">
-  <% @division.input_fields.each do |field| %>
+  <% @division.business_card_fields.each do |field| %>
     <style type="text/css">
-      .<%= field.field_name.downcase.gsub(' ', '_') %>   {
+      .<%= field.name.downcase.gsub(' ', '_') %>   {
         font-size: <%=((field.size).to_f*zoom).to_s %>pt;
         color: <%=field.colour%>;
         top: <%=field.y_pos/300.0*2.54*zoom %>cm;
         left: <%=field.x_pos/300.0*2.54*zoom %>cm;        
-        font-family: <%=field.font.name%>;
+        <%unless field.font == nil%>font-family:<%=field.font.name%><%end%>;
         font-weight: <%=field.weight%>;
         position: absolute;
         text-align: left;
         line-height: <%=((field.size.to_f)*zoom).to_s %>pt;}
         </style>
-    <div class="<%= field.field_name.downcase.gsub(' ', '_') %>" <% if preview == "false" %> style= "width: <%= (division.image.width - field.x_pos)/300.0*2.54%>cm"; <% end %> >
+    <div class="<%= field.name.downcase.gsub(' ', '_') %>" <% if preview == "false" %> style= "width: <%= (division.image.width - field.x_pos)/300.0*2.54%>cm"; <% end %> >
 
       <!--TODO: REFACTOR THIS TO MAKE IT MORE OBVIOUS -->
         <% unless session[:field_inputs]["field_#{field.id}"] == nil or session[:field_inputs]["field_#{field.id}"] == "" %>

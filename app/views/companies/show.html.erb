@@ -9,13 +9,9 @@
 			<div class="row" style= "padding: 40px 214px 0;">
 	  			<ul class="list-group">
 
-	  				<%= link_to "Business Card Creator", divisions_path(@company, function: :business_card) %>
+	  				<%= link_to "Business Card Creator", divisions_path(@company, function: :business_card) %><br>
 	  				<%= link_to "Email Signature Creator", division_path(@company, function: :email_sig) %>
 	  				
-	  				<br><br><br>
-    				<% @company.divisions.order(:order).each do |division| %>  
-    					<li class="list-group-item"><%= link_to "#{division.name}", generate_division_path(division) %></li>      
-  					<% end if @company.present? %>
 				</ul>  
 			
 			</div>

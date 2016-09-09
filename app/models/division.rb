@@ -2,7 +2,7 @@ class Division < ApplicationRecord
 	
 	belongs_to :company
 
-	has_and_belongs_to_many :input_fields, :join_table => 'divisions_input_fields'
+	has_and_belongs_to_many :business_card_fields, :join_table => 'business_card_fields_divisions'
 
 	attr_accessor :email_receiver
 

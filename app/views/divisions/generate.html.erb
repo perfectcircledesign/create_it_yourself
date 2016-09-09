@@ -23,13 +23,10 @@
 
 			<%= form_tag(preview_division_path) do %>
 			 	<div class="form-group">
-					<% InputField.joins(:divisions).where("division_id = ? ",@division.id).order(:order).each do |field| %>
+					<% BusinessCardField.joins(:divisions).where("division_id = ? ",@division.id).order(:order).each do |field| %>
 				 	<% next unless field.default == "" or field.default == nil%>
 				 		<div class="form-group">
-				    		<%= label_tag "#{field.field_name}:" %>
-				    		<%# raise %>
-				    		<!-- <#%= text_field_tag "#{field.id}", nil, {class: 'form-control'} %> -->
-				    		<%# raise if back=true%>
+				    		<%= label_tag "#{field.name}:" %>
 				    		<%= text_field_tag "field_inputs[field_#{field.id}]", (session[:field_inputs].present? and session[:field_inputs]["field_#{field.id}"].present?) ? session[:field_inputs]["field_#{field.id}"] : nil , {class: 'form-control'} %>
 				 		</div>
 					<% end %>	 	

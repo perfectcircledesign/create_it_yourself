@@ -1,3 +1,3 @@
 class Font < ApplicationRecord
-	has_many :input_fields
+	has_many :business_card_fields
 end

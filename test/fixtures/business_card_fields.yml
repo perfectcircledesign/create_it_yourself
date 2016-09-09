@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  x_pos: 1.5
+  y_pos: 1.5
+  size: MyString
+  colour: MyString
+  weight: MyString
+  align: MyString
+  font_id: 1
+  prefix: MyString
+  default: MyString
+  order: 1
+
+two:
+  name: MyString
+  x_pos: 1.5
+  y_pos: 1.5
+  size: MyString
+  colour: MyString
+  weight: MyString
+  align: MyString
+  font_id: 1
+  prefix: MyString
+  default: MyString
+  order: 1

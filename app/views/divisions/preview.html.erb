@@ -22,7 +22,7 @@
 			<div class="generate-form" style="text-align: center;">
 
 				<%= form_tag(division_path(:format=>:pdf), :method => :get) do %>
-					<% InputField.joins(:divisions).where("division_id = ? ",@division.id).each do |field| %>
+					<% BusinessCardField.joins(:divisions).where("division_id = ? ",@division.id).each do |field| %>
 					<%= hidden_field_tag "#{field.id}", params[:field_inputs][:"field_#{field.id}"] %>
 					<% end %>
 	    	    <div class="row preview-row4">
