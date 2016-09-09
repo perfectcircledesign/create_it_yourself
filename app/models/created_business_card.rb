@@ -1,0 +1,2 @@
+class CreatedBusinessCard < ApplicationRecord
+end

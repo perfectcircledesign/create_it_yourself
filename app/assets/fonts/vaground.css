@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'vaground';
+    src: url('fonts/vaground.eot');
+    src: url('fonts/vaground.eot') format('embedded-opentype'),
+         url('fonts/vaground.woff2') format('woff2'),
+         url('fonts/vaground.woff') format('woff'),
+         url('fonts/vaground.ttf') format('truetype'),
+         url('fonts/vaground.svg#vaground') format('svg');
+}

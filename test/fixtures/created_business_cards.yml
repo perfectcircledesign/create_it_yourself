@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  holder_name: MyString
+  holder_name2: MyString
+  company: MyString
+  division: MyString
+
+two:
+  holder_name: MyString
+  holder_name2: MyString
+  company: MyString
+  division: MyString

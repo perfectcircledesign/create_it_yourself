@@ -1,0 +1,250 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require nprogress
+ *= require nprogress-bootstrap
+ *= require nprogress-turbolinks5
+ */
+
+a {
+  text-decoration: none;
+  color: #a7a9ac; }
+
+a:hover, a:active, a:focus {
+  text-decoration: none;
+  color: #fe001a; }
+
+/* Home
+---------------------------------------- */
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: #333333; }
+
+.container {
+  padding: 50px 0; }
+  .container img {
+    display: block;
+    margin: auto; }
+  .container h1 {
+    text-align: center;
+    font-weight: 300;
+    font-size: 40px;
+    color: #fe001a;
+    margin-top: 40px;
+    letter-spacing: 1px; }
+  .container h2 {
+    font-weight: 200;
+    font-size: 16px;
+    text-align: center;
+    padding-top: -10px;
+    color: #fe001a;
+    line-height: 24px; }
+  .container .row {
+    padding-top: 40px; }
+    .container .row ul li {
+      border: 1px solid #eee;
+      border-left: none;
+      border-right: none;
+      font-size: 12px;
+      font-weight: 400;
+      text-transform: uppercase;
+      padding: 24px 0;
+      letter-spacing: 0.5px;
+      line-height: 0; }
+      .container .row ul li:nth-child(1) {
+        border-top: none; }
+      .container .row ul li:nth-child(8) {
+        border-bottom: none; }
+
+/* Details
+---------------------------------------- */
+.details h1 {
+  margin-bottom: 10px; }
+.details .details-row1 {
+  padding-top: 0; }
+  .details .details-row1 .form-input {
+    margin-top: 80px;
+    padding-right: 20px; }
+.details .details-row1 .tip {
+    margin-top: 6px;
+    font-size: 12px;
+    color: #b7b7b7;
+    line-height: 16px; }
+.details .cards {
+  padding-top: 40px; }
+  .details .cards .bgimg {
+    img{width:340px}
+    max-width: 340px;
+    margin: auto;
+    margin-bottom: 20px; }
+  .details .cards .bgimg2 {
+    img{width:340px}
+    max-width: 340px;
+    margin: auto; }
+    .preview .preview-row2 .bgimg3 {
+    margin: auto; }.details .cards .bgimg3 {
+    max-width: 340px;
+    margin: auto; 
+    img{width:100%;}
+    }
+
+.form-input .form-group label {
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding: 24px 0 12px;
+  letter-spacing: 0.5px;
+  line-height: 0;
+  color: #a7a9ac; }
+.form-input .form-group input {
+  border: 1px solid #eee;
+  border-radius: 0; }
+.form-input .btn-default {
+  border: none;
+  background-color: #fe001a;
+  border-radius: 3px;
+  color: #fff;
+  font-weight: 300;
+  padding: 8px 20px;
+  margin-top: 20px; }
+.form-input .btn1 {
+  border: 1px solid #fe001a;
+  background-color: #fff;
+  color: #fe001a;
+  margin-right: 10px; }
+
+.form-control:focus {
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); }
+
+.print-input {width: 76%; float: left;}
+.print-submit {float: right!important; margin-top: 0!important;}
+
+/* PDF-Preview
+---------------------------------------- */
+.preview .btn-default {
+  border: none;
+  background-color: #fe001a;
+  border-radius: 3px;
+  color: #fff;
+  font-weight: 300;
+  padding: 8px 20px;
+  margin-top: 20px; }
+  .preview .btn-default2 {
+  border: none;
+  background-color: #fe001a;
+  border-radius: 3px;
+  color: #fff;
+  font-weight: 600;
+  padding: 8px 45px;
+  margin-top: 20px; }
+  .preview .btn-default3 {
+  border: none;
+  background-color: #fe001a;
+  border-radius: 3px;
+  color: #fff;
+  font-weight: 600;
+  padding: 8px 33px;
+  margin-top: 20px; }
+.preview .preview-row1 {
+  padding-top: 0; }
+  .preview .preview-row1 h1 {
+    margin-bottom: 10px; }
+.preview .preview-row2 {
+  margin: auto;
+  text-align: center; }
+  .preview .preview-row2 .bgimg {
+    margin: auto; }
+  .preview .preview-row2 .bgimg2 {
+    margin: auto; }
+  .preview .preview-row2 .bgimg3 {
+    margin: auto; }
+  .preview .preview-row2 .btn1 {
+    border: 1px solid #fe001a;
+    background-color: #fff;
+    color: #fe001a;
+    margin-right: 10px;
+    margin-top: 26px; }
+.preview .preview-row3 h1 {
+  margin-bottom: 10px;
+  margin-top: 60px;
+  text-transform: uppercase; }
+.preview .preview-row4 {
+  padding-top: 20px; }
+  .preview .preview-row4 .clear {
+    clear: both;
+    float: left; }
+  .preview .preview-row4 .left {
+    padding: 0 234px; }
+    .preview .preview-row4 .left .btn-default {
+      float: right;
+      margin-top: 22px; }
+  .preview .preview-row4 h3 {
+    color: #fe001a;
+    font-size: 20px;
+    margin-bottom: 5px; }
+  .preview .preview-row4 p {
+    color: #fe001a;
+    font-size: 16px; }
+  .preview .preview-row4 .right h3 {
+    margin-top: 20px;
+    float: left; }
+  .preview .preview-row4 .right .btn-default {
+    margin-top: 10px;
+    float: right;
+    margin-top: 22px; }
+  .preview .preview-row4 .or {border-top: 1px solid #dcdcdc; padding-top: 20px ;}
+
+
+/* Loading
+---------------------------------------- */
+
+.loading {
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   position: fixed;
+   display: block;
+   opacity: 0.7;
+   background-color: #fff;
+   z-index: 99;
+   text-align: center;
+}
+
+.loading-image {
+  position: absolute;
+  top: 100px;
+  left: 240px;
+  z-index: 100;
+}
+
+
+
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: image-url("red_spinner2.gif") center no-repeat #fff;
+}
+
+
+
+/*# sourceMappingURL=application.css.map */
+

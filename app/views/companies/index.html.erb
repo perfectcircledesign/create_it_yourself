@@ -1,0 +1,22 @@
+
+<div class="container">
+  <h1>Companies</h1>
+  <table>
+    <thead>
+      <tr>
+    <tbody>
+      <% @companies.each do |company| %>
+        <div class = "row">
+        <tr>
+          <td><%= company.name %></td>
+                    
+          <td><%= link_to('Divisions', company_path(company)) %></td>
+
+        </tr>
+      <% end %>
+      </div>
+    </tbody>
+  </table>
+</div>
+  <br>
+

@@ -1,0 +1,42 @@
+<%= form_for(division, multipart: true) do |f| %>
+  <% if division.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(division.errors.count, "error") %> prohibited this division from being saved:</h2>
+
+      <ul>
+      <% division.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %> 
+    <%= f.text_field :name %>
+  </div>
+
+ <div class="field">
+    <%= f.label :image %><br>
+    <%= f.file_field :image%>
+  </div>
+
+   <div class="field">
+    <%= f.label :image_back %><br>
+    <%= f.file_field :image_back%>
+  </div>
+
+  <div class="field">
+    <%= f.label :image_cut %><br>
+    <%= f.file_field :image_cut%>
+  </div>
+  <br>
+  <%= f.submit 'Upload', class: 'btn btn-primary' %>
+
+  <br>
+
+  
+
+
+
+<% end %>
