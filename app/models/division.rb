@@ -3,6 +3,7 @@ class Division < ApplicationRecord
 	belongs_to :company
 
 	has_and_belongs_to_many :business_card_fields, :join_table => 'business_card_fields_divisions'
+	has_and_belongs_to_many :email_sig_fields, :join_table => 'divisions_email_sig_fields'
 
 	attr_accessor :email_receiver
 
@@ -12,6 +13,10 @@ class Division < ApplicationRecord
 
   	extend Dragonfly::Model
   	extend Dragonfly::Model::Validations
+
+
+	has_attached_file :email_sig_template
+	validates_attachment_content_type :email_sig_template, :content_type => ["text/html", "text/txt"]
 	
 
 	dragonfly_accessor :image

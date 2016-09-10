@@ -5,7 +5,7 @@
 			<div class="row" >
 	  			<ul class="list-group"  > 
     				<!-- TODO: ASK GERARD ABOUT @division vs divion when @company is being used BEST PRACTICE ? -->
-    				<% @divisions.order(:order).each do |division| %>  
+    				<% @divisions.order(:order).each do |division| %> 
     					<li class="list-group-item" style="padding: 40px 214px 0;"><%= link_to "#{division.name}", generate_division_path(division) %></li>      
   					<% end %>
 				</ul>  
