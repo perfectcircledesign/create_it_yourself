@@ -1,7 +1,7 @@
 class DivisionsController < ApplicationController 
 
   before_action :set_division, only: [:show, :generate, :preview] 
-  before_action :set_company, only: [:generate, :show]
+  before_action :set_company, only: [:generate, :show, :preview]
   #before_action :set_function, only: [:generate, :show, :preview, :completed_job]
 
 	def index 
@@ -97,7 +97,7 @@ class DivisionsController < ApplicationController
   end
 
   def preview
-
+    
     if session[:function] == "business_card"
       unless params[:returning]
         session[:field_inputs] = params[:field_inputs].each do |field| field end
@@ -120,7 +120,7 @@ class DivisionsController < ApplicationController
       end
         
       File.write(@generated_email_sig_file.path, "#{@generated_email_sig}")
-      render file: @generated_email_sig_file.path, layout: false, content_type: 'html'
+      render :template => 'divisions/preview_email_sig.html.erb'
     end
 
 

@@ -23,7 +23,9 @@ a {
 
 a:hover, a:active, a:focus {
   text-decoration: none;
-  color: #fe001a; }
+  color: #fe001a; 
+
+  }
 
 /* Home
 ---------------------------------------- */
@@ -41,7 +43,7 @@ body {
     text-align: center;
     font-weight: 300;
     font-size: 40px;
-    color: #fe001a;
+    /*color: #fe001a;*/
     margin-top: 40px;
     letter-spacing: 1px; }
   .container h2 {
@@ -49,7 +51,7 @@ body {
     font-size: 16px;
     text-align: center;
     padding-top: -10px;
-    color: #fe001a;
+    /*color: #fe001a;*/
     line-height: 24px; }
   .container .row {
     padding-top: 40px; }
@@ -205,6 +207,18 @@ body {
     float: right;
     margin-top: 22px; }
   .preview .preview-row4 .or {border-top: 1px solid #dcdcdc; padding-top: 20px ;}
+
+/* Companies
+---------------------------------------- */
+
+.perfectcircle {
+  color: #8dc73f;
+}
+
+.coca-cola {
+  color: #fe001a;
+}
+
 
 
 /* Loading

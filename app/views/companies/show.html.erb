@@ -1,20 +1,27 @@
 
-<div class="container">
-	<!-- <img src="/assets/logo.jpg"> -->
+<div class="container <%=@company.slug%>">
+	
+
 	<div class="bgimg"><%= image_tag(@company.company_logo.remote_url) %></div>
 
 		<h1>Create It Yourself</h1>
-		<h2>Welcome to our online business card generator. To start off, select the Function that would be responsible for the approval of your card.<br> Once selected, please wait for the next page to load.</h2>
+		<h2>Company Stationary and Apparel</h2>
 		<%# raise %>
 		
 
 			<div class="row" style= "padding: 40px 214px 0;">
-	  			<ul class="list-group">
-
-	  				<%= link_to "Business Card Creator", divisions_path(@company, function: :business_card) %><br>
-	  				<%= link_to "Email Signature Creator", divisions_path(@company, function: :email_sig) %>
+	  			
+	  			<div class="col-xs-4 form-input">  
+	  				<%= link_to image_tag("bizcardspoof.jpg"), divisions_path(@company, function: :business_card) %>
+	  			</div>
+				<div class="col-xs-4 form-input">
+					<%= link_to image_tag("emailsigspoof.jpg"), divisions_path(@company, function: :email_sig) %>
+				</div>
+				<div class="col-xs-4 form-input">
+	  				<img src="/assets/accesscardspoof.jpg">
 	  				
-				</ul>  
-			
+				</div>
+				<%#= link_to image_tag(@company.company_logo.remote_url), divisions_path(@company, function: :business_card) %>
+
 			</div>
 </div>
