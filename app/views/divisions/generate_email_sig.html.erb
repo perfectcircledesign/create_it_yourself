@@ -1,0 +1,50 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+
+  <div class="se-pre-con"></div>
+  <div class="container details">
+    <div class="row details-row1">
+        <div class="col-xs-12">
+            <img src="/assets/logo.jpg">
+            <h1>Business Card for Department: <br> <strong> International Division  </strong></h1>
+            <h2>You’re one step closer! Be sure to fill in all your details carefully.<br>
+            Once you’re happy that everything is correct, click the “Generate” button and wait for the next page to load. </h2>
+         </div>       
+    </div>
+	<div class="row" style= "padding: 40px 214px 0;">
+		<div class="col-xs-8 form-input" style="width: 53.667%">  
+			<%= form_tag(preview_division_path) do %>
+			 	<div class="form-group">
+			 		<% EmailSigField.joins(:divisions).where("division_id = ? ",@division.id).order(:order).each do |field| %>
+				 		<div class="form-group">
+				 		
+				    			<%= label_tag "#{field.replace_field}:" %>
+				    			<%= text_field_tag "field_inputs[#{field.replace_field}]", (session[:field_inputs].present? and session[:field_inputs]["#{field.replace_field}"].present?) ? session[:field_inputs]["#{field.replace_field}"] : nil , {class: 'form-control'} %>
+				 		</div>
+					<%end%>	<br> 	
+				</div>
+					<div>
+					
+						<%= link_to 'Back to Functions', company_path(@division.company, function: params[:function]), class: "btn btn-default btn1" %>
+						<input type="submit" name="commit" value="Generate" class="btn btn-default" >
+					</div>
+				
+			<% end %>			
+
+		<!-- </form> -->
+		</div>
+	
+
+
+		<div class="col-xs-4 cards">
+ 			
+			<%= render file: @division.email_sig_template.path, layout: false, content_type: 'html' %>
+			    
+
+      </div>
+	</div>
+
+
+
+</div>
+

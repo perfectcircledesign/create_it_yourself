@@ -58,7 +58,7 @@ class DivisionsController < ApplicationController
     end
 
     if session[:function] == "email_sig"
-
+      raise
 
     end
 
@@ -86,8 +86,13 @@ class DivisionsController < ApplicationController
       render :template => 'divisions/generate_business_card.html.erb'
     end
 
-
-
+    if session[:function] == "email_sig"
+      @email_sig_fields = EmailSigField.all
+      unless params[:back].present?
+          session.delete(:field_inputs)
+      end
+      render :template => 'divisions/generate_email_sig.html.erb'
+    end
 
   end
 
@@ -100,8 +105,22 @@ class DivisionsController < ApplicationController
       end
       render :template => 'divisions/preview_business_card.html.erb'
     end
-    if session[:function] == "email_sig"
 
+    if session[:function] == "email_sig"
+      unless params[:returning]
+        session[:field_inputs] = params[:field_inputs].each do |field| field end
+        @email_sig_fields = EmailSigField.all
+      end
+
+      @generated_email_sig_file = Tempfile.new('temp_route_sig', "#{Rails.root}/tmp/")
+      @generated_email_sig = File.read(@division.email_sig_template.path)
+
+      session[:field_inputs].each do |field| 
+        @generated_email_sig = @generated_email_sig.gsub(field[0],field[1])
+      end
+        
+      File.write(@generated_email_sig_file.path, "#{@generated_email_sig}")
+      render file: @generated_email_sig_file.path, layout: false, content_type: 'html'
     end
 
 
