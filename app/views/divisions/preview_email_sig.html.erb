@@ -7,20 +7,19 @@
 <div class="container preview <%=@company.slug%>">
 	<div class="row preview-row1">
     	<div class="col-xs-12">
-    		<img src="/assets/logo.jpg">
+    		<%= image_tag(@company.company_logo.remote_url) %>
     		<!-- <img src=image-url("spinner.gif")> -->
-           	<h1>Business Card for <br> Department<strong> <%= @division.name %> </strong></h1>
-           	<h2>WALA! Here’s a proof of your business card! Please take a moment to make <br> sure your details are correct – this is your last chance! If you’d like to make a change, scroll down and select <br> ‘Back to Input’. If you are happy, insert your <strong> Purchase Order (PO) </strong>number and select 'PRINT' to send your business card to the printers.</h2>
+           	<h1>Email Signature for <br> Department<strong> <%= @division.name %> </strong></h1>
+           	<h2>WALA! Here’s a proof of your business card! Please take a moment to make <br> sure your details are correct – this is your last chance! If you’d like to make a change, scroll down and select <br> ‘Back to Input’. If you are happy, insert your <strong> Purchase Order (PO) </strong>number and select 'SEND', and we'll email you your email signature.</h2>
       	</div>       
   	</div>
 
-<div class="se-pre-con"></div>
+	<div class="se-pre-con-<%=@company.slug%>"></div>
 
  	<div class="row preview-row2" style="padding-top: 0px"> 
 		<div class="col-xs-12 ">
 			<%#= render 'business_card_form', division: @division, preview: "true" %>
 			<div class="generate-form" style="text-align: center;">
-
 				<%= form_tag(division_path, :method => :get) do %>
 					<% EmailSigField.joins(:divisions).where("division_id = ? ",@division.id).each do |field| %>
 					<%= hidden_field_tag "#{field.id}", params[:field_inputs][:"#{field.replace_field}"] %>
@@ -28,15 +27,23 @@
 	    	    <div class="row preview-row4">
 			        <div class="col-xs-12 left">				            
 		                 <input type="text"  pattern="[0-9]{10}" oninvalid="setCustomValidity('Please enter a valid Purchase Order number')" onchange="try{setCustomValidity('')}catch(e){}" name = "Purchase Order" class="form-control print-input" placeholder="Enter your Purchase Order Number here&hellip;" required>
-           				<input type="submit" style="align: right;" name="250" value= "PRINT" class="btn btn-default2 print-submit">
+           				<input type="submit" style="align: right;" name="250" value= "PRINT" class="btn-default2 <%=@company.slug%>-bg print-submit">
 			    	</div>
-				</div><br><br>
+				</div><
 				<% end %>
 			</div>
-
-<%= render file: @generated_email_sig_file.path, layout: false, content_type: 'html' %>]
-		<br><br><%= link_to 'Back to Input', generate_division_path(@division,back:true), class: "btn btn-default3 btn1", style: "margin-left: 0px" %><br><br><br>
-		</div>  
+		</div> 
+	</div>
+</div>
+		<!-- <div class="col-xs-4"></div><div class="col-xs-4" style="text-align: left"><%= render file: @generated_email_sig_file.path, layout: false, content_type: 'html' %>]</div> -->
+		 <div class="col-xs-4"></div><div class="col-xs-4">
+		<%= render file: @generated_email_sig_file.path, layout: false, content_type: 'html' %>
+			</div><div class="col-xs-4"></div>
+<div class="container preview <%=@company.slug%>">
+	<div class="row preview-row2" style="padding-top: 0px"> 	
+		<div class="col-xs-12">
+		<br><br><%= link_to 'Back to Input', generate_division_path(@division,back:true), class: "btn-default3 #{@company.slug}-border ", style: "margin-left: 0px" %><br><br><br>
+		 </div>
 		<div class="row preview-row4">
 	        <div class="col-xs-12 left">
 	            <div>

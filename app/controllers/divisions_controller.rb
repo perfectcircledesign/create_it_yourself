@@ -1,7 +1,7 @@
 class DivisionsController < ApplicationController 
 
-  before_action :set_division, only: [:show, :generate, :preview] 
-  before_action :set_company, only: [:generate, :show, :preview]
+  before_action :set_division, only: [:show, :generate, :preview, :completed_job] 
+  before_action :set_company, only: [:generate, :show, :preview, :completed_job]
   #before_action :set_function, only: [:generate, :show, :preview, :completed_job]
 
 	def index 
@@ -58,7 +58,7 @@ class DivisionsController < ApplicationController
     end
 
     if session[:function] == "email_sig"
-      raise
+      
 
     end
 
@@ -69,7 +69,12 @@ class DivisionsController < ApplicationController
 
 
   def completed_job
-    raise 
+    if session[:function] == "business_card"
+      render :template => 'divisions/completed_business_card.html.erb'
+    elsif session[:function] == "email_sig"
+      render :template => 'divisions/completed_email_sig.html.erb'
+    end
+     
   end
 
 	def new
@@ -98,6 +103,7 @@ class DivisionsController < ApplicationController
 
   def preview
     
+
     if session[:function] == "business_card"
       unless params[:returning]
         session[:field_inputs] = params[:field_inputs].each do |field| field end

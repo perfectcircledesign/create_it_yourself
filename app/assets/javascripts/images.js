@@ -46,6 +46,6 @@ $( document ).ready(function() {
 $( window ).load(function() {
   // console.dir('I am loaded')
 
-	$(".se-pre-con").fadeOut("slow");;
-
+	$(".se-pre-con-coca-cola").fadeOut("slow");
+	$(".se-pre-con-perfectcircle").fadeOut("slow");
 });
