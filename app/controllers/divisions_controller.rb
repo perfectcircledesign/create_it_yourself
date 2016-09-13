@@ -103,7 +103,6 @@ class DivisionsController < ApplicationController
 
   def preview
     
-
     if session[:function] == "business_card"
       unless params[:returning]
         session[:field_inputs] = params[:field_inputs].each do |field| field end
@@ -125,8 +124,26 @@ class DivisionsController < ApplicationController
         @generated_email_sig = @generated_email_sig.gsub(field[0],field[1])
       end
         
+      
+      #raise
+      # REPLACE: <img src="/assets/vincalogo.jpg" border="0">
+      # WITH: <%= image_tag(params[:picture]) %>
+
+      #@file3 = Tempfile.new('temp_route_image', "#{Rails.root}/tmp/")
+
+
+      
+      #file = Tempfile.new()
+
+
+      
+      
+      #@generated_email_sig = @generated_email_sig.gsub("IMAGE", params[:picture])
+       
+
       File.write(@generated_email_sig_file.path, "#{@generated_email_sig}")
-      render :template => 'divisions/preview_email_sig.html.erb'
+      render :template => 'divisions/temp_image_testing.html.erb'
+      #render :template => 'divisions/preview_email_sig.html.erb'
     end
 
 
@@ -150,6 +167,17 @@ class DivisionsController < ApplicationController
   # def set_function
   #   @function = params[:function]
   # end
+
+
+def create_file_to_upload(body, name)
+  basename  = File.basename(name)
+  extension = File.extname(name)
+  file      = Tempfile.new([basename, extension])
+  file.binmode
+  file.write(body.read)
+  file.close
+  file
+end
 
 end
 

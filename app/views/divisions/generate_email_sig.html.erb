@@ -22,6 +22,11 @@
 				    			<%= text_field_tag "field_inputs[#{field.replace_field}]", (session[:field_inputs].present? and session[:field_inputs]["#{field.replace_field}"].present?) ? session[:field_inputs]["#{field.replace_field}"] : nil , {class: 'form-control'} %>
 				 		</div>
 					<%end%>	<br> 	
+				
+					<%#= form_tag({action: :upload}, multipart: true) do %>
+  						<%= file_field_tag 'picture' %>
+					<%# end %>
+
 				</div>
 				<div>
 					<%= link_to 'Back to Functions', company_path(@division.company, function: params[:function]), class: "btn-default #{@company.slug}-border #{@company.slug}" %>

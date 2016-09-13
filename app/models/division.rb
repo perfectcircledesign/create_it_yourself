@@ -16,7 +16,7 @@ class Division < ApplicationRecord
 
 
 	has_attached_file :email_sig_template
-	validates_attachment_content_type :email_sig_template, :content_type => ["text/html", "text/txt"]
+	validates_attachment_content_type :email_sig_template, :content_type => ["text/html", "text/erb"]
 	
 
 	dragonfly_accessor :image
