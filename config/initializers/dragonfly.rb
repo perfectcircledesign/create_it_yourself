@@ -9,10 +9,10 @@ Dragonfly.app.configure do
   url_format "/media/:job/:name"
 
 if Rails.env.production?
-	 datastore :s3,
-    bucket_name: 'business-card-generator-production',
-    access_key_id: 'AKIAJ7KBTNXSVPH6TVQA',
-    secret_access_key: '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'
+   datastore :s3,
+    bucket_name: ENV['S3_BUCKET'],
+    access_key_id: ENV['S3_KEY'],
+    secret_access_key: ENV['S3_SECRET']
 
 else
 
@@ -22,3 +22,4 @@ else
   end
 end
 
+#NOTETOSELF: This file edited to prevent heroku/S3/image problems
