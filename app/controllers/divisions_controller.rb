@@ -125,25 +125,26 @@ class DivisionsController < ApplicationController
       end
         
       
-      #raise
+
+      session[:file_name] = params[:picture].original_filename
+      directory = "#{Rails.root}/public/assets"
+      @file_path = File.join(directory, session[:file_name])
+      File.open(@file_path, "wb") { |f| f.write(params[:picture].read) }
+
+      
+
       # REPLACE: <img src="/assets/vincalogo.jpg" border="0">
       # WITH: <%= image_tag(params[:picture]) %>
-
       #@file3 = Tempfile.new('temp_route_image', "#{Rails.root}/tmp/")
-
-
-      
       #file = Tempfile.new()
-
-
       
-      
-      #@generated_email_sig = @generated_email_sig.gsub("IMAGE", params[:picture])
+      #@generated_email_sig = @generated_email_sig.gsub("IMAGE", params[:my_file_path])
+      @generated_email_sig = @generated_email_sig.gsub("IMAGE", "/assets/#{session[:file_name]}")
        
 
       File.write(@generated_email_sig_file.path, "#{@generated_email_sig}")
-      render :template => 'divisions/temp_image_testing.html.erb'
-      #render :template => 'divisions/preview_email_sig.html.erb'
+      #render :template => 'divisions/temp_image_testing.html.erb'
+      render :template => 'divisions/preview_email_sig.html.erb'
     end
 
 
