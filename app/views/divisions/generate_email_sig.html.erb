@@ -36,7 +36,7 @@
 			<% end %>			
 		</div>
 		<div class="col-xs-4 cards">
-			<%= render file: @division.email_sig_template.path, layout: false, content_type: 'html' %>
+			<%= render file:  @generated_email_sig_file.path, layout: false, content_type: 'html' %>
     	</div>
 	</div>
 </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160910093824) do
+ActiveRecord::Schema.define(version: 20160914095012) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 20160910093824) do
     t.string   "email_sig_template_content_type"
     t.integer  "email_sig_template_file_size"
     t.datetime "email_sig_template_updated_at"
+    t.string   "default_email_sig_image_uid"
   end
 
   create_table "divisions_email_sig_fields", id: false, force: :cascade do |t|

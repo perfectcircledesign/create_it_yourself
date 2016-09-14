@@ -24,4 +24,5 @@ class Division < ApplicationRecord
 	dragonfly_accessor :image_cut
 	dragonfly_accessor :image_preview_front
 	dragonfly_accessor :image_preview_back
+	dragonfly_accessor :default_email_sig_image
 end

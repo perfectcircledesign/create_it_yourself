@@ -96,6 +96,13 @@ class DivisionsController < ApplicationController
       unless params[:back].present?
           session.delete(:field_inputs)
       end
+
+      #REPLACE "IMAGE" STRING WITH DEFAULT IMAGE:
+      create_email_sig
+      @generated_email_sig = @generated_email_sig.gsub("IMAGE", "/assets/#{@division.default_email_sig_image.name}")
+      File.write(@generated_email_sig_file.path, "#{@generated_email_sig}")
+      #COMPLETE: DEFAULT IMAGE PLACED
+
       render :template => 'divisions/generate_email_sig.html.erb'
     end
 
@@ -117,28 +124,23 @@ class DivisionsController < ApplicationController
         @email_sig_fields = EmailSigField.all
       end
 
-      @generated_email_sig_file = Tempfile.new('temp_route_sig', "#{Rails.root}/tmp/")
-      @generated_email_sig = File.read(@division.email_sig_template.path)
+      # @generated_email_sig_file = Tempfile.new('temp_route_sig', "#{Rails.root}/tmp/")
+      # @generated_email_sig = File.read(@division.email_sig_template.path)
 
-      session[:field_inputs].each do |field| 
-        @generated_email_sig = @generated_email_sig.gsub(field[0],field[1])
-      end
+      # session[:field_inputs].each do |field| 
+      #   @generated_email_sig = @generated_email_sig.gsub(field[0],field[1])
+      # end
         
       
-
+      create_email_sig
+      
+      #PROCESS UPLOADED IMAGE
       session[:file_name] = params[:picture].original_filename
       directory = "#{Rails.root}/public/assets"
       @file_path = File.join(directory, session[:file_name])
       File.open(@file_path, "wb") { |f| f.write(params[:picture].read) }
+      #COMPLETE: IMAGE UPLOADED
 
-      
-
-      # REPLACE: <img src="/assets/vincalogo.jpg" border="0">
-      # WITH: <%= image_tag(params[:picture]) %>
-      #@file3 = Tempfile.new('temp_route_image', "#{Rails.root}/tmp/")
-      #file = Tempfile.new()
-      
-      #@generated_email_sig = @generated_email_sig.gsub("IMAGE", params[:my_file_path])
       @generated_email_sig = @generated_email_sig.gsub("IMAGE", "/assets/#{session[:file_name]}")
        
 
@@ -165,20 +167,17 @@ class DivisionsController < ApplicationController
     @company = @division.company   
   end
 
-  # def set_function
-  #   @function = params[:function]
-  # end
+  def create_email_sig
 
+    @generated_email_sig_file = Tempfile.new('temp_route_sig', "#{Rails.root}/tmp/")
+    @generated_email_sig = File.read(@division.email_sig_template.path)
 
-def create_file_to_upload(body, name)
-  basename  = File.basename(name)
-  extension = File.extname(name)
-  file      = Tempfile.new([basename, extension])
-  file.binmode
-  file.write(body.read)
-  file.close
-  file
-end
+    if session[:field_inputs].present?
+      session[:field_inputs].each do |field| 
+        @generated_email_sig = @generated_email_sig.gsub(field[0],field[1])
+      end
+    end
+  end
 
 end
 
