@@ -54,7 +54,7 @@ class DivisionsController < ApplicationController
         end
          `pdftk "#{Rails.root}/tmp/filename.pdf" cat 1-"#{final_page}" output "#{@file2.path}"`
         #CUT OFF LAST BLANK PAGE FINISHED    
-        #PdfMailer.tester(@file2.path,@division, card_holder_name, card_holder_email, purchase_order_number).deliver
+        PdfMailer.tester(@file2.path,@division, card_holder_name, card_holder_email, purchase_order_number).deliver
     end
 
     if session[:function] == "email_sig"
