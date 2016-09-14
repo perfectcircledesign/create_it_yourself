@@ -13,7 +13,7 @@
     </div>
 	<div class="row" style= "padding: 40px 214px 0;">
 		<div class="col-xs-7 form-input" style="width: 53.667%">  
-			<%= form_tag(preview_division_path) do %>
+			<%= form_tag(preview_division_path, multipart: true) do %>
 			 	<div class="form-group">
 			 		<% EmailSigField.joins(:divisions).where("division_id = ? ",@division.id).order(:order).each do |field| %>
 				 		<div class="form-group">
@@ -24,7 +24,9 @@
 					<%end%>	<br> 	
 				
 					<%#= form_tag({action: :upload}, multipart: true) do %>
-  						<%= file_field_tag 'picture' %>
+  						<%= file_field_tag :picture %>
+  						<%= hidden_field_tag :my_file_path, nil ,id: 'my_file_path'%>
+  						<!-- <img src='' class="temp_img" style="display:none;" /> -->
 					<%# end %>
 
 				</div>
@@ -40,3 +42,12 @@
 	</div>
 </div>
 
+
+<script>
+	$('#picture').change(function(event){
+
+		$('#my_file_path').val(URL.createObjectURL(event.target.files[0]));
+	    // $('.temp_img').attr('src',URL.createObjectURL(event.target.files[0]));
+		// $('.temp_img').show();
+	});
+</script>
