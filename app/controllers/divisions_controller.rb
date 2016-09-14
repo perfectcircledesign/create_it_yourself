@@ -2,6 +2,7 @@ class DivisionsController < ApplicationController
 
   before_action :set_division, only: [:show, :generate, :preview, :completed_job] 
   before_action :set_company, only: [:generate, :show, :preview, :completed_job]
+  before_action :set_images, only: [:show, :preview]
   #before_action :set_function, only: [:generate, :show, :preview, :completed_job]
 
 	def index 
@@ -177,6 +178,17 @@ class DivisionsController < ApplicationController
         @generated_email_sig = @generated_email_sig.gsub(field[0],field[1])
       end
     end
+  end
+  #BELOW ENABLES THE RE-USE OF BCG FOR CALLCARDS ETC.
+  def set_images
+    if session[:function] == 'business_card'
+      @card_front = @division.image
+      @card_back  = @division.image_back 
+    elsif session[:function] == 'crew_card'
+      
+    end
+
+
   end
 
 end
