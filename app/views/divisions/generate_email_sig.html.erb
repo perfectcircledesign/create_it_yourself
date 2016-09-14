@@ -1,8 +1,8 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
 
-  <div class="se-pre-con-perfectcircle"></div>
-  <div class="container details perfectcircle">
+  <div class="se-pre-con-<%=@company.slug%>"></div>
+  <div class="container details <%=@company.slug%>">
     <div class="row details-row1">
         <div class="col-xs-12">
              <%= image_tag(@company.company_logo.remote_url) %>
