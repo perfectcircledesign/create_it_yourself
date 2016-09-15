@@ -2,9 +2,8 @@ class Division < ApplicationRecord
 	
 	belongs_to :company
 
-	has_and_belongs_to_many :business_card_fields, :join_table => 'business_card_fields_divisions'
+	has_and_belongs_to_many :card_fields, :join_table => 'card_fields_divisions'
 	has_and_belongs_to_many :email_sig_fields, :join_table => 'divisions_email_sig_fields'
-	has_and_belongs_to_many :crew_card_fields, :join_table => 'crew_card_fields_divisions'
 	has_many :card_images
 
 

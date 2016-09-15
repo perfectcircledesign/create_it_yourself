@@ -10,20 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160915093245) do
+ActiveRecord::Schema.define(version: 20160915134542) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "business_card_fields", force: :cascade do |t|
+  create_table "card_fields", force: :cascade do |t|
     t.string   "name"
+    t.string   "function"
     t.float    "x_pos"
     t.float    "y_pos"
+    t.integer  "font_id"
     t.string   "size"
     t.string   "colour"
     t.string   "weight"
     t.string   "align"
-    t.integer  "font_id"
     t.string   "prefix"
     t.string   "default"
     t.integer  "order"
@@ -31,9 +32,9 @@ ActiveRecord::Schema.define(version: 20160915093245) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "business_card_fields_divisions", id: false, force: :cascade do |t|
-    t.integer "division_id",            null: false
-    t.integer "business_card_field_id", null: false
+  create_table "card_fields_divisions", id: false, force: :cascade do |t|
+    t.integer "division_id",   null: false
+    t.integer "card_field_id", null: false
   end
 
   create_table "card_images", force: :cascade do |t|
@@ -54,27 +55,6 @@ ActiveRecord::Schema.define(version: 20160915093245) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.string   "company_logo_uid"
-  end
-
-  create_table "crew_card_fields", force: :cascade do |t|
-    t.string   "name"
-    t.float    "x_pos"
-    t.float    "y_pos"
-    t.string   "size"
-    t.string   "colour"
-    t.string   "weight"
-    t.string   "align"
-    t.integer  "font_id"
-    t.string   "prefix"
-    t.string   "default"
-    t.integer  "order"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "crew_card_fields_divisions", id: false, force: :cascade do |t|
-    t.integer "division_id",        null: false
-    t.integer "crew_card_field_id", null: false
   end
 
   create_table "divisions", force: :cascade do |t|

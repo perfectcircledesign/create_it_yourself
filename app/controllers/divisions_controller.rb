@@ -13,7 +13,8 @@ class DivisionsController < ApplicationController
   end
 
 	def show
-    @card_fields = BusinessCardField.all
+    #TODO: CHOOSE BY FUNCTION
+    @card_fields = CardField.all
     
      if session[:function] == "business_card"
       
@@ -85,7 +86,7 @@ class DivisionsController < ApplicationController
   def generate
 
     if session[:function] == 'business_card'
-      @card_fields = BusinessCardField.all
+      @card_fields = CardField.where(function: 'business_card')
       unless params[:back].present?
           session.delete(:field_inputs)
       end
@@ -93,7 +94,7 @@ class DivisionsController < ApplicationController
     end
 
     if session[:function] == 'crew_card'
-      @card_fields = CrewCardField.all
+      @card_fields = CardField.where(function: 'crew_card')
       unless params[:back].present?
           session.delete(:field_inputs)
       end
@@ -122,7 +123,7 @@ class DivisionsController < ApplicationController
     if session[:function] == 'business_card'
       unless params[:returning]
         session[:field_inputs] = params[:field_inputs].each do |field| field end
-        @card_fields = BusinessCardField.all
+        @card_fields = CardField.where(function: 'business_card')
       end
       render :template => 'divisions/preview_card.html.erb'
     end
@@ -130,7 +131,7 @@ class DivisionsController < ApplicationController
     if session[:function] == 'crew_card'
       unless params[:returning]
         session[:field_inputs] = params[:field_inputs].each do |field| field end
-        @card_fields = CrewCardField.all
+        @card_fields = CardField.where(function: 'crew_card')
       end
 
       @image_path = []
