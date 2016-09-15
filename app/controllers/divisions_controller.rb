@@ -2,7 +2,7 @@ class DivisionsController < ApplicationController
 
   before_action :set_division, only: [:show, :generate, :preview, :completed_job] 
   before_action :set_company, only: [:generate, :show, :preview, :completed_job]
-  before_action :set_images, only: [:show, :preview]
+  before_action :set_images, only: [:show, :preview, :generate]
   #before_action :set_function, only: [:generate, :show, :preview, :completed_job]
 
 	def index 
@@ -13,7 +13,7 @@ class DivisionsController < ApplicationController
   end
 
 	def show
-    @business_card_fields = BusinessCardField.all
+    @card_fields = BusinessCardField.all
     
      if session[:function] == "business_card"
       
@@ -84,12 +84,20 @@ class DivisionsController < ApplicationController
 
   def generate
 
-    if session[:function] == "business_card"
-      @business_card_fields = BusinessCardField.all
+    if session[:function] == 'business_card'
+      @card_fields = BusinessCardField.all
       unless params[:back].present?
           session.delete(:field_inputs)
       end
-      render :template => 'divisions/generate_business_card.html.erb'
+      render :template => 'divisions/generate_card.html.erb'
+    end
+
+    if session[:function] == 'crew_card'
+      @card_fields = CrewCardField.all
+      unless params[:back].present?
+          session.delete(:field_inputs)
+      end
+      render :template => 'divisions/generate_card.html.erb'
     end
 
     if session[:function] == "email_sig"
@@ -111,15 +119,23 @@ class DivisionsController < ApplicationController
 
   def preview
     
-    if session[:function] == "business_card"
+    if session[:function] == 'business_card'
       unless params[:returning]
         session[:field_inputs] = params[:field_inputs].each do |field| field end
-        @business_card_fields = BusinessCardField.all
+        @card_fields = BusinessCardField.all
       end
-      render :template => 'divisions/preview_business_card.html.erb'
+      render :template => 'divisions/preview_card.html.erb'
     end
 
-    if session[:function] == "email_sig"
+    if session[:function] == 'crew_card'
+      unless params[:returning]
+        session[:field_inputs] = params[:field_inputs].each do |field| field end
+        @card_fields = CrewCardField.all
+      end
+      render :template => 'divisions/preview_card.html.erb'
+    end    
+
+    if session[:function] == 'email_sig'
       unless params[:returning]
         session[:field_inputs] = params[:field_inputs].each do |field| field end
         @email_sig_fields = EmailSigField.all
@@ -157,7 +173,7 @@ class DivisionsController < ApplicationController
   private
 
   def division_params
-    params.require(:division).permit(:name, :image, :image_back, :image_cut, :image_preview_front, :image_preview_back, :slug, :email_choice, :associate_name, :business_card_field_ids)
+    params.require(:division).permit(:name, :image, :image_back, :image_cut, :image_preview_front, :image_preview_back, :slug, :email_choice, :associate_name)
   end
 
   def set_division
@@ -184,8 +200,13 @@ class DivisionsController < ApplicationController
     if session[:function] == 'business_card'
       @card_front = @division.image
       @card_back  = @division.image_back 
+      @card_front_preview = @division.image_preview_front
+      @card_back_preview  = @division.image_preview_back
     elsif session[:function] == 'crew_card'
-      
+      @card_front = @division.crew_card_image_front
+      @card_back  = @division.crew_card_image_back
+      @card_front_preview = @division.crew_card_image_preview_front
+      @card_back_preview  = @division.crew_card_image_preview_back
     end
 
 

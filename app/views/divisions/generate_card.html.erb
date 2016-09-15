@@ -1,0 +1,49 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+
+  <div class="se-pre-con-<%=@company.slug%>"></div>
+  <div class="container details <%=@company.slug%>">
+    <div class="row details-row1">
+        <div class="col-xs-12">
+            <%= image_tag(@company.company_logo.remote_url) %>
+            <h1>Business Card for Department: <br> <strong> <%=@division.name%>  </strong></h1>
+            <h2>You’re one step closer! Be sure to fill in all your details carefully.<br>
+            Once you’re happy that everything is correct, click the “Generate” button and wait for the next page to load. </h2>
+         </div>       
+    </div>
+
+<% h = @card_front_preview.height/300.0*2.54%>
+<% w = @card_front_preview.width/300.0*2.54%>
+	<div class="row" style= "padding: 40px 214px 0;">
+		<div class="col-xs-8 form-input" style="width: 53.667%">  
+			<%= form_tag(preview_division_path) do %>
+			 	<div class="form-group">
+					<% @card_fields.joins(:divisions).where("division_id = ? ",@division.id).order(:order).each do |field| %>
+					<% next unless field.default == "" or field.default == nil%>
+				 		<div class="form-group">
+				    		<%= label_tag "#{field.name}:" %>
+				    		<%= text_field_tag "field_inputs[field_#{field.id}]", (session[:field_inputs].present? and session[:field_inputs]["field_#{field.id}"].present?) ? session[:field_inputs]["field_#{field.id}"] : nil , {class: 'form-control'} %>
+				 		</div>
+					<% end %>	 	
+					<br>
+					<!-- UNCOMMENT FOLLOWING WHEN EMAIL REQUIRED TODO -->
+<!-- 					<div class="form-group">
+				    	<%= label_tag "Enter e-mail address where business card should be sent:" %>
+				    	<%= text_field_tag "email_receiver", nil, {class: 'form-control'} %>
+				 	</div>
+				 	<br> -->
+				</div>
+					<div>
+						<%= link_to 'Back to Functions', company_path(@division.company, function: params[:function]), class: "btn-default #{@company.slug}-border #{@company.slug}" %>
+						<%#= submit_tag("Generate", class: "btn btn-default") %> 
+						<input type="submit" name="commit" value="Generate" class="btn-default <%=@company.slug%>-bg" >
+					</div>
+			<% end %>			
+		</div>
+		<div class="col-xs-4 cards">
+		    <div class="bgimg"><%= image_tag(@card_front_preview.remote_url) %></div>
+		    <div class="bgimg2"><%= image_tag(@card_back_preview.remote_url) %></div>
+      </div>
+	</div>
+</div>
+
