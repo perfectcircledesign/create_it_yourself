@@ -132,23 +132,28 @@ class DivisionsController < ApplicationController
         session[:field_inputs] = params[:field_inputs].each do |field| field end
         @card_fields = CrewCardField.all
       end
+
+      @image_path = []
+      @division.card_images.where(function: session[:function]).each do |image|
+
+        #NOT WORKING YET BECAUSE IT'S A STRING
+        session["image_#{image.id}"] = params["image_#{image.id}"].original_filename
+        directory = "#{Rails.root}/public/assets"
+        @image_path[image.id] = File.join(directory, session["image_#{image.id}"])
+        File.open(@image_path[image.id], "wb") { |f| f.write(params["image_#{image.id}"].read) }
+         
+      end
+
       render :template => 'divisions/preview_card.html.erb'
     end    
 
     if session[:function] == 'email_sig'
+
       unless params[:returning]
         session[:field_inputs] = params[:field_inputs].each do |field| field end
         @email_sig_fields = EmailSigField.all
       end
 
-      # @generated_email_sig_file = Tempfile.new('temp_route_sig', "#{Rails.root}/tmp/")
-      # @generated_email_sig = File.read(@division.email_sig_template.path)
-
-      # session[:field_inputs].each do |field| 
-      #   @generated_email_sig = @generated_email_sig.gsub(field[0],field[1])
-      # end
-        
-      
       create_email_sig
       
       #PROCESS UPLOADED IMAGE
@@ -159,8 +164,7 @@ class DivisionsController < ApplicationController
       #COMPLETE: IMAGE UPLOADED
 
       @generated_email_sig = @generated_email_sig.gsub("IMAGE", "/assets/#{session[:file_name]}")
-       
-
+ 
       File.write(@generated_email_sig_file.path, "#{@generated_email_sig}")
       #render :template => 'divisions/temp_image_testing.html.erb'
       render :template => 'divisions/preview_email_sig.html.erb'
