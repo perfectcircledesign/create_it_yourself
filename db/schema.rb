@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160914190823) do
+ActiveRecord::Schema.define(version: 20160914195003) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-    create_table "business_card_fields", force: :cascade do |t|
+  create_table "business_card_fields", force: :cascade do |t|
     t.string   "name"
     t.float    "x_pos"
     t.float    "y_pos"
@@ -36,12 +36,40 @@ ActiveRecord::Schema.define(version: 20160914190823) do
     t.integer "business_card_field_id", null: false
   end
 
+  create_table "card_images", force: :cascade do |t|
+    t.float    "x_pos"
+    t.float    "y_pos"
+    t.integer  "x_size"
+    t.integer  "y_size"
+    t.string   "function"
+    t.integer  "page"
+    t.integer  "division_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "companies", force: :cascade do |t|
     t.string   "name"
     t.string   "slug"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.string   "company_logo_uid"
+  end
+
+  create_table "crew_card_fields", force: :cascade do |t|
+    t.string   "name"
+    t.float    "x_pos"
+    t.float    "y_pos"
+    t.string   "size"
+    t.string   "colour"
+    t.string   "weight"
+    t.string   "align"
+    t.integer  "font_id"
+    t.string   "prefix"
+    t.string   "default"
+    t.integer  "order"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "divisions", force: :cascade do |t|
@@ -55,14 +83,18 @@ ActiveRecord::Schema.define(version: 20160914190823) do
     t.string   "slug"
     t.string   "head_email_address"
     t.string   "head_name"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.integer  "order"
     t.string   "email_sig_template_file_name"
     t.string   "email_sig_template_content_type"
     t.integer  "email_sig_template_file_size"
     t.datetime "email_sig_template_updated_at"
     t.string   "default_email_sig_image_uid"
+    t.string   "crew_card_image_front_uid"
+    t.string   "crew_card_image_back_uid"
+    t.string   "crew_card_image_preview_front_uid"
+    t.string   "crew_card_image_preview_back_uid"
   end
 
   create_table "divisions_email_sig_fields", id: false, force: :cascade do |t|

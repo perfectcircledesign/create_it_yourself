@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  x_pos: 1.5
+  y_pos: 1.5
+  x_size: 1
+  y_size: 1
+  function: MyString
+  page: 1
+  division_id: 1
+
+two:
+  x_pos: 1.5
+  y_pos: 1.5
+  x_size: 1
+  y_size: 1
+  function: MyString
+  page: 1
+  division_id: 1

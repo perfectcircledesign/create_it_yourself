@@ -1,0 +1,2 @@
+class CrewCardField < ApplicationRecord
+end

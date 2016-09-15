@@ -4,6 +4,7 @@ class Division < ApplicationRecord
 
 	has_and_belongs_to_many :business_card_fields, :join_table => 'business_card_fields_divisions'
 	has_and_belongs_to_many :email_sig_fields, :join_table => 'divisions_email_sig_fields'
+	has_many :card_images
 
 	attr_accessor :email_receiver
 
@@ -27,4 +28,6 @@ class Division < ApplicationRecord
 	dragonfly_accessor :default_email_sig_image
 	dragonfly_accessor :crew_card_image_front
 	dragonfly_accessor :crew_card_image_back
+	dragonfly_accessor :crew_card_image_preview_front
+	dragonfly_accessor :crew_card_image_preview_back
 end
