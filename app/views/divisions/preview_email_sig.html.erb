@@ -29,16 +29,17 @@
 		                 <input type="text"  pattern="[0-9]{10}" oninvalid="setCustomValidity('Please enter a valid Purchase Order number')" onchange="try{setCustomValidity('')}catch(e){}" name = "Purchase Order" class="form-control print-input" placeholder="Enter your Purchase Order Number here&hellip;" required>
            				<input type="submit" style="align: right;" name="250" value= "PRINT" class="btn-default2 <%=@company.slug%>-bg print-submit">
 			    	</div>
-				</div><
+				</div>
 				<% end %>
 			</div>
 		</div> 
 	</div>
 </div>
-		<!-- <div class="col-xs-4"></div><div class="col-xs-4" style="text-align: left"><%= render file: @generated_email_sig_file.path, layout: false, content_type: 'html' %>]</div> -->
-		 <div class="col-xs-4"></div><div class="col-xs-4">
-		<%= render file: @generated_email_sig_file.path, layout: false, content_type: 'html' %>
-			</div><div class="col-xs-4"></div>
+<div class="container">
+	<div class="col-xs-12">	 
+	<%= render file: @generated_email_sig_file.path, layout: false, content_type: 'html' %>
+	</div>
+</div>		
 <div class="container preview <%=@company.slug%>">
 	<div class="row preview-row2" style="padding-top: 0px"> 	
 		<div class="col-xs-12">

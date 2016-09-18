@@ -103,6 +103,7 @@ GEM
     haml (4.0.7)
       tilt
     i18n (0.7.0)
+    ionicons-rails (2.0.0)
     ipaddress (0.8.3)
     jbuilder (2.6.0)
       activesupport (>= 3.0.0, < 5.1)
@@ -242,6 +243,7 @@ DEPENDENCIES
   dragonfly
   dragonfly-s3_data_store
   friendly_id
+  ionicons-rails
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)

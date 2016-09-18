@@ -1,9 +1,0 @@
-
-
-
-<%= params[:picture].path %> 
-<% if Rails.env.production? %>
-	<img src="<%="#{Rails.root}/assets/#{session[:file_name]}" %>"/>
-<% else %>
-	<img src="<%="/assets/#{session[:file_name]}" %>"/>
-<% end %>

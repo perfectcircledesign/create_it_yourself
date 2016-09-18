@@ -41,6 +41,8 @@ gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 gem 'rename'
 gem 'paperclip'
+gem 'ionicons-rails'
+
 
 # group :production do
 

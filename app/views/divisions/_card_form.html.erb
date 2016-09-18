@@ -12,6 +12,17 @@
 <% h = @card_front.height/300.0*2.54%>
 <% w = @card_front.width/300.0*2.54%>
 
+<% zoom_user = params[:scale] %>
+
+<% zoom_user = params[:scale].to_f %>
+<% x1 = 1/params[:scale].to_f * params[:x_axis].to_f %>
+<% y1 = 1/params[:scale].to_f * params[:y_axis].to_f %>
+<%# x2 = 1/params[:scale].to_f * @division.card_images.first.x_size.to_f %>
+<%# y2 = 1/params[:scale].to_f * @division.card_images.first.y_size.to_f %>
+<% x2 = x1 + 1/params[:scale].to_f * 100.0 %>
+<% y2 = y1 + 1/params[:scale].to_f * 100.0 %>
+
+<%# raise %>
 <% if preview == "true" %>
   <%  zoom = 2.0%>
   <% else %>
@@ -40,11 +51,6 @@
         clear:both; 
         page-break-after:always; 
       }
-  .imageTest{
-        position: absolute; 
-        top: 60px; 
-        left: 80px;
-      }
   <%if preview == "true"%>
     .zoom {
         transform: scale(zoom,zoom);
@@ -68,7 +74,7 @@
 
 
 <div class="bgimg zoom">
-  <% @card_fields.each do |field| %>
+  <% @card_fields.where(page: 1).each do |field| %>
 
   <%# @division.business_card_fields.each do |field| %>
     <style type="text/css">
@@ -111,16 +117,76 @@
     <% end %>
 
   <!-- BELOW WORKS (NON DYNAMIC) -->
-  <!-- <img class="imageTest" src="/assets/<%#= params[:image_1].original_filename%>"></img>  -->
-  <%# raise %>
-
-
-
-
+  <% unless @division.card_images.where(function: session[:function]).empty? %>
+    <style type="text/css">
+    .clipzone{
+      position:  absolute;
+      /*left: 150px;*/
+      top: <%=@division.card_images.first.y_pos / 300.0 * 2.54 * zoom %>cm; 
+      left: <%=@division.card_images.first.x_pos / 300.0 * 2.54 * zoom %>cm;
+      height: <%=@division.card_images.first.y_size / 300.0 * 2.54 * zoom %>cm;
+      width: <%=@division.card_images.first.x_size / 300.0 * 2.54 * zoom %>cm;
+/*      width:500px; 
+      height:50px;*/
+      /*transform: scale(<%=zoom_user%>, <%=zoom_user%>);*/
+      overflow:hidden;
+    }
+    .clipped{
+      position: absolute;
+      /*top: 0cm;*/
+      /*left: 0cm;*/
+      height: <%= 256.0/300*2.54 * zoom * zoom_user%>cm;
+      width: <%= 256.0/300*2.54 * zoom * zoom_user%>cm;
+      top: <%=-params[:y_axis].to_f/300.0*2.54*zoom%>cm;
+      left: <%=-params[:x_axis].to_f/300.0*2.54*zoom%>cm;
+      /*clip: rect(<%=y1%>px,<%=x2%>px,<%=y2%>px,<%=x1%>px);*/
+      <%#raise%>
+      /*transform: scale(1.0/300.0*2.54*2.0*2.0, 1.0/300.0*2.54*2.0*2.0);*/
+    }
+    </style>
+    <div class="clipzone">
+      <img class="clipped" src="/assets/<%= params[:image_1].original_filename%>"></img> 
+    </div>
+  <%end%>
 </div>
 
 <!-- TODO: COPY bgimg CODE FOR TEXT PLACEMENT TO bgimg2. ADD .where(page1) TO DIFFERENTIATE -->
-<div class="bgimg2 zoom"></div>
+<div class="bgimg2 zoom">
+<% @card_fields.where(page: 2).each do |field| %>
+    <style type="text/css">
+      .<%= field.name.downcase.gsub(' ', '_') %>   {
+        font-size: <%=((field.size).to_f*zoom).to_s %>pt;
+        color: <%=field.colour%>;
+        top: <%=field.y_pos/300.0*2.54*zoom %>cm;
+        left: <%=field.x_pos/300.0*2.54*zoom %>cm;        
+        <%unless field.font == nil%>font-family:<%=field.font.name%><%end%>;
+        font-weight: <%=field.weight%>;
+        position: absolute;
+        text-align: left;
+        line-height: <%=((field.size.to_f)*zoom).to_s %>pt;}
+        </style>
+    <div class="<%= field.name.downcase.gsub(' ', '_') %>" <% if preview == "false" %> style= "width: <%= (division.image.width - field.x_pos)/300.0*2.54%>cm"; <% end %> >
+      <!--TODO: REFACTOR THIS TO MAKE IT MORE OBVIOUS -->
+        <% unless session[:field_inputs]["field_#{field.id}"] == nil or session[:field_inputs]["field_#{field.id}"] == "" %>
+          <% unless field.prefix == nil or field.prefix == ""%>
+            <span style="width:<%=(7*zoom).to_s%>px; display: inline-block;">
+              <%= field.prefix %>
+            </span>  
+          <% end %>
+        <% end %>
+      <!-- UP TO HERE  -->
+        <% if field.default == "" or field.default == nil%>
+          <%= session[:field_inputs]["field_#{field.id}"] %>
+          <% elsif field.prefix? %>
+            <span style="width:<%=(7*zoom).to_s%>px; display: inline-block;">
+            <%= field.prefix %>
+            </span> 
+            <%= field.default %>
+          <% else %>
+            <%= field.default %>
+        <% end %>
+      </div>                    
+    <% end %>
+</div>
 <div class="bgimg3 zoom"></div>
-
 <%end%> 

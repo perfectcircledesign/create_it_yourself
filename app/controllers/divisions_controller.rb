@@ -3,7 +3,6 @@ class DivisionsController < ApplicationController
   before_action :set_division, only: [:show, :generate, :preview, :completed_job] 
   before_action :set_company, only: [:generate, :show, :preview, :completed_job]
   before_action :set_images, only: [:show, :preview, :generate]
-  #before_action :set_function, only: [:generate, :show, :preview, :completed_job]
 
 	def index 
     @company = Company.where(slug: params[:format]).first
@@ -76,7 +75,6 @@ class DivisionsController < ApplicationController
     elsif session[:function] == "email_sig"
       render :template => 'divisions/completed_email_sig.html.erb'
     end
-     
   end
 
 	def new
@@ -127,47 +125,40 @@ class DivisionsController < ApplicationController
       end
       render :template => 'divisions/preview_card.html.erb'
     end
-
     if session[:function] == 'crew_card'
       unless params[:returning]
         session[:field_inputs] = params[:field_inputs].each do |field| field end
         @card_fields = CardField.where(function: 'crew_card')
       end
-
       @image_path = []
       @division.card_images.where(function: session[:function]).each do |image|
-
         #NOT WORKING YET BECAUSE IT'S A STRING
         session["image_#{image.id}"] = params["image_#{image.id}"].original_filename
         directory = "#{Rails.root}/public/assets"
         @image_path[image.id] = File.join(directory, session["image_#{image.id}"])
         File.open(@image_path[image.id], "wb") { |f| f.write(params["image_#{image.id}"].read) }
-         
       end
 
       render :template => 'divisions/preview_card.html.erb'
     end    
 
     if session[:function] == 'email_sig'
-
       unless params[:returning]
         session[:field_inputs] = params[:field_inputs].each do |field| field end
         @email_sig_fields = EmailSigField.all
       end
-
       create_email_sig
-      
       #PROCESS UPLOADED IMAGE
-      session[:file_name] = params[:picture].original_filename
-      directory = "#{Rails.root}/public/assets"
-      @file_path = File.join(directory, session[:file_name])
-      File.open(@file_path, "wb") { |f| f.write(params[:picture].read) }
+#TODO: ONLY DO THE FOLLING IF STRING "USER_IMAGE" EXISTS IN TEMPLATE
+        # session[:file_name] = params[:picture].original_filename
+        # directory = "#{Rails.root}/public/assets"
+        # @file_path = File.join(directory, session[:file_name])
+        # File.open(@file_path, "wb") { |f| f.write(params[:picture].read) }
       #COMPLETE: IMAGE UPLOADED
-
-      @generated_email_sig = @generated_email_sig.gsub("IMAGE", "/assets/#{session[:file_name]}")
- 
+      # @generated_email_sig = @generated_email_sig.gsub("IMAGE", "/assets/#{session[:file_name]}")
+#END TODO: ONLY DO THE FOLLING IF STRING "USER_IMAGE" EXISTS IN TEMPLATE
+      
       File.write(@generated_email_sig_file.path, "#{@generated_email_sig}")
-      #render :template => 'divisions/temp_image_testing.html.erb'
       render :template => 'divisions/preview_email_sig.html.erb'
     end
 
