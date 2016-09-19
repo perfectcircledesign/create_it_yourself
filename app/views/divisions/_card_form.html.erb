@@ -17,12 +17,9 @@
 <% zoom_user = params[:scale].to_f %>
 <% x1 = 1/params[:scale].to_f * params[:x_axis].to_f %>
 <% y1 = 1/params[:scale].to_f * params[:y_axis].to_f %>
-<%# x2 = 1/params[:scale].to_f * @division.card_images.first.x_size.to_f %>
-<%# y2 = 1/params[:scale].to_f * @division.card_images.first.y_size.to_f %>
 <% x2 = x1 + 1/params[:scale].to_f * 100.0 %>
 <% y2 = y1 + 1/params[:scale].to_f * 100.0 %>
 
-<%# raise %>
 <% if preview == "true" %>
   <%  zoom = 2.0%>
   <% else %>
@@ -121,31 +118,22 @@
     <style type="text/css">
     .clipzone{
       position:  absolute;
-      /*left: 150px;*/
       top: <%=@division.card_images.first.y_pos / 300.0 * 2.54 * zoom %>cm; 
       left: <%=@division.card_images.first.x_pos / 300.0 * 2.54 * zoom %>cm;
       height: <%=@division.card_images.first.y_size / 300.0 * 2.54 * zoom %>cm;
       width: <%=@division.card_images.first.x_size / 300.0 * 2.54 * zoom %>cm;
-/*      width:500px; 
-      height:50px;*/
-      /*transform: scale(<%=zoom_user%>, <%=zoom_user%>);*/
       overflow:hidden;
     }
     .clipped{
       position: absolute;
-      /*top: 0cm;*/
-      /*left: 0cm;*/
-      height: <%= 256.0/300*2.54 * zoom * zoom_user%>cm;
-      width: <%= 256.0/300*2.54 * zoom * zoom_user%>cm;
+      height: <%= session[:y_res]/300*2.54 * zoom * zoom_user%>cm;
+      width: <%= session[:x_res]/300*2.54 * zoom * zoom_user%>cm;
       top: <%=-params[:y_axis].to_f/300.0*2.54*zoom%>cm;
       left: <%=-params[:x_axis].to_f/300.0*2.54*zoom%>cm;
-      /*clip: rect(<%=y1%>px,<%=x2%>px,<%=y2%>px,<%=x1%>px);*/
-      <%#raise%>
-      /*transform: scale(1.0/300.0*2.54*2.0*2.0, 1.0/300.0*2.54*2.0*2.0);*/
     }
     </style>
     <div class="clipzone">
-      <img class="clipped" src="/assets/<%= params[:image_1].original_filename%>"></img> 
+      <img class="clipped" src="/assets/<%= session[:image_1]%>"></img> 
     </div>
   <%end%>
 </div>

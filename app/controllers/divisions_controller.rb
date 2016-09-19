@@ -8,6 +8,12 @@ class DivisionsController < ApplicationController
     @company = Company.where(slug: params[:format]).first
     @divisions = @company.divisions
     session[:function] = params[:function]
+
+    if @company.divisions.count == 1
+      division = @company.divisions.first
+      redirect_to generate_division_path(division)
+    end
+
     # TODO: ASK GERARD:  session var vs param passed in url for function ?
   end
 
@@ -15,20 +21,20 @@ class DivisionsController < ApplicationController
     #TODO: CHOOSE BY FUNCTION
     @card_fields = CardField.all
     
-     if session[:function] == "business_card"
+     if session[:function] == "business_card" or session[:function] == 'crew_card'
       
         #THIS HAS TO BE CLEANED UP
-        if @division.business_card_fields.where(name: "Associate Name").exists?
+        if @division.card_fields.where(name: "Associate Name").exists?
           card_holder_name = params[:"#{@division.business_card_fields.where(name: "Associate Name").last.id}"]
         end
-        if @division.business_card_fields.where(name: "email").exists?
+        if @division.card_fields.where(name: "email").exists?
           card_holder_email = params[:"#{@division.business_card_fields.where(name: "email").last.id}"]
         end
         purchase_order_number =  params[:"Purchase Order"]
         #UP TO HERE
 
         #CONCAT name and name line 2 if name line 2 is not empty
-        if @division.business_card_fields.where(name: "Name line 2 if needed").exists?
+        if @division.card_fields.where(name: "Name line 2 if needed").exists?
             card_holder_name2 = params[:"#{@division.business_card_fields.where(name: "Name line 2 if needed").last.id}"]
             unless card_holder_name2 == ""
               card_holder_name2 = " " + card_holder_name2  
@@ -70,10 +76,12 @@ class DivisionsController < ApplicationController
 
 
   def completed_job
-    if session[:function] == "business_card"
+    if session[:function] == "business_card" 
       render :template => 'divisions/completed_business_card.html.erb'
     elsif session[:function] == "email_sig"
       render :template => 'divisions/completed_email_sig.html.erb'
+    elsif
+      render :template => 'divisions/completed_business_card.html.erb'
     end
   end
 
@@ -137,8 +145,13 @@ class DivisionsController < ApplicationController
         directory = "#{Rails.root}/public/assets"
         @image_path[image.id] = File.join(directory, session["image_#{image.id}"])
         File.open(@image_path[image.id], "wb") { |f| f.write(params["image_#{image.id}"].read) }
-      end
+      
 
+      end
+      session[:x_res] = FastImage.size(@image_path[1])[0].to_f
+      session[:y_res] = FastImage.size(@image_path[1])[1].to_f
+
+      
       render :template => 'divisions/preview_card.html.erb'
     end    
 

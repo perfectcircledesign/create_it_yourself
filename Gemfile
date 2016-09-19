@@ -42,6 +42,7 @@ gem 'wkhtmltopdf-binary'
 gem 'rename'
 gem 'paperclip'
 gem 'ionicons-rails'
+gem 'fastimage'
 
 
 # group :production do
