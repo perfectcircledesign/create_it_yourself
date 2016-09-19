@@ -147,18 +147,19 @@ class DivisionsController < ApplicationController
       end
       @image_path = []
       @division.card_images.where(function: session[:function]).each do |image|
-        #NOT WORKING YET BECAUSE IT'S A STRING
         session["image_#{image.id}"] = params["image_#{image.id}"].original_filename
         directory = "#{Rails.root}/public/assets"
         @image_path[image.id] = File.join(directory, session["image_#{image.id}"])
         File.open(@image_path[image.id], "wb") { |f| f.write(params["image_#{image.id}"].read) }
-      
-
       end
-      session[:x_res] = FastImage.size(@image_path[1])[0].to_f
-      session[:y_res] = FastImage.size(@image_path[1])[1].to_f
 
-      
+      @division.card_images.where(function: session[:function]).each do |image|
+        if @division.card_images.where(function: session[:function]).present?
+          session[:x_res] = FastImage.size(@image_path[image.id])[0].to_f
+          session[:y_res] = FastImage.size(@image_path[image.id])[1].to_f
+        end
+      end
+
       render :template => 'divisions/preview_card.html.erb'
     end    
 

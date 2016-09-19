@@ -8,6 +8,7 @@ class CompaniesController < ApplicationController
 
 	def show
 		 @company = Company.find_by_slug(params[:id])
+     reset_session
 	end
 
 	def new

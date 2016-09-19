@@ -15,25 +15,23 @@
 <% zoom_user = params[:scale].to_f %>
 
 <% if preview == "true" %>
-  <%  zoom = 2.0%>
-  <% else %>
-  <%  zoom = 1.45%>
+  <%  zoom = 2.0 %>
+<% else %>
+  <%  zoom = 1.0 %>
 <% end %>
-
-<%# raise %>
 
 <%= render 'fonts' %>
 <style type="text/css">
-  /*body{margin:0px; padding:0px; }*/
+  body{margin:0px; padding:0px; }
   .bgimg{
-        background-image: url("<%= @card_front.remote_url %>");
-        height: <%= h*zoom %>cm;
+        background-image: url("<%= card_image(@card_front, preview) %>");
+        height: <%= h*zoom %>cm;        
         width: <%= w*zoom %>cm;
         background-size: cover;
         position:relative;
       }
   .bgimg2{
-        background-image: url("<%= @card_back.remote_url %>");
+        background-image: url("<%= card_image(@card_back, preview) %>");
         height: <%= h*zoom %>cm;
         width: <%= w*zoom %>cm;
         background-size: cover;
@@ -52,6 +50,7 @@
   <% end %>
 </style>
 
+  
 <div class="bgimg">
   <% @card_fields.where(page: 1).each do |field| %>
 
@@ -68,7 +67,7 @@
         text-align: left;
         line-height: <%=((field.size.to_f)*zoom).to_s %>pt;}
         </style>
-    <div class="<%= field.name.downcase.gsub(' ', '_') %>" <% if preview == "false" %> style= "width: <%= (division.image.width - field.x_pos)/300.0*2.54%>cm"; <% end %> >
+    <div class="<%= field.name.downcase.gsub(' ', '_') %>" <% if preview == "false" %> style= "width: <%= (@card_front.width - field.x_pos)/300.0*2.54%>cm"; <% end %> >
 
       <!--TODO: REFACTOR THIS TO MAKE IT MORE OBVIOUS -->
         <% unless session[:field_inputs]["field_#{field.id}"] == nil or session[:field_inputs]["field_#{field.id}"] == "" %>
@@ -97,27 +96,30 @@
 
   <!-- BELOW WORKS (NON DYNAMIC) -->
   <% unless @division.card_images.where(function: session[:function]).empty? %>
-    <style type="text/css">
-    .clipzone{
-      position:  absolute;
-      top: <%=@division.card_images.first.y_pos / 300.0 * 2.54 * zoom %>cm; 
-      left: <%=@division.card_images.first.x_pos / 300.0 * 2.54 * zoom %>cm;
-      height: <%=@division.card_images.first.y_size / 300.0 * 2.54 * zoom %>cm;
-      width: <%=@division.card_images.first.x_size / 300.0 * 2.54 * zoom %>cm;
-      overflow:hidden;
-    }
-    .clipped{
-      position: absolute;
-      height: <%= session[:y_res]/300*2.54 * zoom * zoom_user%>cm;
-      width: <%= session[:x_res]/300*2.54 * zoom * zoom_user%>cm;
-      top: <%=-params[:y_axis].to_f/300.0*2.54*zoom%>cm;
-      left: <%=-params[:x_axis].to_f/300.0*2.54*zoom%>cm;
-    }
-    </style>
-    <div class="clipzone">
-      <img class="clipped" src="/assets/<%= session[:image_1]%>"></img> 
-    </div>
+    <% @division.card_images.where(function: session[:function]).each do |image| %>
+      <style type="text/css">
+      .clipzone{
+        position:  absolute;
+        top: <%=@division.card_images.first.y_pos / 300.0 * 2.54 * zoom %>cm; 
+        left: <%=@division.card_images.first.x_pos / 300.0 * 2.54 * zoom %>cm;
+        height: <%=@division.card_images.first.y_size / 300.0 * 2.54 * zoom %>cm;
+        width: <%=@division.card_images.first.x_size / 300.0 * 2.54 * zoom %>cm;
+        overflow:hidden;
+      }
+      .clipped{
+        position: absolute;
+        height: <%= session[:y_res]/300*2.54 * zoom * zoom_user%>cm;
+        width: <%= session[:x_res]/300*2.54 * zoom * zoom_user%>cm;
+        top: <%=-params[:y_axis].to_f/300.0*2.54*zoom%>cm;
+        left: <%=-params[:x_axis].to_f/300.0*2.54*zoom%>cm;
+      }
+      </style>
+      <div class="clipzone">
+        <img class="clipped" src="/assets/<%= session[:"image_#{image.id}"]%>"></img> 
+      </div>
+    <%end%>
   <%end%>
+
 </div>
 
 <!-- TODO: COPY bgimg CODE FOR TEXT PLACEMENT TO bgimg2. ADD .where(page1) TO DIFFERENTIATE -->
@@ -135,7 +137,7 @@
         text-align: left;
         line-height: <%=((field.size.to_f)*zoom).to_s %>pt;}
         </style>
-    <div class="<%= field.name.downcase.gsub(' ', '_') %>" <% if preview == "false" %> style= "width: <%= (division.image.width - field.x_pos)/300.0*2.54%>cm"; <% end %> >
+    <div class="<%= field.name.downcase.gsub(' ', '_') %>" <% if preview == "false" %> style= "width: <%= (@card_back.width - field.x_pos)/300.0*2.54%>cm"; <% end %> >
       <!--TODO: REFACTOR THIS TO MAKE IT MORE OBVIOUS -->
         <% unless session[:field_inputs]["field_#{field.id}"] == nil or session[:field_inputs]["field_#{field.id}"] == "" %>
           <% unless field.prefix == nil or field.prefix == ""%>
