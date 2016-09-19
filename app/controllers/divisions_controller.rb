@@ -13,12 +13,10 @@ class DivisionsController < ApplicationController
       division = @company.divisions.first
       redirect_to generate_division_path(division)
     end
-
-    # TODO: ASK GERARD:  session var vs param passed in url for function ?
+  
   end
 
 	def show
-    #TODO: CHOOSE BY FUNCTION
     
      if session[:function] == 'business_card' or session[:function] == 'crew_card'
 

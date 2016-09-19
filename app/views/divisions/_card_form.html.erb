@@ -17,38 +17,29 @@
 <% if preview == "true" %>
   <%  zoom = 2.0%>
   <% else %>
-  <%  zoom = 1.0%>
+  <%  zoom = 1.6%>
 <% end %>
 
 <%# raise %>
 
 <%= render 'fonts' %>
 <style type="text/css">
-  body{margin:0px; padding:0px; }
+  /*body{margin:0px; padding:0px; }*/
   .bgimg{
-        background-image: url("<%= @card_front.remote_url %>")  ;
+        background-image: url("<%= @card_front.remote_url %>");
         height: <%= h*zoom %>cm;
         width: <%= w*zoom %>cm;
         background-size: cover;
         position:relative;
       }
   .bgimg2{
-        background-image: url("<%= @card_back.remote_url %>")  ;
+        background-image: url("<%= @card_back.remote_url %>");
         height: <%= h*zoom %>cm;
         width: <%= w*zoom %>cm;
         background-size: cover;
         position:relative;
       }     
 
-  <%if preview == "true"%>
-    .zoom {
-        transform: scale(zoom,zoom);
-        -ms-transform: scale(zoom,zoom); /* IE 9 */
-        -webkit-transform: scale(zoom,zoom); /* Safari and Chrome */
-        -o-transform: scale(zoom,zoom); /* Opera */
-        -moz-transform: scale(zoom,zoom); /* Firefox */
-        }
-  <%end%>
   /*TODO: THIS MUST NOT BREAK WHEN CUT PRESENT*/
   <% if @division.image_cut.present?%>
     .bgimg3{
@@ -61,8 +52,7 @@
   <% end %>
 </style>
 
-
-<div class="bgimg zoom">
+<div class="bgimg">
   <% @card_fields.where(page: 1).each do |field| %>
 
   <%# @division.business_card_fields.each do |field| %>
@@ -131,7 +121,7 @@
 </div>
 
 <!-- TODO: COPY bgimg CODE FOR TEXT PLACEMENT TO bgimg2. ADD .where(page1) TO DIFFERENTIATE -->
-<div class="bgimg2 zoom">
+<div class="bgimg2">
 <% @card_fields.where(page: 2).each do |field| %>
     <style type="text/css">
       .<%= field.name.downcase.gsub(' ', '_') %>   {
@@ -168,5 +158,5 @@
       </div>                    
     <% end %>
 </div>
-<div class="bgimg3 zoom"></div>
+<div class="bgimg3"></div>
 <%end%> 
