@@ -12,7 +12,7 @@
 <% h = @card_front.height/300.0*2.54%>
 <% w = @card_front.width/300.0*2.54%>
 
-<% zoom_user = params[:scale].to_f %>
+<% zoom_user = session[:scale].to_f %>
 
 <% if preview == "true" %>
   <%  zoom = 2.0 %>
@@ -110,13 +110,36 @@
         position: absolute;
         height: <%= session[:y_res]/300*2.54 * zoom * zoom_user%>cm;
         width: <%= session[:x_res]/300*2.54 * zoom * zoom_user%>cm;
-        top: <%=-params[:y_axis].to_f/300.0*2.54*zoom%>cm;
-        left: <%=-params[:x_axis].to_f/300.0*2.54*zoom%>cm;
+        top: <%=-session[:y_axis].to_f/300.0*2.54*zoom%>cm;
+        left: <%=-session[:x_axis].to_f/300.0*2.54*zoom%>cm;
       }
+
+      .clipped-pdf{
+        position: absolute;
+        height: <%= session[:y_res]/300*2.54 * zoom * zoom_user%>cm;
+        width: <%= session[:x_res]/300*2.54 * zoom * zoom_user%>cm;
+        top: <%=-session[:y_axis].to_f/300.0*2.54*zoom%>cm;
+        left: <%=-session[:x_axis].to_f/300.0*2.54*zoom%>cm;
+      }
+      <%#raise%>
+
       </style>
+      <% if preview == 'true' %>
       <div class="clipzone">
-        <img class="clipped" src="/assets/<%= session[:"image_#{image.id}"]%>"></img> 
+        <img class="clipped" src="/assets/<%= session[:"image_#{image.id}"]%>"></img>         
       </div>
+      <% end %>
+      <% if preview == 'false' %>
+      <div class="clipzone">
+        <!-- <div class="clipped-pdf">  -->
+            <%# pic = session[:"image_#{image.id}"] %>
+            <%#= wicked_pdf_image_tag "/assets/#{pic}" %> 
+            <img class="clipped" src="file:////home/nic/cOdin/PerfectCircle/create_it_yourself/public/assets/test_id_pic_markers.jpg"></img>
+
+             <%# raise %>
+        <!-- </div> -->
+      </div>
+      <% end %>
     <%end%>
   <%end%>
 
