@@ -12,19 +12,15 @@
 <% h = @card_front.height/300.0*2.54%>
 <% w = @card_front.width/300.0*2.54%>
 
-<% zoom_user = params[:scale] %>
-
 <% zoom_user = params[:scale].to_f %>
-<% x1 = 1/params[:scale].to_f * params[:x_axis].to_f %>
-<% y1 = 1/params[:scale].to_f * params[:y_axis].to_f %>
-<% x2 = x1 + 1/params[:scale].to_f * 100.0 %>
-<% y2 = y1 + 1/params[:scale].to_f * 100.0 %>
 
 <% if preview == "true" %>
   <%  zoom = 2.0%>
   <% else %>
   <%  zoom = 1.0%>
 <% end %>
+
+<%# raise %>
 
 <%= render 'fonts' %>
 <style type="text/css">
@@ -43,11 +39,7 @@
         background-size: cover;
         position:relative;
       }     
-  .pageBreak { 
-        display: block;
-        clear:both; 
-        page-break-after:always; 
-      }
+
   <%if preview == "true"%>
     .zoom {
         transform: scale(zoom,zoom);

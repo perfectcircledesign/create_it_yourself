@@ -19,9 +19,16 @@ class DivisionsController < ApplicationController
 
 	def show
     #TODO: CHOOSE BY FUNCTION
-    @card_fields = CardField.all
     
-     if session[:function] == "business_card" or session[:function] == 'crew_card'
+     if session[:function] == 'business_card' or session[:function] == 'crew_card'
+
+      if session[:function] == 'business_card'
+        @card_fields = CardField.where(function: 'business_card')
+      elsif session[:function] == 'crew_card'
+        @card_fields = CardField.where(function: 'crew_card')
+      end
+        
+
       
         #THIS HAS TO BE CLEANED UP
         if @division.card_fields.where(name: "Associate Name").exists?
@@ -43,13 +50,15 @@ class DivisionsController < ApplicationController
         end
         #END CONCAT
 
+
           render :pdf => "filename.pdf",
             :template => 'divisions/create_pdf.html.erb',#, :show_as_html => true
               :page_height => "#{@card_front.height / 300.0 *  25.4}",
                   :page_width => "#{@card_front.width / 300.0 * 25.4}",
                       margin:  { top: 0, bottom: 0, left: 0, right: 0 },
                         :save_to_file => Rails.root.join('tmp', "filename.pdf"),                                  
-                          :show_as_html => false, :dpi => '300', :save_only => true    
+                          :show_as_html => false, :dpi => '300', :save_only => false    
+
 
 
         @file2 = Tempfile.new('temp_route_pdf', "#{Rails.root}/tmp/")
@@ -61,7 +70,7 @@ class DivisionsController < ApplicationController
         end
          `pdftk "#{Rails.root}/tmp/filename.pdf" cat 1-"#{final_page}" output "#{@file2.path}"`
         #CUT OFF LAST BLANK PAGE FINISHED    
-        PdfMailer.tester(@file2.path,@division, card_holder_name, card_holder_email, purchase_order_number).deliver
+        #PdfMailer.tester(@file2.path,@division, card_holder_name, card_holder_email, purchase_order_number).deliver
     end
 
     if session[:function] == "email_sig"
@@ -69,7 +78,7 @@ class DivisionsController < ApplicationController
 
     end
 
-    redirect_to completed_job_division_path
+    #redirect_to completed_job_division_path
     
   end
 
