@@ -1,10 +1,10 @@
 class PdfMailer < ApplicationMailer
 
 
-  def tester(pdf, division, card_holder_name, card_holder_email, purchase_order_number)
+  def cocacola(pdf, division, card_holder_name, card_holder_email, purchase_order_number)
 
       attachments['businss_card.pdf'] = File.read(pdf) 
-      mail(:to => "info@simonsays.co.za", :subject => "Online Business Card Generator ", :body => "Good day\n\n#{division.name} has requested business cards for approval via the Online Business Card Generator, for #{card_holder_name}. The quantity that they have selected is # at R#, referencing #{purchase_order_number}. From proof of receipt, the order will take 5 working days.\n\nThank you.\n\nRegards\n\nCoca-Cola Team")
+      mail(:to => "nicholas@perfectcircle.co.za; gauragaura@gmail.com", :subject => "Online Business Card Generator ", :body => "Good day\n\n#{division.name} has requested business cards for approval via the Online Business Card Generator, for #{card_holder_name}. The quantity and cost of the order corresponds to the Purchase Order Number (#{purchase_order_number}). From proof of receipt, the order will take 5 working days.\n\nThank you.\n\nRegards\n\nCoca-Cola Team")
       #mail(:to => "info@simonsays.co.za", :subject => "Online Business Card Generator ", :body => "Good day\n\n#{division.name} has requested business cards for approval via the Online Business Card Generator, for #{card_holder_name}. The quantity that they have selected is #{print_number} at R#, referencing #{purchase_order_number}. From proof of receipt, the order will take 5 working days.\n\nThank you.\n\nRegards\n\nCoca-Cola Team")
   end
 
