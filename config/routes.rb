@@ -22,5 +22,11 @@ Rails.application.routes.draw do
   get '/:id' => 'companies#show'
 
 
+#Create root route points to pages controller, home action
+#create pages controller
+#create actions called home
+#create views for home
+
+
 
 end
