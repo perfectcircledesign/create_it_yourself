@@ -2,8 +2,11 @@
 
 
 <%if @company.slug == 'coca-cola' %>
-
 	<%= image_tag(@company.company_logo.remote_url) %>
     <h1>Business Card for Department: <br> <strong> <%=@division.name%>  </strong></h1><h2>You’re one step closer! Be sure to fill in all your details carefully.<br>Once you’re happy that everything is correct, click the “Generate” button and wait for the next page to load. </h2>
+<%else  %>
+		<%= image_tag(@company.company_logo.remote_url) %>
+		<h1><strong> Card Generator  </strong></h1><h2>You’re one step closer! Be sure to fill in all your details carefully.<br>Once you’re happy that everything is correct, click the “Generate” button and wait for the next page to load. </h2>
 
 <% end %>
+

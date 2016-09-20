@@ -15,7 +15,7 @@
 
  	<div class="row preview-row2" style="padding-top: 0px"> 
 		<div class="col-xs-12 ">
-			<div class="generate-form" style="text-align: center;">
+			<!-- <div class="generate-form" style="text-align: center;">
 				<%= form_tag(division_path, :method => :get) do %>
 					<% EmailSigField.joins(:divisions).where("division_id = ? ",@division.id).each do |field| %>
 					<%= hidden_field_tag "#{field.id}", params[:field_inputs][:"#{field.replace_field}"] %>
@@ -27,7 +27,7 @@
 			    	</div>
 				</div>
 				<%end%>
-			</div>
+			</div> -->
 		</div> 
 	</div>
 </div>
