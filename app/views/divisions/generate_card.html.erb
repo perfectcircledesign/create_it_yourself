@@ -13,7 +13,8 @@
 		<div class="col-xs-6 form-input">
 			<%= form_tag(preview_division_path, multipart: true) do %>
 			 	
-					<% @card_fields.joins(:divisions).where("division_id = ? ",@division.id).order(:order).each do |field| %>
+					<%# @card_fields.joins(:divisions).where("division_id = ? ",@division.id).order(:order).each do |field| %>
+					<% @card_fields.order(:order).each do |field| %>
 						<% next unless field.default == "" or field.default == nil%>
 			 			<div class="form-group">
 			    			<%= label_tag "#{field.name}:" %>

@@ -20,27 +20,21 @@ class DivisionsController < ApplicationController
     
      if session[:function] == 'business_card' or session[:function] == 'crew_card'
 
-      if session[:function] == 'business_card'
-        @card_fields = CardField.where(function: 'business_card')
-      elsif session[:function] == 'crew_card'
-        @card_fields = CardField.where(function: 'crew_card')
-      end
-        
-
+      @card_fields = CardField.where(function: session[:function]).joins(:divisions).where("division_id = ? ",@division.id)
       
         #THIS HAS TO BE CLEANED UP
-        if @division.card_fields.where(name: "Associate Name").exists?
-          card_holder_name = params[:"#{@division.business_card_fields.where(name: "Associate Name").last.id}"]
+        if @card_fields.where(name: "Associate Name").exists?
+          card_holder_name = params[:"#{@card_fields.where(name: "Associate Name").last.id}"]
         end
-        if @division.card_fields.where(name: "email").exists?
-          card_holder_email = params[:"#{@division.business_card_fields.where(name: "email").last.id}"]
+        if @card_fields.where(name: "email").exists?
+          card_holder_email = params[:"#{@card_fields.where(name: "email").last.id}"]
         end
         purchase_order_number =  params[:"Purchase Order"]
         #UP TO HERE
 
         #CONCAT name and name line 2 if name line 2 is not empty
-        if @division.card_fields.where(name: "Name line 2 if needed").exists?
-            card_holder_name2 = params[:"#{@division.business_card_fields.where(name: "Name line 2 if needed").last.id}"]
+        if @card_fields.where(name: "Name line 2 if needed").exists?
+            card_holder_name2 = params[:"#{@card_fields.where(name: "Name line 2 if needed").last.id}"]
             unless card_holder_name2 == ""
               card_holder_name2 = " " + card_holder_name2  
             end
@@ -55,7 +49,7 @@ class DivisionsController < ApplicationController
                   :page_width => "#{@card_front.width / 300.0 * 25.4}",
                       margin:  { top: 0, bottom: 0, left: 0, right: 0 },
                         :save_to_file => Rails.root.join('tmp', "filename.pdf"),                                  
-                          :show_as_html => false, :dpi => '300', :save_only => false    
+                          :show_as_html => false, :dpi => '300', :save_only => true    
 
 
 
@@ -68,7 +62,7 @@ class DivisionsController < ApplicationController
         end
          `pdftk "#{Rails.root}/tmp/filename.pdf" cat 1-"#{final_page}" output "#{@file2.path}"`
         #CUT OFF LAST BLANK PAGE FINISHED    
-        #PdfMailer.tester(@file2.path,@division, card_holder_name, card_holder_email, purchase_order_number).deliver
+        PdfMailer.tester(@file2.path,@division, card_holder_name, card_holder_email, purchase_order_number).deliver
     end
 
     if session[:function] == "email_sig"
@@ -76,7 +70,7 @@ class DivisionsController < ApplicationController
 
     end
 
-    #redirect_to completed_job_division_path
+    redirect_to completed_job_division_path
     
   end
 
@@ -98,20 +92,13 @@ class DivisionsController < ApplicationController
 
   def generate
 
-    if session[:function] == 'business_card'
-      @card_fields = CardField.where(function: 'business_card')
-      unless params[:back].present?
-          session.delete(:field_inputs)
-      end
-      render :template => 'divisions/generate_card.html.erb'
-    end
+    if session[:function] == 'business_card' or session[:function] == 'crew_card'
 
-    if session[:function] == 'crew_card'
-      @card_fields = CardField.where(function: 'crew_card')
+      @card_fields = CardField.where(function: session[:function]).joins(:divisions).where("division_id = ? ",@division.id)
+
       unless params[:back].present?
           session.delete(:field_inputs)
       end
-      
       render :template => 'divisions/generate_card.html.erb'
     end
 
@@ -134,40 +121,41 @@ class DivisionsController < ApplicationController
 
   def preview
     
-    if session[:function] == 'business_card'
+    if session[:function] == 'business_card' or session[:function] == 'crew_card'
+
+      @card_fields = CardField.where(function: session[:function]).joins(:divisions).where("division_id = ? ",@division.id)
+
       unless params[:returning]
         session[:field_inputs] = params[:field_inputs].each do |field| field end
-        @card_fields = CardField.where(function: 'business_card')
+        @card_fields = CardField.where(function: session[:function]).joins(:divisions).where("division_id = ? ",@division.id)
       end
       render :template => 'divisions/preview_card.html.erb'
-    end
-    if session[:function] == 'crew_card'
-      unless params[:returning]
-        session[:field_inputs] = params[:field_inputs].each do |field| field end
-        @card_fields = CardField.where(function: 'crew_card')
-      end
-      session[:image_path] = []
-      @division.card_images.where(function: session[:function]).each do |image|
-        session["image_#{image.id}"] = params["image_#{image.id}"].original_filename
-        directory = "#{Rails.root}/public/assets"
-        session[:image_path][image.id] = File.join(directory, session["image_#{image.id}"])
-        File.open(session[:image_path][image.id], "wb") { |f| f.write(params["image_#{image.id}"].read) }
-      end
-
-      @division.card_images.where(function: session[:function]).each do |image|
-        if @division.card_images.where(function: session[:function]).present?
-          session[:x_res] = FastImage.size(session[:image_path][image.id])[0].to_f
-          session[:y_res] = FastImage.size(session[:image_path][image.id])[1].to_f
+   
+      if @division.card_images.where(function: session[:function]).exists?
+        
+        session[:image_path] = []
+        @division.card_images.where(function: session[:function]).each do |image|
+          session["image_#{image.id}"] = params["image_#{image.id}"].original_filename
+          directory = "#{Rails.root}/public/assets"
+          session[:image_path][image.id] = File.join(directory, session["image_#{image.id}"])
+          File.open(session[:image_path][image.id], "wb") { |f| f.write(params["image_#{image.id}"].read) }
         end
-      end
-      
-      session[:x_axis] = params[:x_axis]
-      session[:y_axis] = params[:y_axis]
-      session[:scale] = params[:scale]
-      session[:width] = params[:width]
-      session[:height] = params[:height]
 
-      render :template => 'divisions/preview_card.html.erb'
+        @division.card_images.where(function: session[:function]).each do |image|
+          if @division.card_images.where(function: session[:function]).present?
+            session[:x_res] = FastImage.size(session[:image_path][image.id])[0].to_f
+            session[:y_res] = FastImage.size(session[:image_path][image.id])[1].to_f
+          end
+        end
+        
+        session[:x_axis] = params[:x_axis]
+        session[:y_axis] = params[:y_axis]
+        session[:scale] = params[:scale]
+        session[:width] = params[:width]
+        session[:height] = params[:height]
+
+        render :template => 'divisions/preview_card.html.erb'
+      end
     end    
 
     if session[:function] == 'email_sig'
@@ -176,15 +164,6 @@ class DivisionsController < ApplicationController
         @email_sig_fields = EmailSigField.all
       end
       create_email_sig
-      #PROCESS UPLOADED IMAGE
-#TODO: ONLY DO THE FOLLING IF STRING "USER_IMAGE" EXISTS IN TEMPLATE
-        # session[:file_name] = params[:picture].original_filename
-        # directory = "#{Rails.root}/public/assets"
-        # @file_path = File.join(directory, session[:file_name])
-        # File.open(@file_path, "wb") { |f| f.write(params[:picture].read) }
-      #COMPLETE: IMAGE UPLOADED
-      # @generated_email_sig = @generated_email_sig.gsub("IMAGE", "/assets/#{session[:file_name]}")
-#END TODO: ONLY DO THE FOLLING IF STRING "USER_IMAGE" EXISTS IN TEMPLATE
       
       File.write(@generated_email_sig_file.path, "#{@generated_email_sig}")
       render :template => 'divisions/preview_email_sig.html.erb'

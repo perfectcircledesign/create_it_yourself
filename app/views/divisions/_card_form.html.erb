@@ -53,7 +53,7 @@
   
 <div class="bgimg">
   <% @card_fields.where(page: 1).each do |field| %>
-
+  <%#raise%>
   <%# @division.business_card_fields.each do |field| %>
     <style type="text/css">
       .<%= field.name.downcase.gsub(' ', '_') %>   {
