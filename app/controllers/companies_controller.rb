@@ -8,6 +8,11 @@ class CompaniesController < ApplicationController
 
 	def show
 		 @company = Company.find_by_slug(params[:id])
+     
+    if @company.slug == 'coca-cola'
+      redirect_to divisions_path(@company, function: :business_card)
+    end
+
      reset_session
 	end
 

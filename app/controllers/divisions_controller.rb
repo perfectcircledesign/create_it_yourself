@@ -49,7 +49,7 @@ class DivisionsController < ApplicationController
                   :page_width => "#{@card_front.width / 300.0 * 25.4}",
                       margin:  { top: 0, bottom: 0, left: 0, right: 0 },
                         :save_to_file => Rails.root.join('tmp', "filename.pdf"),                                  
-                          :show_as_html => false, :dpi => '300', :save_only => true    
+                          :show_as_html => false, :dpi => '300', :save_only => false    
 
 
 
@@ -72,7 +72,7 @@ class DivisionsController < ApplicationController
 
     end
 
-    redirect_to completed_job_division_path
+    #redirect_to completed_job_division_path
     
   end
 

@@ -1,13 +1,14 @@
+
+
 <div class="container <%=@company.slug%>">
-<%= image_tag(@company.company_logo.remote_url) %>
-	<h1>Business Card Generator</h1>
-		<h2>Select a function you would like to create a business card for</h2>
-			<div class="row" >
-	  			<ul class="list-group"  > 
-    				<!-- TODO: ASK GERARD ABOUT @division vs divion when @company is being used BEST PRACTICE ? -->
-    				<% @divisions.order(:order).each do |division| %> 
-    					<li class="list-group-item" style="padding: 40px 214px 10px;"><%= link_to "#{division.name}", generate_division_path(division) %></li>      
-  					<% end %>
-				</ul>  
-			</div>
+	<%= image_tag(@company.company_logo.remote_url) %>
+		<h1>Business Card Generator</h1>
+			<h2>Select a function you would like to create a business card for</h2>
+				<div class="row">
+	  				<ul class="list-group" style="padding: 40px 214px 10px";> 
+    					<%@divisions.order(:order).each do |division| %> 
+    						<li class="list-group-item" ><%= link_to "#{division.name}", generate_division_path(division) %></li>      
+  						<%end %>
+					</ul>  
+				</div>
 </div>
