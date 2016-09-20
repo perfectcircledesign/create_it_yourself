@@ -72,7 +72,7 @@ class DivisionsController < ApplicationController
 
     end
 
-    #redirect_to completed_job_division_path
+    redirect_to completed_job_division_path
     
   end
 
