@@ -114,15 +114,6 @@
         left: <%=-session[:x_axis].to_f/300.0*2.54*zoom%>cm;
       }
 
-      .clipped-pdf{
-        position: absolute;
-        height: <%= session[:y_res]/300*2.54 * zoom * zoom_user%>cm;
-        width: <%= session[:x_res]/300*2.54 * zoom * zoom_user%>cm;
-        top: <%=-session[:y_axis].to_f/300.0*2.54*zoom%>cm;
-        left: <%=-session[:x_axis].to_f/300.0*2.54*zoom%>cm;
-      }
-      <%#raise%>
-
       </style>
       <% if preview == 'true' %>
       <div class="clipzone">
@@ -132,9 +123,9 @@
       <% if preview == 'false' %>
       <div class="clipzone">
         <!-- <div class="clipped-pdf">  -->
-            <%# pic = session[:"image_#{image.id}"] %>
+            <% pic = session[:"image_#{image.id}"] %>
             <%#= wicked_pdf_image_tag "/assets/#{pic}" %> 
-            <img class="clipped" src="file:////home/nic/cOdin/PerfectCircle/create_it_yourself/public/assets/test_id_pic_markers.jpg"></img>
+            <img class="clipped" src="file:////home/nic/cOdin/PerfectCircle/create_it_yourself/public/assets/<%=pic%>"></img>
 
              <%# raise %>
         <!-- </div> -->

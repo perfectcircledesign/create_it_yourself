@@ -5,13 +5,10 @@
 <div class="container details <%=@company.slug%>">
     <div class="row details-row1">
         <div class="col-xs-12">
-            <%= image_tag(@company.company_logo.remote_url) %>
-            <h1>Business Card for Department: <br> <strong> <%=@division.name%>  </strong></h1>
-            <h2>You’re one step closer! Be sure to fill in all your details carefully.<br>
-            Once you’re happy that everything is correct, click the “Generate” button and wait for the next page to load. </h2>
-         </div>       
+          <%= render 'generate_card_header' %>    
+        </div>       
     </div>
-
+    
 	<div class="row" style= "padding: 40px 214px 0;">
 		<div class="col-xs-6 form-input">
 			<%= form_tag(preview_division_path, multipart: true) do %>
