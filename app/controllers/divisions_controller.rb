@@ -49,7 +49,7 @@ class DivisionsController < ApplicationController
                   :page_width => "#{@card_front.width / 300.0 * 25.4}",
                       margin:  { top: 0, bottom: 0, left: 0, right: 0 },
                         :save_to_file => Rails.root.join('tmp', "filename.pdf"),                                  
-                          :show_as_html => false, :dpi => '300', :save_only => true    
+                          :show_as_html => false, :dpi => '300', :save_only => false    
 
 
 
@@ -63,7 +63,7 @@ class DivisionsController < ApplicationController
          `pdftk "#{Rails.root}/tmp/filename.pdf" cat 1-"#{final_page}" output "#{@file2.path}"`
         #CUT OFF LAST BLANK PAGE FINISHED    
 
-        PdfMailer.cocacola(@file2.path,@division, card_holder_name, card_holder_email, purchase_order_number).deliver if @company.slug == "coca-cola"
+        #PdfMailer.cocacola(@file2.path,@division, card_holder_name, card_holder_email, purchase_order_number).deliver if @company.slug == "coca-cola"
     
     end
 
@@ -72,7 +72,7 @@ class DivisionsController < ApplicationController
 
     end
 
-    redirect_to completed_job_division_path
+    #redirect_to completed_job_division_path
     
   end
 
@@ -131,7 +131,7 @@ class DivisionsController < ApplicationController
         session[:field_inputs] = params[:field_inputs].each do |field| field end
         @card_fields = CardField.where(function: session[:function]).joins(:divisions).where("division_id = ? ",@division.id)
       end
-      render :template => 'divisions/preview_card.html.erb'
+      #render :template => 'divisions/preview_card.html.erb'
    
       if @division.card_images.where(function: session[:function]).exists?
         
@@ -141,10 +141,20 @@ class DivisionsController < ApplicationController
           directory = "#{Rails.root}/public/assets"
           session[:image_path][image.id] = File.join(directory, session["image_#{image.id}"])
           File.open(session[:image_path][image.id], "wb") { |f| f.write(params["image_#{image.id}"].read) }
+        puts "xxxxx sessino[:image_path]:xxxxxx"
+        puts session[:image_path]
+        puts "xxxxx directory xxxxxx"
+        puts directory
+        puts "xxxxxxxxxxx"
+        puts "xxxxxxxxxxx"
+        puts "xxxxxxxxxxx"
+        puts "xxxxxxxxxxx"
+        
         end
 
         @division.card_images.where(function: session[:function]).each do |image|
           if @division.card_images.where(function: session[:function]).present?
+
             session[:x_res] = FastImage.size(session[:image_path][image.id])[0].to_f
             session[:y_res] = FastImage.size(session[:image_path][image.id])[1].to_f
           end
@@ -154,10 +164,9 @@ class DivisionsController < ApplicationController
         session[:y_axis] = params[:y_axis]
         session[:scale] = params[:scale]
         session[:width] = params[:width]
-        session[:height] = params[:height]
-
-        render :template => 'divisions/preview_card.html.erb'
+        session[:height] = params[:height] 
       end
+      render :template => 'divisions/preview_card.html.erb'
     end    
 
     if session[:function] == 'email_sig'
