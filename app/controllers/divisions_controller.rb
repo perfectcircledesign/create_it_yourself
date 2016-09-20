@@ -63,8 +63,10 @@ class DivisionsController < ApplicationController
          `pdftk "#{Rails.root}/tmp/filename.pdf" cat 1-"#{final_page}" output "#{@file2.path}"`
         #CUT OFF LAST BLANK PAGE FINISHED    
 
-        #PdfMailer.cocacola(@file2.path,@division, card_holder_name, card_holder_email, purchase_order_number).deliver if @company.slug == "coca-cola"
-    
+        if session[:function] == 'business_card' and @company.slug == 'coca-cola'
+          PdfMailer.cocacola(@file2.path,@division, card_holder_name, card_holder_email, purchase_order_number).deliver if @company.slug == "coca-cola"
+        end
+
     end
 
     if session[:function] == "email_sig"
@@ -141,14 +143,7 @@ class DivisionsController < ApplicationController
           directory = "#{Rails.root}/public/assets"
           session[:image_path][image.id] = File.join(directory, session["image_#{image.id}"])
           File.open(session[:image_path][image.id], "wb") { |f| f.write(params["image_#{image.id}"].read) }
-        # puts "xxxxx sessino[:image_path]:xxxxxx"
-        # puts session[:image_path]
-        # puts "xxxxx directory xxxxxx"
-        # puts directory
-        # puts "xxxxxxxxxxx"
-        # puts "xxxxxxxxxxx"
-        # puts "xxxxxxxxxxx"
-        # puts "xxxxxxxxxxx"
+  
         
         end
 

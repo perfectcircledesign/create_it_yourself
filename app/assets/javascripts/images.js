@@ -48,4 +48,5 @@ $( window ).load(function() {
 
 	$(".se-pre-con-coca-cola").fadeOut("slow");
 	$(".se-pre-con-perfectcircle").fadeOut("slow");
+	$(".se-pre-con-airschool43").fadeOut("slow");
 });
