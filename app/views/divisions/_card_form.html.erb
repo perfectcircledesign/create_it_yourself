@@ -132,13 +132,12 @@
       <div class="clipzone">
         <!-- <div class="clipped-pdf">  -->
             <% pic = session[:"image_#{image.id}"] %>
-            <%#= wicked_pdf_image_tag "/assets/#{pic}" %> 
-            <!-- <img class="clipped" src="file:////home/nic/cOdin/PerfectCircle/create_it_yourself/public/assets/<%=pic%>"></img> -->
-            <img class="clipped" src="/app/public/assets/<%=pic%>"></img>
-            <%= puts "xxxxx sessino[:y_res]:xxxxxx"  %> 
-            <%= puts session[:y_res]  %> 
-             <%# raise %>
-        <!-- </div> -->
+            
+            <% Rails.env.production? ? image_path = "/app/public/assets/#{pic}" : image_path = "file:////home/nic/cOdin/PerfectCircle/create_it_yourself/public/assets/#{pic}"%>
+            <!-- <img class="clipped" src="file:////home/nic/cOdin/PerfectCircle/create_it_yourself/public/assets/<%#=pic%>"></img> -->
+            <!-- <img class="clipped" src="/app/public/assets/<%#=pic%>"></img> -->
+            <img class="clipped" src="<%=image_path%>"></img>
+              <%# raise %>
       </div>
       <% end %>
     <%end%>
