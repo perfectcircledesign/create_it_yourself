@@ -141,14 +141,14 @@ class DivisionsController < ApplicationController
           directory = "#{Rails.root}/public/assets"
           session[:image_path][image.id] = File.join(directory, session["image_#{image.id}"])
           File.open(session[:image_path][image.id], "wb") { |f| f.write(params["image_#{image.id}"].read) }
-        puts "xxxxx sessino[:image_path]:xxxxxx"
-        puts session[:image_path]
-        puts "xxxxx directory xxxxxx"
-        puts directory
-        puts "xxxxxxxxxxx"
-        puts "xxxxxxxxxxx"
-        puts "xxxxxxxxxxx"
-        puts "xxxxxxxxxxx"
+        # puts "xxxxx sessino[:image_path]:xxxxxx"
+        # puts session[:image_path]
+        # puts "xxxxx directory xxxxxx"
+        # puts directory
+        # puts "xxxxxxxxxxx"
+        # puts "xxxxxxxxxxx"
+        # puts "xxxxxxxxxxx"
+        # puts "xxxxxxxxxxx"
         
         end
 

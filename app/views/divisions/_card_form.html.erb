@@ -114,10 +114,18 @@
         left: <%=-session[:x_axis].to_f/300.0*2.54*zoom%>cm;
       }
 
+
+        <%= puts "xxxxx sessino[:y_res]:xxxxxx"  %> 
+        <%= puts session[:y_res]  %> 
+        <%= puts "xxxxx sessino[:y_axis]:xxxxxx"  %> 
+       <%= puts session[:y_axis]  %> 
+
       </style>
       <% if preview == 'true' %>
       <div class="clipzone">
         <img class="clipped" src="/assets/<%= session[:"image_#{image.id}"]%>"></img>         
+      
+
       </div>
       <% end %>
       <% if preview == 'false' %>
@@ -125,8 +133,10 @@
         <!-- <div class="clipped-pdf">  -->
             <% pic = session[:"image_#{image.id}"] %>
             <%#= wicked_pdf_image_tag "/assets/#{pic}" %> 
-            <img class="clipped" src="file:////home/nic/cOdin/PerfectCircle/create_it_yourself/public/assets/<%=pic%>"></img>
-
+            <!-- <img class="clipped" src="file:////home/nic/cOdin/PerfectCircle/create_it_yourself/public/assets/<%=pic%>"></img> -->
+            <img class="clipped" src="/app/public/assets/<%=pic%>"></img>
+            <%= puts "xxxxx sessino[:y_res]:xxxxxx"  %> 
+            <%= puts session[:y_res]  %> 
              <%# raise %>
         <!-- </div> -->
       </div>
