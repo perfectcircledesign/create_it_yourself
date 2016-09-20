@@ -49,7 +49,7 @@ Rails.application.configure do
     :address              => "smtp.gmail.com",
     :port                 => 587,
     :user_name            => "gauragaura@gmail.com",
-    :password             => "Boer1488",
+    :password             => "password",
     :authentication       => "plain",
     :enable_starttls_auto => true,
     :openssl_verify_mode  => 'none'
