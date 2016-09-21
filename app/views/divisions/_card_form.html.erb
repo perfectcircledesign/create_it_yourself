@@ -57,16 +57,20 @@
   <%# @division.business_card_fields.each do |field| %>
     <style type="text/css">
       .<%= field.name.downcase.gsub(' ', '_') %>   {
-        font-size: <%=((field.size).to_f*zoom).to_s %>pt;
-        color: <%=field.colour%>;
-        top: <%=field.y_pos/300.0*2.54*zoom %>cm;
-        left: <%=field.x_pos/300.0*2.54*zoom %>cm;        
-        <%unless field.font == nil%>font-family:<%=field.font.name%><%end%>;
-        font-weight: <%=field.weight%>;
-        position: absolute;
-        text-align: left;
-        line-height: <%=((field.size.to_f)*zoom).to_s %>pt;}
-        </style>
+
+      <%unless field.font == nil%>font-family:<%=field.font.name%><%end%>;
+      <%unless field.align.empty?%>
+        <%field.x_pos = field.x_pos - calc_string_width(field) if field.align=='center'%>
+      <%end%>
+
+      font-size: <%=((field.size).to_f*zoom).to_s %>pt;
+      color: <%=field.colour%>;
+      top: <%=field.y_pos/300.0*2.54*zoom %>cm;
+      left: <%=(field.x_pos)/300.0*2.54*zoom %>cm;        
+      font-weight: <%=field.weight%>;
+      position: absolute;
+      line-height: <%=((field.size.to_f)*zoom).to_s %>pt;}
+    </style>
     <div class="<%= field.name.downcase.gsub(' ', '_') %>" <% if preview == "false" %> style= "width: <%= (@card_front.width - field.x_pos)/300.0*2.54%>cm"; <% end %> >
 
       <!--TODO: REFACTOR THIS TO MAKE IT MORE OBVIOUS -->
@@ -121,13 +125,13 @@
       
 
       </div>
-      <% end %>
-      <% if preview == 'false' %>
+      <%end%>
+      <%if preview == 'false' %>
       <div class="clipzone">
         <!-- <div class="clipped-pdf">  -->
-            <% pic = session[:"image_#{image.id}"] %>
+            <%pic = session[:"image_#{image.id}"] %>
             
-            <% Rails.env.production? ? image_path = "/app/public/assets/#{pic}" : image_path = "file:////home/nic/cOdin/PerfectCircle/create_it_yourself/public/assets/#{pic}"%>
+            <%Rails.env.production? ? image_path = "/app/public/assets/#{pic}" : image_path = "file:////home/nic/cOdin/PerfectCircle/create_it_yourself/public/assets/#{pic}"%>
             <!-- <img class="clipped" src="file:////home/nic/cOdin/PerfectCircle/create_it_yourself/public/assets/<%#=pic%>"></img> -->
             <!-- <img class="clipped" src="/app/public/assets/<%#=pic%>"></img> -->
             <img class="clipped" src="<%=image_path%>"></img>

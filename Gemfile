@@ -43,6 +43,7 @@ gem 'rename'
 gem 'paperclip'
 gem 'ionicons-rails'
 gem 'fastimage'
+gem 'rmagick'
 
 
 # group :production do

@@ -12,4 +12,20 @@ module ApplicationHelper
 		end
 	end
 
+	def calc_string_width(field)
+
+		the_text = session[:field_inputs]["field_#{field.id}"]
+		label = Magick::Draw.new
+		label.font = "/home/nic/cOdin/PerfectCircle/create_it_yourself/public/fonts/DINProBlack.ttf" #you can also specify a file name... check the rmagick docs to be sure
+		label.text_antialias(true)
+		label.pointsize = (field.size.to_f)*2
+		label.font_style=Magick::NormalStyle
+		# label.gravity=Magick::CenterGravity
+		label.text(0,0,the_text)
+		metrics = label.get_type_metrics(the_text)
+		string_width = metrics.width
+
+		return string_width
+	end
+
 end
