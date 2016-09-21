@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  # root 'companies#index'
+  root 'pages#home'
 
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
@@ -18,15 +18,8 @@ Rails.application.routes.draw do
       get "completed_job"
   	end  
   end
-
+  get '/robots' => 'pages#robots'
   get '/:id' => 'companies#show'
-
-
-#Create root route points to pages controller, home action
-#create pages controller
-#create actions called home
-#create views for home
-
 
 
 end
