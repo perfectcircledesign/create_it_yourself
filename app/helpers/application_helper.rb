@@ -24,7 +24,7 @@ module ApplicationHelper
 		label.text(0,0,the_text)
 		metrics = label.get_type_metrics(the_text)
 		string_width = metrics.width
-
+		PUTS 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 		return string_width
 	end
 
