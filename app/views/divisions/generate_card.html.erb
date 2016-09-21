@@ -18,7 +18,9 @@
 						<% next unless field.default == "" or field.default == nil%>
 			 			<div class="form-group">
 			    			<%= label_tag "#{field.name}:" %>
-      			    <%= text_field_tag "field_inputs[field_#{field.id}]", (session[:field_inputs].present? and session[:field_inputs]["field_#{field.id}"].present?) ? session[:field_inputs]["field_#{field.id}"] : nil , {class: 'form-control'} %>
+			    	<!-- TODO: REFACTOR OUT THE HACK PREPOPULATE HACK FOR COCACOLA DIVISIONS-->
+      			    <%= text_field_tag "field_inputs[field_#{field.id}]", (session[:field_inputs].present? and session[:field_inputs]["field_#{field.id}"].present?) ? session[:field_inputs]["field_#{field.id}"] : field.pre_populate.present? ? @division.name : nil , {class: 'form-control'} %>
+            
             </div>    
     			<%end%><br>
 

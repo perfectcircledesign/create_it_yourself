@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160915195748) do
+ActiveRecord::Schema.define(version: 20160921193805) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,9 +28,10 @@ ActiveRecord::Schema.define(version: 20160915195748) do
     t.string   "prefix"
     t.string   "default"
     t.integer  "order"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.integer  "page"
+    t.string   "pre_populate"
   end
 
   create_table "card_fields_divisions", id: false, force: :cascade do |t|
