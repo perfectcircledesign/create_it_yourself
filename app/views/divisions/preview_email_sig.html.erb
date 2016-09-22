@@ -17,8 +17,8 @@
 <h2><strong>Instructions for copying email signature:</strong></h2> 
 	<div class="row">
 			<ol style="padding: 0px 214px 10px ";> 
-				<li>Select and copy the email signature. To do so simply move your curser to the top left of the page, then while holding in the shift key – left click and drag over your signature. With your entire signature now selected (it will be highlighted), right click and copy.</li> 
-				<li>jfklwehgfwrehgwr</li>                
+				<li>Select and highlight the email signature. To do so simply move your curser to the top left of the page, then while holding in the shift key – left click and drag over your signature. With your entire signature now selected (it will be highlighted), right click and copy.</li> 
+				<li>The next step is to paste your email signature into your email client. For MS Outlook users...</li>                
 		</ol>  
 	</div>
 	<div class="row preview-row2" style="padding-top: 0px">
@@ -32,7 +32,7 @@
 </div>
 
 
-<div class="container">
+<div class="container js-emaillink">
 	<div class="col-xs-12" style="line-height:1.1"><br><br> 
 	<%= render file: @generated_email_sig_file.path, layout: false, content_type: 'html' %>
 	</div><br><br>
@@ -68,3 +68,28 @@
     $("#testarea").val("");
   });
 </script> -->
+<!-- <p>Email me at <a class="js-emaillink" href="mailto:matt@example.co.uk">matt@example.co.uk</a></p> -->
+<p><button class="js-emailcopybtn">Copy</button></p>
+<script>
+var copyEmailBtn = document.querySelector('.js-emailcopybtn');  
+copyEmailBtn.addEventListener('click', function(event) {  
+  // Select the email link anchor text  
+  var emailLink = document.querySelector('.js-emaillink');  
+  var range = document.createRange();  
+  range.selectNode(emailLink);  
+  window.getSelection().addRange(range);  
+    
+  try {  
+    // Now that we've selected the anchor text, execute the copy command  
+    var successful = document.execCommand('copy');  
+    var msg = successful ? 'successful' : 'unsuccessful';  
+    console.log('Copy email command was ' + msg);  
+  } catch(err) {  
+    console.log('Oops, unable to copy');  
+  }  
+    
+  // Remove the selections - NOTE: Should use   
+  // removeRange(range) when it is supported  
+  window.getSelection().removeAllRanges();  
+});
+</script>
