@@ -196,7 +196,11 @@ class DivisionsController < ApplicationController
     #REPLACE FIELDS IN TEMPLATE WITH INPUT + PREFIX
     if session[:field_inputs].present?
       session[:field_inputs].each do |field| 
-        @generated_email_sig = @generated_email_sig.gsub(field[0],@division.email_sig_fields.where(replace_field: field[0]).first.prefix + " " + field[1])
+        if field[1].empty?
+          @generated_email_sig = @generated_email_sig.gsub(field[0],"")
+        else
+          @generated_email_sig = @generated_email_sig.gsub(field[0],@division.email_sig_fields.where(replace_field: field[0]).first.prefix + " " + field[1])
+        end
       end
     end
   end
