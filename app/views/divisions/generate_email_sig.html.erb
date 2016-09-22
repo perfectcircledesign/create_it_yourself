@@ -22,7 +22,7 @@
 			 	<div class="form-group">
 			 		<% EmailSigField.joins(:divisions).where("division_id = ? ",@division.id).order(:order).each do |field| %>
 				 		<div class="form-group">
-				 		
+				 				<%# raise %>
 				    			<%= label_tag "#{field.replace_field}:" %>
 				    			<%= text_field_tag "field_inputs[#{field.replace_field}]", (session[:field_inputs].present? and session[:field_inputs]["#{field.replace_field}"].present?) ? session[:field_inputs]["#{field.replace_field}"] : nil , {class: 'form-control'} %>
 				 		</div>

@@ -1,6 +1,6 @@
 class DivisionsController < ApplicationController 
 
-  before_action :set_division, only: [:show, :generate, :preview, :completed_job] 
+  before_action :set_division, only: [:show, :generate, :preview, :completed_job, :create_email_sig] 
   before_action :set_company, only: [:generate, :show, :preview, :completed_job]
   before_action :set_images, only: [:show, :preview, :generate]
 
@@ -193,13 +193,14 @@ class DivisionsController < ApplicationController
 
     @generated_email_sig_file = Tempfile.new('temp_route_sig', "#{Rails.root}/tmp/")
     @generated_email_sig = File.read(@division.email_sig_template.path)
-
+    #REPLACE FIELDS IN TEMPLATE WITH INPUT + PREFIX
     if session[:field_inputs].present?
       session[:field_inputs].each do |field| 
-        @generated_email_sig = @generated_email_sig.gsub(field[0],field[1])
+        @generated_email_sig = @generated_email_sig.gsub(field[0],@division.email_sig_fields.where(replace_field: field[0]).first.prefix + " " + field[1])
       end
     end
   end
+
   #BELOW ENABLES THE RE-USE OF BCG FOR CALLCARDS ETC.
   def set_images
     if session[:function] == 'business_card'
