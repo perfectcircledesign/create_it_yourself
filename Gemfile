@@ -44,6 +44,7 @@ gem 'paperclip'
 gem 'ionicons-rails'
 gem 'fastimage'
 gem 'rmagick'
+gem 'zeroclipboard-rails'
 
 
 # group :production do

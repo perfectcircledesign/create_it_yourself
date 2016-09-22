@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.guillotine
+//= require zeroclipboard
 //= require_tree .
 
 

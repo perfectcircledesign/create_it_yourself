@@ -234,6 +234,8 @@ GEM
     websocket-extensions (0.1.2)
     wicked_pdf (1.0.6)
     wkhtmltopdf-binary (0.12.3)
+    zeroclipboard-rails (0.1.2)
+      railties (>= 3.1)
 
 PLATFORMS
   ruby
@@ -269,6 +271,7 @@ DEPENDENCIES
   web-console
   wicked_pdf
   wkhtmltopdf-binary
+  zeroclipboard-rails
 
 BUNDLED WITH
    1.12.5

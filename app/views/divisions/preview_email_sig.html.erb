@@ -4,51 +4,67 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
 
+<div class="se-pre-con-<%=@company.slug%>"></div>
 <div class="container preview <%=@company.slug%>">
 	<div class="row preview-row1">
     	<div class="col-xs-12">
     		<%= render 'preview_email_sig_header' %>
       	</div>       
   	</div>
-
-	<div class="se-pre-con-<%=@company.slug%>"></div>
-
- 	<div class="row preview-row2" style="padding-top: 0px"> 
-		<div class="col-xs-12 ">
-			<!-- <div class="generate-form" style="text-align: center;">
-				<%= form_tag(division_path, :method => :get) do %>
-					<% EmailSigField.joins(:divisions).where("division_id = ? ",@division.id).each do |field| %>
-					<%= hidden_field_tag "#{field.id}", params[:field_inputs][:"#{field.replace_field}"] %>
-				<%end%>
-	    	    <div class="row preview-row4">
-			        <div class="col-xs-12 left">				            
-		                 <input type="text"  pattern="[0-9]{10}" oninvalid="setCustomValidity('Please enter a valid Purchase Order number')" onchange="try{setCustomValidity('')}catch(e){}" name = "Purchase Order" class="form-control print-input" placeholder="Enter your Purchase Order Number here&hellip;" required>
-           				<input type="submit" style="align: right;" name="250" value= "PRINT" class="btn-default2 <%=@company.slug%>-bg print-submit">
-			    	</div>
-				</div>
-				<%end%>
-			</div> -->
-		</div> 
-	</div>
 </div>
-<div class="container">
-	<div class="col-xs-12" style="line-height:1.1">	 
-	<%= render file: @generated_email_sig_file.path, layout: false, content_type: 'html' %>
-	</div>
-</div>		
+
 <div class="container preview <%=@company.slug%>">
-	<div class="row preview-row2" style="padding-top: 0px"> 	
+<h2><strong>Instructions for copying email signature:</strong></h2> 
+	<div class="row">
+			<ol style="padding: 0px 214px 10px ";> 
+				<li>Select and copy the email signature. To do so simply move your curser to the top left of the page, then while holding in the shift key – left click and drag over your signature. With your entire signature now selected (it will be highlighted), right click and copy.</li> 
+				<li>jfklwehgfwrehgwr</li>                
+		</ol>  
+	</div>
+	<div class="row preview-row2" style="padding-top: 0px">
 		<div class="col-xs-12">
-		<br><br><%= link_to 'Back to Input', generate_division_path(@division,back:true), class: "btn-default3 #{@company.slug}-border ", style: "margin-left: 0px" %><br><br><br>
+			<%= link_to 'Back to Input', generate_division_path(@division,back:true), class: "btn-default3 #{@company.slug}-border ", style: "margin-left: 0px" %>
+			<div class="row preview-row4">
+		 		<div class= "or "></div>	
+			</div>
 		 </div>
-		<div class="row preview-row4">
-	        <div class="col-xs-12 left">
-	            <div>
-	            	<div class= "or "></div>
-	            </div>
-	        </div>       
-	    </div>
 	</div>  
-</div>	
+</div>
 
 
+<div class="container">
+	<div class="col-xs-12" style="line-height:1.1"><br><br> 
+	<%= render file: @generated_email_sig_file.path, layout: false, content_type: 'html' %>
+	</div><br><br>
+</div>		
+	
+
+<%# raise %>
+
+
+<!-- <div class='demo-area'>
+  <button class='my_clip_button' data-clipboard-target='fe_text' data-clipboard-text='Default clipboard text from attribute' id='d_clip_button' title='Click me to copy to clipboard.'>
+    <b>Copy To Clipboard...</b>
+  </button>
+  <h4>
+    <label for='fe_text'>Change Copy Text Here</label>
+  </h4>
+  <textarea cols='50' id='fe_text' rows='3'><%=@generated_email_sig_file.read  %></textarea>
+  <h4>
+    <label for='testarea'>Paste Text Here</label>
+  </h4>
+  <textarea cols='50' id='testarea' rows='3'></textarea>
+  <p>
+    <button id='clear-test'>Clear Test Area</button>
+  </p>
+</div>
+<script>
+  $(document).ready(function() {
+    var clip = new ZeroClipboard($("#d_clip_button"))
+  });
+
+  $("#clear-test").on("click", function(){
+    $("#fe_text").val("Copy me!");
+    $("#testarea").val("");
+  });
+</script> -->
