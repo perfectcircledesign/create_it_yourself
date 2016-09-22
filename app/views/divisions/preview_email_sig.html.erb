@@ -13,6 +13,17 @@
   	</div>
 </div>
 
+
+<div class="container preview "><div class="col-xs-12 row preview-row4"><div class= "or"></div>	</div></div>
+
+<div class="container js-emaillink">
+	<div class="col-xs-12" style="line-height:1.1"><br><br> 
+	<%= render file: @generated_email_sig_file.path, layout: false, content_type: 'html' %>
+	</div><br><br>
+</div>		
+
+<div class="container preview "><div class="col-xs-12 row preview-row4"><div class= "or"></div>	</div></div>
+	
 <div class="container preview <%=@company.slug%>">
 <h2><strong>Instructions for copying email signature:</strong></h2> 
 	<div class="row">
@@ -25,52 +36,18 @@
 		<div class="col-xs-12">
 			<%= link_to 'Back to Input', generate_division_path(@division,back:true), class: "btn-default3 #{@company.slug}-border ", style: "margin-left: 0px" %>
 			<input type="button" name="commit" value="  Copy  " class="js-emailcopybtn btn-default <%=@company.slug%>-bg" >
-			<div class="row preview-row4">
-		 		<div class= "or "></div>	
-			</div>
 		 </div>
 	</div>  
 </div>
 
 
-<div class="container js-emaillink">
-	<div class="col-xs-12" style="line-height:1.1"><br><br> 
-	<%= render file: @generated_email_sig_file.path, layout: false, content_type: 'html' %>
-	</div><br><br>
-</div>		
-	
-
-<%# raise %>
 
 
-<!-- <div class='demo-area'>
-  <button class='my_clip_button' data-clipboard-target='fe_text' data-clipboard-text='Default clipboard text from attribute' id='d_clip_button' title='Click me to copy to clipboard.'>
-    <b>Copy To Clipboard...</b>
-  </button>
-  <h4>
-    <label for='fe_text'>Change Copy Text Here</label>
-  </h4>
-  <textarea cols='50' id='fe_text' rows='3'><%=@generated_email_sig_file.read  %></textarea>
-  <h4>
-    <label for='testarea'>Paste Text Here</label>
-  </h4>
-  <textarea cols='50' id='testarea' rows='3'></textarea>
-  <p>
-    <button id='clear-test'>Clear Test Area</button>
-  </p>
-</div>
-<script>
-  $(document).ready(function() {
-    var clip = new ZeroClipboard($("#d_clip_button"))
-  });
 
-  $("#clear-test").on("click", function(){
-    $("#fe_text").val("Copy me!");
-    $("#testarea").val("");
-  });
-</script> -->
-<!-- <p>Email me at <a class="js-emaillink" href="mailto:matt@example.co.uk">matt@example.co.uk</a></p> -->
-<p><button class="js-emailcopybtn">Copy</button></p>
+
+
+
+
 <script>
 var copyEmailBtn = document.querySelector('.js-emailcopybtn');  
 copyEmailBtn.addEventListener('click', function(event) {  
@@ -94,3 +71,4 @@ copyEmailBtn.addEventListener('click', function(event) {
   window.getSelection().removeAllRanges();  
 });
 </script>
+
