@@ -7,7 +7,12 @@ class PdfMailer < ApplicationMailer
       #mail(:to => "gauragaura@gmail.com", :subject => "Online Business Card Generator ", :body => "Good day\n\n#{division.name} has requested business cards for approval via the Online Business Card Generator, for #{card_holder_name}. The quantity and cost of the order corresponds to the Purchase Order Number (#{purchase_order_number}). From proof of receipt, the order will take 5 working days.\n\nThank you.\n\nRegards\n\nCoca-Cola Team")
       mail(:to => "info@simonsays.co.za; #{division.head_email_address}; #{card_holder_email}", :subject => "Online Business Card Generator ", :body => "Good day\n\n#{division.name} has requested business cards for approval via the Online Business Card Generator, for #{card_holder_name}. The quantity and cost of the order corresponds to the Purchase Order Number (#{purchase_order_number}). From proof of receipt, the order will take 5 working days.\n\nThank you.\n\nRegards\n\nCoca-Cola Team")
   end
+  def crew_card(pdf, division, card_holder_name, card_holder_email, purchase_order_number)
 
+      attachments['business_card.pdf'] = File.read(pdf) 
+      mail(:to => "gauragaura@gmail.com", :subject => "Online Business Card Generator ", :body => "Good day\n\n#{division.name} has requested business cards for approval via the Online Business Card Generator, for #{card_holder_name}. The quantity and cost of the order corresponds to the Purchase Order Number (#{purchase_order_number}). From proof of receipt, the order will take 5 working days.\n\nThank you.\n\nRegards\n\nCoca-Cola Team")
+      # mail(:to => "info@simonsays.co.za; #{division.head_email_address}; #{card_holder_email}", :subject => "Online Business Card Generator ", :body => "Good day\n\n#{division.name} has requested business cards for approval via the Online Business Card Generator, for #{card_holder_name}. The quantity and cost of the order corresponds to the Purchase Order Number (#{purchase_order_number}). From proof of receipt, the order will take 5 working days.\n\nThank you.\n\nRegards\n\nCoca-Cola Team")
+  end
 
 
 

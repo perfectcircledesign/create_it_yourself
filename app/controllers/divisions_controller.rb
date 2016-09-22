@@ -64,7 +64,10 @@ class DivisionsController < ApplicationController
         #CUT OFF LAST BLANK PAGE FINISHED    
 
         if session[:function] == 'business_card' and @company.slug == 'coca-cola'
-          PdfMailer.cocacola(@file2.path,@division, card_holder_name, card_holder_email, purchase_order_number).deliver if @company.slug == "coca-cola"
+          PdfMailer.cocacola(@file2.path,@division, card_holder_name, card_holder_email, purchase_order_number).deliver 
+        end
+        if session[:function] == 'crew_card'
+          PdfMailer.crew_card(@file2.path,@division, card_holder_name, card_holder_email, purchase_order_number).deliver 
         end
 
     end

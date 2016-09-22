@@ -17,15 +17,13 @@ class Division < ApplicationRecord
   	extend Dragonfly::Model::Validations
 
 
-	has_attached_file :email_sig_template
-	validates_attachment_content_type :email_sig_template, :content_type => ["text/html"]
-	
 
 	dragonfly_accessor :image
 	dragonfly_accessor :image_back
 	dragonfly_accessor :image_cut
 	dragonfly_accessor :image_preview_front
 	dragonfly_accessor :image_preview_back
+	dragonfly_accessor :email_sig_template
 	dragonfly_accessor :default_email_sig_image
 	dragonfly_accessor :crew_card_image_front
 	dragonfly_accessor :crew_card_image_back
