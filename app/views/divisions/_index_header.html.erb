@@ -1,0 +1,15 @@
+
+<%if @company.slug == 'coca-cola' and session[:function] == 'business_card'%>
+	<%= image_tag(@company.company_logo.remote_url) %>
+	<h1>Business Card Generator</h1><h2>Select a function you would like to create a business card for</h2>
+<%elsif session[:function] == 'business_card' %>
+	<%= image_tag(@company.company_logo.remote_url) %>
+	<h1>Business Card Generator</h1><h2>Select a division you would like to create a business card for</h2>
+<%elsif session[:function] == 'crew_card' %>
+	<%= image_tag(@company.company_logo.remote_url) %>
+	<h1>Crew Card Generator</h1><h2>Select a division you would like to create a crew card for</h2>
+<%elsif session[:function] == 'email_sig' %>
+	<%= image_tag(@company.company_logo.remote_url) %>
+	<h1>Email Signature Generator</h1><h2>Select a division you would like to create an email signature for</h2>
+<% end %>
+

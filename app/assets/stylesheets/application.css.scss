@@ -213,9 +213,11 @@ body {
 /* Companies
 ---------------------------------------- */
 
-.perfectcircle {
-  color: #8dc73f!important;
+.perfectcircle a:hover, a:active, a:focus{
+  color: #8dc73f;
 }
+
+
 .perfectcircle-bg{
   background-color: #8dc73f!important; 
 }
@@ -226,7 +228,7 @@ body {
   margin-right: 10px; 
 }
 
-.coca-cola {
+.coca-cola a:hover, a:active, a:focus {
   color: #fe001a!important;
 }
 .coca-cola-bg {
@@ -239,7 +241,10 @@ body {
   margin-right: 10px; 
 }
 
-.airschool43 {
+.airschool43 a:hover, a:active, a:focus {
+  color: #e8c21f!important;
+}
+.airschool43{
   color: #362f5a!important;
 }
 .airschool43-bg {

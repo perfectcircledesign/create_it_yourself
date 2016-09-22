@@ -65,31 +65,24 @@ class DivisionsController < ApplicationController
 
         if session[:function] == 'business_card' and @company.slug == 'coca-cola'
           PdfMailer.cocacola(@file2.path,@division, card_holder_name, card_holder_email, purchase_order_number).deliver 
+        elsif @company.slug == 'airschool43'
+          PdfMailer.airschool43(@file2.path,@division, card_holder_name, card_holder_email, purchase_order_number).deliver 
+        else
+          raise
         end
-        if session[:function] == 'crew_card'
-          PdfMailer.crew_card(@file2.path,@division, card_holder_name, card_holder_email, purchase_order_number).deliver 
-        end
-
+        redirect_to completed_job_division_path 
     end
-
-    if session[:function] == "email_sig"
-      
-
+    #END OF CARD FUNCTION
+    if session[:function] == 'email_sig'
     end
-
-    #redirect_to completed_job_division_path
     
   end
 
 
 
   def completed_job
-    if session[:function] == "business_card" 
-      render :template => 'divisions/completed_business_card.html.erb'
-    elsif session[:function] == "email_sig"
-      render :template => 'divisions/completed_email_sig.html.erb'
-    elsif
-      render :template => 'divisions/completed_business_card.html.erb'
+    if session[:function] == "business_card" or session[:function] == "crew_card"
+      render :template => 'divisions/completed_card.html.erb'
     end
   end
 

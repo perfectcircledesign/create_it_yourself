@@ -1,12 +1,15 @@
 
 
 
-<%if @company.slug == 'coca-cola' %>
+<%if @company.slug == 'coca-cola' and session[:function] == 'business_card'%>
 	<%= image_tag(@company.company_logo.remote_url) %>
     <h1>Business Card for Department: <br> <strong> <%=@division.name%>  </strong></h1><h2>You’re one step closer! Be sure to fill in all your details carefully.<br>Once you’re happy that everything is correct, click the “Generate” button and wait for the next page to load. </h2>
-<%else  %>
+<%elsif session[:function] == 'business_card' %>
 		<%= image_tag(@company.company_logo.remote_url) %>
-		<h1><strong> Card Generator  </strong></h1><h2>You’re one step closer! Be sure to fill in all your details carefully.<br>Once you’re happy that everything is correct, click the “Generate” button and wait for the next page to load. </h2>
-
+		<h1><strong> Business Card Generator  </strong></h1><h2>You’re one step closer! Be sure to fill in all your details carefully.<br>Once you’re happy that everything is correct, click the “Generate” button and wait for the next page to load. </h2>
+<%elsif session[:function] == 'crew_card' %>
+		<%= image_tag(@company.company_logo.remote_url) %>
+		<h1><strong> Crew Card Generator  </strong></h1><h2>You’re one step closer! Be sure to fill in all your details carefully.<br>Once you’re happy that everything is correct, click the “Generate” button and wait for the next page to load. </h2>
 <% end %>
+
 
