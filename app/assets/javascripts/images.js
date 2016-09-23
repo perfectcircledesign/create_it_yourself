@@ -37,16 +37,16 @@
 // });
 
 
-// $( document ).ready(function() {
-// 	// console.dir('I am ready')
+$( document ).ready(function() {
+	// console.dir('I am ready')
 
-// });
+});
 
 
-// $( window ).load(function() {
-//   // console.dir('I am loaded')
+$( window ).load(function() {
+  // console.dir('I am loaded')
 
-// 	$(".se-pre-con-coca-cola").fadeOut("slow");
-// 	$(".se-pre-con-perfectcircle").fadeOut("slow");
-// 	$(".se-pre-con-airschool43").fadeOut("slow");
-// });
+	$(".se-pre-con-coca-cola").fadeOut("slow");
+	$(".se-pre-con-perfectcircle").fadeOut("slow");
+	$(".se-pre-con-airschool43").fadeOut("slow");
+});
