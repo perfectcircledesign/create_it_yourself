@@ -23,31 +23,40 @@
             
             </div>    
     			<%end%><br>
-
 					<% @division.card_images.where(function: session[:function]).each do |image| %>
 						<div class="form-group">
-  						<div class="photo-uploader">
-        					<div class="photo-input">
-            				<div class="photo-container" style="width:60%; display:none;" data-guillotine-width="<%=image.x_size%>" data-guillotine-height="<%=image.y_size%>">
-								    </div>
-          					<div id="guillotine-controls" style="display:none;">
-				              <a href="javascript:void(0)" id="rotate_left" title="Rotate left"><i class="ion-reply"></i></a>
-				              <a href="javascript:void(0)" id="zoom_out" title="Zoom out"><i class="ion-minus-circled"></i></a>
-				              <a href="javascript:void(0)" id="fit" title="Fit image"><i class="ion-arrow-shrink"></i></a>
-				              <a href="javascript:void(0)" id="zoom_in" title="Zoom in"><i class="ion-plus-circled"></i></a>
-				              <a href="javascript:void(0)" id="rotate_right" title="Rotate right"><i class="ion-forward"></i></a>
-          					</div>
-				            <%= hidden_field_tag :scale %>
-				            <%= hidden_field_tag :angle %>
-				            <%= hidden_field_tag :x_axis %>
-				            <%= hidden_field_tag :y_axis %>
-				            <%= hidden_field_tag :width %>
-				            <%= hidden_field_tag :height %>		
-    						<%= file_field_tag "image_#{image.id}", id: "upload" %>
-          				</div>
-        			</div>
-            </div>
-		      <%end%><!--END OF EACH STATEMENT -->	
+	  						<div class="photo-uploader">
+	        					<div class="photo-input">
+		            				<div class="photo-container" style="width:60%; display:none;" data-guillotine-width="<%=image.x_size%>" data-guillotine-height="<%=image.y_size%>">
+									</div>
+		          					<div id="guillotine-controls" style="display:none;">
+							            <!-- <a href="javascript:void(0)" id="rotate_left" title="Rotate left"><i class="ion-reply"></i></a> -->
+							            <a href="javascript:void(0)" id="zoom_out" title="Zoom out"><i class="ion-minus-circled"></i></a>
+							            <a href="javascript:void(0)" id="fit" title="Fit image"><i class="ion-arrow-shrink"></i></a>
+							            <a href="javascript:void(0)" id="zoom_in" title="Zoom in"><i class="ion-plus-circled"></i></a>
+							            <!-- <a href="javascript:void(0)" id="rotate_right" title="Rotate right"><i class="ion-forward"></i></a> -->
+		          					</div>
+						            <%= hidden_field_tag :scale %>
+						            <%= hidden_field_tag :angle %>
+						            <%= hidden_field_tag :x_axis %>
+						            <%= hidden_field_tag :y_axis %>
+						            <%= hidden_field_tag :width %>
+						            <%= hidden_field_tag :height %>		
+		    						<%= file_field_tag "image_#{image.id}", id: "upload" %>
+
+		    						<!-- <label class="custom-file-upload">
+			    						<input type="file" id="upload" style="display: none"/>
+			    						<div class="btn-default <%=@company.slug%>-bg"> Upload Picture </div>
+									</label> -->
+	          					
+	          					</div>
+        					</div>
+            			</div>
+		      		<%end%><!--END OF EACH STATEMENT -->						
+<!-- 			<label class="custom-file-upload">
+			    	<input type="file" style="display: none"/>
+			    	<div class="btn-default <%=@company.slug%>-bg"> Upload Picture </div>
+				</label> -->
 					<div>
 						<%= link_to 'Back to Functions', company_path(@division.company, function: params[:function]), class: "btn-default #{@company.slug}-border #{@company.slug}" %>
 						<input type="submit" name="commit" value="Generate" class="btn-default <%=@company.slug%>-bg" >
@@ -61,3 +70,17 @@
 	</div>
 </div>
 
+<style type="text/css">
+	.ion-minus-circled {
+  		font-size: 25px;
+
+	}
+	.ion-arrow-shrink  {
+  		font-size: 25px;
+
+	}
+	.ion-plus-circled {
+  		font-size: 25px;
+
+	}
+</style>

@@ -11,8 +11,19 @@
     		<%= render 'preview_email_sig_header' %>
       	</div>       
   	</div>
+	<div class="row">
+			<ol style="padding: 0px 214px 10px ";> 
+				<li><strong>Copy email signature</strong>. To do so simply click the COPY button below.</li> 
+				<li>The next step is to paste your email signature into your email client. For MS Outlook users...</li>                
+		</ol>  
+	</div>
+	<div class="row preview-row2" style="padding-top: 0px">
+		<div class="col-xs-12">
+			<%= link_to 'Back to Input', generate_division_path(@division,back:true), class: "btn-default3 #{@company.slug}-border ", style: "margin-left: 0px" %>
+			<input type="button" name="commit" value="  COPY  " class="js-emailcopybtn btn-default <%=@company.slug%>-bg" >
+		 </div>
+	</div>  
 </div>
-
 
 <div class="container preview "><div class="col-xs-12 row preview-row4"><div class= "or"></div>	</div></div>
 
@@ -24,21 +35,7 @@
 
 <div class="container preview "><div class="col-xs-12 row preview-row4"><div class= "or"></div>	</div></div>
 	
-<div class="container preview <%=@company.slug%>">
-<h2><strong>Instructions for copying email signature:</strong></h2> 
-	<div class="row">
-			<ol style="padding: 0px 214px 10px ";> 
-				<li>Select and highlight the email signature. To do so simply move your curser to the top left of the page, then while holding in the shift key – left click and drag over your signature. With your entire signature now selected (it will be highlighted), right click and copy.</li> 
-				<li>The next step is to paste your email signature into your email client. For MS Outlook users...</li>                
-		</ol>  
-	</div>
-	<div class="row preview-row2" style="padding-top: 0px">
-		<div class="col-xs-12">
-			<%= link_to 'Back to Input', generate_division_path(@division,back:true), class: "btn-default3 #{@company.slug}-border ", style: "margin-left: 0px" %>
-			<input type="button" name="commit" value="  Copy  " class="js-emailcopybtn btn-default <%=@company.slug%>-bg" >
-		 </div>
-	</div>  
-</div>
+
 
 
 

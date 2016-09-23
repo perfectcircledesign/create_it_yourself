@@ -45,15 +45,15 @@ Rails.application.configure do
   # :enable_starttls_auto => true
   # }
 
-  config.action_mailer.smtp_settings = {
-    :address              => "smtp.gmail.com",
-    :port                 => 587,
-    :user_name            => "gauragaura@gmail.com",
-    :password             => "password",
-    :authentication       => "plain",
-    :enable_starttls_auto => true,
-    :openssl_verify_mode  => 'none'
-}
+#   config.action_mailer.smtp_settings = {
+#     :address              => "smtp.gmail.com",
+#     :port                 => 587,
+#     :user_name            => "gauragaura@gmail.com",
+#     :password             => "password",
+#     :authentication       => "plain",
+#     :enable_starttls_auto => true,
+#     :openssl_verify_mode  => 'none'
+# }
 
 
   # Print deprecation notices to the Rails logger.
