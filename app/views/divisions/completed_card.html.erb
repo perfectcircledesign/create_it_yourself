@@ -5,7 +5,13 @@
 	<div class="row details-row1">
 	    <div class="col-xs-12">
 	        <%= render 'completed_card_header' %>
+	     	
 	     </div>       
 	</div>
-</div>
+	<div class="row" style= "padding: 40px 500px 0;">
+		<div class="col-xs-12 form-input">
+		<%= link_to 'Back to Home Page', company_path(@company), class: "btn-default #{@company.slug}-border #{@company.slug}" %>
+		</div>
+	</div>
 
+</div>
