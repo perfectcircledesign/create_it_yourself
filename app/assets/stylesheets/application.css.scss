@@ -23,12 +23,6 @@ a {
   text-decoration: none;
   color: #a7a9ac; }
 
-a:hover, a:active, a:focus {
-  text-decoration: none;
-  color: #fe001a; 
-
-  }
-
 /* Home
 ---------------------------------------- */
 body {
@@ -213,7 +207,7 @@ body {
 /* Companies
 ---------------------------------------- */
 
-.perfectcircle a:hover, a:active, a:focus{
+.perfectcircle a:hover,.perfectcircle a:active,.perfectcircle a:focus{
   color: #8dc73f;
 }
 
@@ -228,7 +222,7 @@ body {
   margin-right: 10px; 
 }
 
-.coca-cola a:hover, a:active, a:focus {
+.coca-cola a:hover,.coca-cola a:active,.coca-cola a:focus {
   color: #fe001a!important;
 }
 .coca-cola-bg {
@@ -241,7 +235,7 @@ body {
   margin-right: 10px; 
 }
 
-.airschool43 a:hover, a:active, a:focus {
+.airschool43 a:hover,.airschool43  a:active,.airschool43  a:focus {
   color: #e8c21f!important;
 }
 .airschool43{
