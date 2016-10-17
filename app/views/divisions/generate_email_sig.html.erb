@@ -32,7 +32,7 @@
 				<!-- TODO: UPLOAD PICTURE ONLY IF TEMPLATE CONTAINS STRING "USER_IMAGE" -->
 				</div>
 				<div>
-					<%= link_to 'Back to Functions', company_path(@division.company, function: params[:function]), class: "btn-default #{@company.slug}-border #{@company.slug}" %>
+					<%= link_to 'Back Home', company_path(@division.company, function: params[:function]), class: "btn-default #{@company.slug}-border #{@company.slug}" %>
 					<input type="submit" name="commit" value="Generate" class="btn-default <%=@company.slug%>-bg" >
 				</div>
 			<% end %>			
