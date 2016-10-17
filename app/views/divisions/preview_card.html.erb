@@ -27,7 +27,7 @@
 			<%= render 'card_form', division: @division, preview: "true" %>
 			<div class="row form-input">
 				<br><br><%= link_to 'Back to Input', generate_division_path(@division,back:true), class: "btn-default3 #{@company.slug}-border", style: "margin-left: 0px" %>
-				<% if @copmpany.slug != "coca-cola" %>
+				<% if @company.slug != "coca-cola" %>
 				<%= link_to 'Back Home', company_path(id: @company.slug), class: "btn-default3 #{@company.slug}-border" %>
 				<% end%>
 				<br><br><br>
