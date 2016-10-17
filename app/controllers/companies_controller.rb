@@ -9,7 +9,7 @@ class CompaniesController < ApplicationController
 	def show
      
     if @company.slug == 'coca-cola'
-      redirect_to divisions_path(@company, function: :business_card)
+      redirect_to divisions_path(company: @company, function: :business_card)
     end
 
      reset_session

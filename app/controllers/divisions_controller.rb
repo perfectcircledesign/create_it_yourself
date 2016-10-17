@@ -5,7 +5,7 @@ class DivisionsController < ApplicationController
   before_action :set_images, only: [:show, :preview, :generate]
 
 	def index 
-    #raise
+    
     @company = Company.where(slug: params[:company]).first
     @divisions = @company.divisions
     session[:function] = params[:function] if !params[:function].nil?
