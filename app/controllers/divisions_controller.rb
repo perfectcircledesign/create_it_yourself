@@ -14,6 +14,10 @@ class DivisionsController < ApplicationController
       division = @company.divisions.first
       redirect_to generate_division_path(division)
     end
+    #I'M SORRY FOR THIS UGLY HACK :/
+    if @company.slug == "airschool43" and params[:function] != "crew_card"
+      redirect_to generate_division_path(@divisions.first)
+    end
   
   end
 

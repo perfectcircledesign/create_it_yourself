@@ -45,8 +45,12 @@
     					</div>
         			</div>
 	      		<%end%><!--END OF EACH STATEMENT -->						
-				<div> <%# raise %>
+				<div>
+					<% if @company.slug == "coca-cola" %>
 					<%= link_to 'Back to Functions', divisions_path(company: @company, function: params[:function]), class: "btn-default #{@company.slug}-border #{@company.slug}" %>
+					<% elsif @company.slug == "airschool43" %>
+					<%= link_to 'Back Home', company_path(id: @company.slug), class: "btn-default #{@company.slug}-border #{@company.slug}" %>
+					<% end %>
 					<input type="submit" name="commit" value="Generate" class="btn-default <%=@company.slug%>-bg" >
 				</div>
 			<%end%>			
