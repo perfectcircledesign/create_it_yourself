@@ -60,7 +60,7 @@
 
       <%unless field.font == nil%>font-family:<%=field.font.name%><%end%>;
       <%# raise %>
-      <%if !field.align.empty? and !session[:field_inputs]["field_#{field.id}"].nil?%>
+      <%if !field.align.empty? and !session[:field_inputs]["field_#{field.id}"].empty?%>
 
         <%field.x_pos = field.x_pos - calc_string_width(field) if field.align=='center'%>
       <%end%>
@@ -152,7 +152,7 @@
 
       <%unless field.font == nil%>font-family:<%=field.font.name%><%end%>;
       <%#unless field.align.empty?%>
-      <%if !field.align.empty? and !session[:field_inputs]["field_#{field.id}"].nil?%> 
+      <%if !field.align.empty? and !session[:field_inputs]["field_#{field.id}"].empty?%> 
         <%field.x_pos = field.x_pos - calc_string_width(field) if field.align=='center'%>
         <%# raise %>
       <%end%>
