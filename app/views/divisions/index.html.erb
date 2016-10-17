@@ -14,9 +14,10 @@
 				<%end %>
 		</ul>  
 
-		<div class = "row" style= "text-align: center">
-
-			<%= link_to 'Back Home', company_path(id: @company.slug), class: "btn-default #{@company.slug}-border" %>
-		</div>
+		<% unless @company.slug == "coca-cola" %>
+			<div class = "row" style= "text-align: center">
+				<%= link_to 'Back Home', company_path(id: @company.slug), class: "btn-default #{@company.slug}-border" %>
+			</div>
+		<% end %>
 	</div>
 </div>
