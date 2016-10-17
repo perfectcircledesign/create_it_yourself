@@ -18,7 +18,7 @@ module ApplicationHelper
 		label = Magick::Draw.new
 		label.font = "/home/nic/cOdin/PerfectCircle/create_it_yourself/public/fonts/#{field.font.name}.ttf" #you can also specify a file name... check the rmagick docs to be sure
 		label.text_antialias(true)
-		label.pointsize = (field.size.to_f)*2
+		label.pointsize = (field.size.to_f)*2 #the reason for the 2 factor isn't clear.
 		label.font_style=Magick::NormalStyle
 		# label.gravity=Magick::CenterGravity
 		label.text(0,0,the_text)

@@ -59,7 +59,8 @@
       .<%= field.name.downcase.gsub(' ', '_') %>   {
 
       <%unless field.font == nil%>font-family:<%=field.font.name%><%end%>;
-      <%unless field.align.empty?%>
+      <%if !field.align.empty? and !params["field_#{field.id}"].nil?%>
+      <% raise %>
         <%field.x_pos = field.x_pos - calc_string_width(field) if field.align=='center'%>
       <%end%>
 
@@ -149,8 +150,8 @@
       .<%= field.name.downcase.gsub(' ', '_') %>   {
 
       <%unless field.font == nil%>font-family:<%=field.font.name%><%end%>;
-      <%unless field.align.empty?%>
-        
+      <%#unless field.align.empty?%>
+      <%if !field.align.empty? and !params["field_#{field.id}"].nil?%> 
         <%field.x_pos = field.x_pos - calc_string_width(field) if field.align=='center'%>
         <%# raise %>
       <%end%>
