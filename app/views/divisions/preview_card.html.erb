@@ -24,10 +24,12 @@
 				</div><br><br>
 				<%end%> <!-- END OF FORM TAG -->
 			</div>
-		<%= render 'card_form', division: @division, preview: "true" %>
-		<br><br><%= link_to 'Back to Input', generate_division_path(@division,back:true), class: "btn-default3 #{@company.slug}-border", style: "margin-left: 0px" %>
-		<%= link_to 'Back Home', company_path(id: @company.slug), class: "btn-default #{@company.slug}-bg " %>
-		<br><br><br>
+			<%= render 'card_form', division: @division, preview: "true" %>
+			<div class="row form-input">
+				<br><br><%= link_to 'Back to Input', generate_division_path(@division,back:true), class: "btn-default3 #{@company.slug}-border", style: "margin-left: 0px" %>
+				<%= link_to 'Back Home', company_path(id: @company.slug), class: "btn-default3 #{@company.slug}-border" %>
+				<br><br><br>
+			</div>
 		</div>  
 		<div class="row preview-row4">
 	        <div class="col-xs-12 left">
@@ -38,5 +40,4 @@
 	    </div>
 	</div>  
 </div>	
-
 
