@@ -8,14 +8,14 @@
 		<%# raise %>
 			<div class="row" style= "padding: 40px 214px 0;">
 	  			<div class="col-xs-4 form-input">  
-	  				<%= link_to image_tag("business_card_button.png"), divisions_path(@company, function: :business_card), :style=> "float: right" %>
+	  				<%= link_to image_tag("business_card_button.png"), divisions_path(company: @company, function: :business_card), :style=> "float: right" %>
 	  			</div>
 				<div class="col-xs-4 form-input">
-					<%= link_to image_tag("email_sig_button.png"), divisions_path(@company, function: :email_sig) %>
+					<%= link_to image_tag("email_sig_button.png"), divisions_path(company: @company, function: :email_sig) %>
 				</div>
 				<div class="col-xs-4 form-input">
 	  				<!-- <img src="/assets/accesscardspoof.jpg"> -->
-	  				<%= link_to image_tag("access_card_button.png"), divisions_path(@company, function: :crew_card), :style=> "float: left"  %>
+	  				<%= link_to image_tag("access_card_button.png"), divisions_path(company: @company, function: :crew_card), :style=> "float: left"  %>
 				</div>
 				<%#= link_to image_tag(@company.company_logo.remote_url), divisions_path(@company, function: :business_card) %>
 			</div>

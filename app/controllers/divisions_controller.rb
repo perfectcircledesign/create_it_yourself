@@ -5,9 +5,10 @@ class DivisionsController < ApplicationController
   before_action :set_images, only: [:show, :preview, :generate]
 
 	def index 
-    @company = Company.where(slug: params[:format]).first
+    #raise
+    @company = Company.where(slug: params[:company]).first
     @divisions = @company.divisions
-    session[:function] = params[:function]
+    session[:function] = params[:function] if !params[:function].nil?
 
     if @company.divisions.count == 1
       division = @company.divisions.first
@@ -25,6 +26,8 @@ class DivisionsController < ApplicationController
         #THIS HAS TO BE CLEANED UP
         if @card_fields.where(name: "Associate Name").exists?
           card_holder_name = params[:"#{@card_fields.where(name: "Associate Name").last.id}"]
+        elsif @card_fields.where(name: "Name Surname").exists?
+          card_holder_name = params[:"#{@card_fields.where(name: "Name Surname").last.id}"]
         end
         if @card_fields.where(name: "email").exists?
           card_holder_email = params[:"#{@card_fields.where(name: "email").last.id}"]
@@ -66,6 +69,7 @@ class DivisionsController < ApplicationController
         if session[:function] == 'business_card' and @company.slug == 'coca-cola'
           PdfMailer.cocacola(@file2.path,@division, card_holder_name, card_holder_email, purchase_order_number).deliver 
         elsif @company.slug == 'airschool43'
+          raise
           PdfMailer.airschool43(@file2.path,@division, card_holder_name, card_holder_email, purchase_order_number).deliver 
         else
           raise

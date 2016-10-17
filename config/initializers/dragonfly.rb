@@ -22,4 +22,3 @@ else
   end
 end
 
-#NOTETOSELF: This file edited to prevent heroku/S3/image problems

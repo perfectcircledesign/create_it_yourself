@@ -1,16 +1,22 @@
 
 
-<div class="container <%=@company.slug%>">
+<div class="container details <%=@company.slug%>">
 	<div class="row details-row1">
 		<div class="col-xs-12">
 	    	<%= render 'index_header' %>    
 	    </div>       
 	</div> 
-	<div class="row">
-			<ul class="list-group" style="padding: 40px 214px 10px";> 
+	<div class="row form-input" style= "padding: 40px 214px 0;">
+
+			<ul class="list-group"> 
 			<%@divisions.order(:order).each do |division| %> 
 				<li class="list-group-item" ><%= link_to "#{division.name}", generate_division_path(division) %></li>      
 				<%end %>
 		</ul>  
+
+		<div class = "row" style= "text-align: center">
+
+			<%= link_to 'Back Home', company_path(id: @company.slug), class: "btn-default #{@company.slug}-border" %>
+		</div>
 	</div>
 </div>
