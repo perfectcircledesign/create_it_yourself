@@ -74,7 +74,7 @@ class DivisionsController < ApplicationController
         if session[:function] == 'business_card' and @company.slug == 'coca-cola'
           PdfMailer.cocacola(@file2.path,@division, card_holder_name, card_holder_email, purchase_order_number).deliver 
         elsif @company.slug == 'airschool43'
-          raise
+          #raise
           PdfMailer.airschool43(@file2.path,@division, card_holder_name, card_holder_email, purchase_order_number).deliver 
         else
           raise
