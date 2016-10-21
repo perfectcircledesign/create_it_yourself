@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root 'pages#home'
+  match "/" => "pages#home", via: [:gets, :post]
 
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
