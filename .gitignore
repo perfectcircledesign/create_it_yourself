@@ -1,6 +1,7 @@
 *.rbc
 capybara-*.html
 .rspec
+dragonfly.log
 /.bundle
 /log*
 /tmp

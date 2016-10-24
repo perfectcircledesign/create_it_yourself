@@ -285,7 +285,7 @@ body {
   width: 100%;
   height: 100%;
   z-index: 9999;
-  background: image-url("red_spinner2.gif") center no-repeat #fff;
+  background: image-url("/assets/spinners/red_spinner2.gif") center no-repeat #fff;
 }
 
 no-js #loader { display: none;  }
@@ -297,7 +297,7 @@ no-js #loader { display: none;  }
   width: 100%;
   height: 100%;
   z-index: 9999;
-  background: image-url("spinner.gif") center no-repeat #fff;
+  background: image-url("/assets/spinners/spinner.gif") center no-repeat #fff;
 }
 
 no-js #loader { display: none;  }
@@ -309,7 +309,7 @@ no-js #loader { display: none;  }
   width: 100%;
   height: 100%;
   z-index: 9999;
-  background: image-url("yellow_spinner.gif") center no-repeat #fff;
+  background: image-url("/assets/spinners/yellow_spinner.gif") center no-repeat #fff;
 }
 
 
