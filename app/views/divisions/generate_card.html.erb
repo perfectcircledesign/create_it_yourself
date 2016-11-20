@@ -21,7 +21,7 @@
             
             		</div>    
     			<%end%><br>
-				<% @division.card_images.where(function: session[:function]).each do |image| %>
+				<% @division.card_images.where(function: session[:function]).where(user_upload: true).each do |image| %>
 					<div class="form-group">
   						<div class="photo-uploader">
         					<div class="photo-input">

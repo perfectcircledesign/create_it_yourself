@@ -140,10 +140,10 @@ class DivisionsController < ApplicationController
       end
       #render :template => 'divisions/preview_card.html.erb'
    
-      if @division.card_images.where(function: session[:function]).exists?
+      if @division.card_images.where(function: session[:function]).where(user_upload: true).exists?
         
         session[:image_path] = []
-        @division.card_images.where(function: session[:function]).each do |image|
+        @division.card_images.where(function: session[:function]).where(user_upload: true).each do |image|
           session["image_#{image.id}"] = params["image_#{image.id}"].original_filename
           directory = "#{Rails.root}/public/assets"
           session[:image_path][image.id] = File.join(directory, session["image_#{image.id}"])
@@ -152,8 +152,8 @@ class DivisionsController < ApplicationController
         
         end
 
-        @division.card_images.where(function: session[:function]).each do |image|
-          if @division.card_images.where(function: session[:function]).present?
+        @division.card_images.where(function: session[:function]).where(user_upload: true).each do |image|
+          if @division.card_images.where(function: session[:function]).where(user_upload: true).present?
 
             session[:x_res] = FastImage.size(session[:image_path][image.id])[0].to_f
             session[:y_res] = FastImage.size(session[:image_path][image.id])[1].to_f

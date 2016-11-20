@@ -101,15 +101,15 @@
     <% end %>
 
   <!-- BELOW WORKS (NON DYNAMIC) -->
-  <% unless @division.card_images.where(function: session[:function]).empty? %>
-    <% @division.card_images.where(function: session[:function]).each do |image| %>
+  <% unless @division.card_images.where(function: session[:function]).where(user_upload: true).empty? %>
+    <% @division.card_images.where(function: session[:function]).where(user_upload: true).each do |image| %>
       <style type="text/css">
       .clipzone{
         position:  absolute;
-        top: <%=@division.card_images.first.y_pos / 300.0 * 2.54 * zoom %>cm; 
-        left: <%=@division.card_images.first.x_pos / 300.0 * 2.54 * zoom %>cm;
-        height: <%=@division.card_images.first.y_size / 300.0 * 2.54 * zoom %>cm;
-        width: <%=@division.card_images.first.x_size / 300.0 * 2.54 * zoom %>cm;
+        top: <%=image.y_pos / 300.0 * 2.54 * zoom %>cm; 
+        left: <%=image.x_pos / 300.0 * 2.54 * zoom %>cm;
+        height: <%=image.y_size / 300.0 * 2.54 * zoom %>cm;
+        width: <%=image.x_size / 300.0 * 2.54 * zoom %>cm;
         overflow:hidden;
       }
       .clipped{
@@ -134,14 +134,28 @@
             <%pic = session[:"image_#{image.id}"] %>
             
             <%Rails.env.production? ? image_path = "/app/public/assets/#{pic}" : image_path = "file:////home/nic/cOdin/PerfectCircle/create_it_yourself/public/assets/#{pic}"%>
-            <!-- <img class="clipped" src="file:////home/nic/cOdin/PerfectCircle/create_it_yourself/public/assets/<%#=pic%>"></img> -->
-            <!-- <img class="clipped" src="/app/public/assets/<%#=pic%>"></img> -->
             <img class="clipped" src="<%=image_path%>"></img>
       </div>
       <% end %>
     <%end%>
   <%end%>
 
+
+    <!-- WATERMARK START -->
+    <!-- card_image(@card_front, preview) -->
+    <% watermark = @division.card_images.where(function: session[:function]).where(user_upload: false).first %>
+    <style type="text/css">
+      .watermark{
+        position: relative;
+        top: <%=watermark.y_pos / 300.0 * 2.54 * zoom %>cm; 
+        left: <%=watermark.x_pos / 300.0 * 2.54 * zoom %>cm;
+        height: <%=watermark.y_size / 300.0 * 2.54 * zoom %>cm;
+        width: <%=watermark.x_size / 300.0 * 2.54 * zoom %>cm;
+        overflow:hidden;
+      }
+      </style>
+    <img class="watermark" src="<%= card_image(watermark.overlay_image, preview) %>"></img>
+    <!-- WATERMARK END -->
 </div>
 
 <!-- TODO: COPY bgimg CODE FOR TEXT PLACEMENT TO bgimg2. ADD .where(page1) TO DIFFERENTIATE -->
