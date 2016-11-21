@@ -143,9 +143,9 @@
 
     <!-- WATERMARK START -->
     <!-- card_image(@card_front, preview) -->
-    <% if @division.card_images.where(function: session[:function]).where(user_upload: false).exists? %>
-      <% watermark = @division.card_images.where(function: session[:function]).where(user_upload: false).first %>
-      <style type="text/css">
+    <%# if @division.card_images.where(function: session[:function]).where(user_upload: false).exists? %>
+      <%# watermark = @division.card_images.where(function: session[:function]).where(user_upload: false).first %>
+     <!--  <style type="text/css">
         .watermark{
           position: relative;
           top: <%=watermark.y_pos / 300.0 * 2.54 * zoom %>cm; 
@@ -155,8 +155,8 @@
           overflow:hidden;
         }
         </style>
-      <img class="watermark" src="<%= card_image(watermark.overlay_image, preview) %>"></img>
-    <% end %>
+      <img class="watermark" src="<%#= card_image(watermark.overlay_image, preview) %>"></img> -->
+    <%# end %>
     <!-- WATERMARK END -->
 </div>
 
