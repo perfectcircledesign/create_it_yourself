@@ -251,6 +251,21 @@ body {
   margin-right: 10px; 
 }
 
+.abendorff{
+  color: #FFF;
+
+  &-bg{
+    background-color: #d13139!important;
+  }
+  &-border{
+    border: 1px solid #d13139!important;
+    background-color: #fff!important;
+    color: #d13139!important;
+    margin-right: 10px;
+  }
+}
+
+
 /* Loading
 ---------------------------------------- */
 
