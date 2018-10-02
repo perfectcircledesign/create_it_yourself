@@ -170,12 +170,12 @@ class DivisionsController < ApplicationController
     if session[:function] == 'email_sig'
 
       unless params[:returning]
-        raise
+
         session[:field_inputs] = params[:field_inputs].each do |field| field end
         @email_sig_fields = EmailSigField.all
       end
       create_email_sig
-      
+      raise
       File.write(@generated_email_sig_file.path, "#{@generated_email_sig}")
       raise
       render :template => 'divisions/preview_email_sig.html.erb'
@@ -198,7 +198,7 @@ class DivisionsController < ApplicationController
   end
 
   def create_email_sig
-    raise
+
     @generated_email_sig_file = Tempfile.new('temp_route_sig', "#{Rails.root}/tmp/")
     @generated_email_sig = File.read(@division.email_sig_template.path)
     #REPLACE FIELDS IN TEMPLATE WITH INPUT + PREFIX
