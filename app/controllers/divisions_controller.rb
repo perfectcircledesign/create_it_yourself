@@ -76,6 +76,8 @@ class DivisionsController < ApplicationController
         elsif @company.slug == 'airschool43'
           #raise
           PdfMailer.airschool43(@file2.path,@division, card_holder_name, card_holder_email, purchase_order_number).deliver 
+        elsif @company.slug == 'adendorff'
+          PdfMailer.adendorff(@file2.path,@division, card_holder_name, card_holder_email, purchase_order_number).deliver
         else
           raise
         end
