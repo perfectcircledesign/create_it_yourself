@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="af023515-1f6d-4a0d-a6c8-192a7d68cc8d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/controllers/divisions_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/divisions_controller.rb" afterDir="false" />
-    </list>
+    <list default="true" id="af023515-1f6d-4a0d-a6c8-192a7d68cc8d" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,12 +22,14 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="erb" value="3" />
+          <entry key="html" value="1" />
           <entry key="rb" value="2" />
           <entry key="scss" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="HTML" value="1" />
           <entry key="RHTML" value="3" />
           <entry key="Ruby" value="2" />
           <entry key="SCSS" value="1" />
@@ -56,11 +56,6 @@
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/mailers/application_mailer.rb">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/application.rb">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
@@ -96,11 +91,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/divisions_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="178" column="66" lean-forward="true" selection-start-line="178" selection-start-column="66" selection-end-line="178" selection-end-column="66" />
+            <state relative-caret-position="283">
+              <caret line="202" column="15" lean-forward="true" selection-start-line="202" selection-start-column="15" selection-end-line="202" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/system/divisions/email_sig_templates/000/000/004/original/template.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" column="134" selection-start-line="19" selection-start-column="134" selection-end-line="19" selection-end-column="134" />
+              <folding>
+                <element signature="n#style#0;n#td#0;n#tr#5;n#table#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -136,6 +143,7 @@
       <find>enter your purchase</find>
       <find>PdfMailer</find>
       <find>preview</find>
+      <find>The views and opinions expressed in this message are those of the individual sender</find>
       <find>def preview</find>
     </findStrings>
   </component>
@@ -185,7 +193,26 @@
               <item name="create_it_yourself" type="b2602c69:ProjectViewProjectNode" />
               <item name="create_it_yourself" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="channels" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="create_it_yourself" type="b2602c69:ProjectViewProjectNode" />
+              <item name="create_it_yourself" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="channels" type="462c0819:PsiDirectoryNode" />
+              <item name="application_cable" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="create_it_yourself" type="b2602c69:ProjectViewProjectNode" />
+              <item name="create_it_yourself" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="create_it_yourself" type="b2602c69:ProjectViewProjectNode" />
+              <item name="create_it_yourself" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="helpers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="create_it_yourself" type="b2602c69:ProjectViewProjectNode" />
@@ -241,18 +268,18 @@
       <updated>1511962660545</updated>
       <workItem from="1511962661870" duration="1673000" />
       <workItem from="1512026565085" duration="26000" />
-      <workItem from="1538412187285" duration="8018000" />
+      <workItem from="1538412187285" duration="9642000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9717000" />
+    <option name="totallyTimeSpent" value="11341000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1987" y="27" width="1853" height="1053" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1840259" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20561253" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
@@ -337,8 +364,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/divisions_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="178" column="66" lean-forward="true" selection-start-line="178" selection-start-column="66" selection-end-line="178" selection-end-column="66" />
+        <state relative-caret-position="283">
+          <caret line="202" column="15" lean-forward="true" selection-start-line="202" selection-start-column="15" selection-end-line="202" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/system/divisions/email_sig_templates/000/000/004/original/template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="134" selection-start-line="19" selection-start-column="134" selection-end-line="19" selection-end-column="134" />
+          <folding>
+            <element signature="n#style#0;n#td#0;n#tr#5;n#table#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
