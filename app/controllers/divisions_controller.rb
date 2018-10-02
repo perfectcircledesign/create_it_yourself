@@ -131,7 +131,7 @@ class DivisionsController < ApplicationController
 
   def preview
     if session[:function] == 'business_card' or session[:function] == 'crew_card'
-raise
+
       @card_fields = CardField.where(function: session[:function]).joins(:divisions).where("division_id = ? ",@division.id)
 
       unless params[:returning]
@@ -168,14 +168,16 @@ raise
     end    
 
     if session[:function] == 'email_sig'
-      raise
+
       unless params[:returning]
+        raise
         session[:field_inputs] = params[:field_inputs].each do |field| field end
         @email_sig_fields = EmailSigField.all
       end
       create_email_sig
       
       File.write(@generated_email_sig_file.path, "#{@generated_email_sig}")
+      raise
       render :template => 'divisions/preview_email_sig.html.erb'
     end
   end
@@ -196,7 +198,7 @@ raise
   end
 
   def create_email_sig
-
+    raise
     @generated_email_sig_file = Tempfile.new('temp_route_sig', "#{Rails.root}/tmp/")
     @generated_email_sig = File.read(@division.email_sig_template.path)
     #REPLACE FIELDS IN TEMPLATE WITH INPUT + PREFIX
