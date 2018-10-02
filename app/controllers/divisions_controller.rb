@@ -86,7 +86,6 @@ class DivisionsController < ApplicationController
     #END OF CARD FUNCTION
     if session[:function] == 'email_sig'
     end
-    
   end
 
 
@@ -131,9 +130,8 @@ class DivisionsController < ApplicationController
   end
 
   def preview
-    
     if session[:function] == 'business_card' or session[:function] == 'crew_card'
-
+raise
       @card_fields = CardField.where(function: session[:function]).joins(:divisions).where("division_id = ? ",@division.id)
 
       unless params[:returning]
@@ -151,7 +149,6 @@ class DivisionsController < ApplicationController
           session[:image_path][image.id] = File.join(directory, session["image_#{image.id}"])
           File.open(session[:image_path][image.id], "wb") { |f| f.write(params["image_#{image.id}"].read) }
   
-        
         end
 
         @division.card_images.where(function: session[:function]).where(user_upload: true).each do |image|
@@ -181,8 +178,6 @@ class DivisionsController < ApplicationController
       File.write(@generated_email_sig_file.path, "#{@generated_email_sig}")
       render :template => 'divisions/preview_email_sig.html.erb'
     end
-
-
   end
 
 
