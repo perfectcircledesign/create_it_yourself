@@ -148,7 +148,6 @@ raise
           directory = "#{Rails.root}/public/assets"
           session[:image_path][image.id] = File.join(directory, session["image_#{image.id}"])
           File.open(session[:image_path][image.id], "wb") { |f| f.write(params["image_#{image.id}"].read) }
-  
         end
 
         @division.card_images.where(function: session[:function]).where(user_upload: true).each do |image|
@@ -169,6 +168,7 @@ raise
     end    
 
     if session[:function] == 'email_sig'
+      raise
       unless params[:returning]
         session[:field_inputs] = params[:field_inputs].each do |field| field end
         @email_sig_fields = EmailSigField.all
