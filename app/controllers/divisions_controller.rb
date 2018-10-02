@@ -175,9 +175,10 @@ class DivisionsController < ApplicationController
         @email_sig_fields = EmailSigField.all
       end
       create_email_sig
-      
+
       File.write(@generated_email_sig_file.path, "#{@generated_email_sig}")
-      raise
+
+      puts "------------------------#{@generated_email_sig}"
       render :template => 'divisions/preview_email_sig.html.erb'
     end
   end
