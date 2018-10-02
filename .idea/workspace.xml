@@ -1,112 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="af023515-1f6d-4a0d-a6c8-192a7d68cc8d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/public/assets/.sprockets-manifest-53e084d2c9e96a9e86ea6ccf4b725dbb.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/43-Air-School-Crew-Card2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/Q-10752-43-Air School-Staff Card3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/ZeroClipboard-ecdb0f1e932bbecf50218ffee9f7a958115ba8f882d4afbe0444bb0aecdb04f0.swf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/access_card_button-e6edcdf9146f47dfd0451f3abbdb5dbc286ff290a6c50aa664fe5d2870c6254d.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/airschool_43_email_sig/airschool_bar-2f3041833766d3ffb6392d2706bfbfec8e0708fe28d7febf1de5535000c7d8a3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/airschool_43_email_sig/airschool_hat-3e3853aa17e74cbfa33f1372cfde9163426b2a302728e12ad9b97ff7a9fc27af.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/airschool_43_email_sig/airschool_logo-300998d77f132a7524d654d44708a6aff6def2e5963a61363dcf4c4ac92d423b.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/airschool_43_email_sig/airschool_url-bf3b851287992663597582c0934bf3e7e8b07315fbed4914bcbff5cbcbd668cd.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/airschool_43_email_sig/bar-11a8e2cad042dd354faa7dfb0942dec201462e9f7f6128469a932a18eaecea51.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/airschool_43_email_sig/logo-0410c1d2c77b98ded6f1a519ecd184d86a8a93cad38a534d6710396493f5c331.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/airschool_43_email_sig/url-3c2671f9ec126f61e695688290e8c49709bcc21af321860d015af33630c2f23c.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/application-986591bd9928bddb621030cdec56298bb33603fbcc5027f18b9a37d4fd266554.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/application-986591bd9928bddb621030cdec56298bb33603fbcc5027f18b9a37d4fd266554.js.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/application-a71a8b2b0a9903c35958e10fc9e56b5bdd6dbddc3d14e75663fe44fa25bff8ff.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/application-a71a8b2b0a9903c35958e10fc9e56b5bdd6dbddc3d14e75663fe44fa25bff8ff.css.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/business_card_button-c5241652cf2120d4899c6347d76caa5b34b7feaa98400d714df8891c568f0a94.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/email_sig_button-7493fa00fcb53bf698bcff2065b77aff0f5b6cece814f7d48fe45c44c0601977.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/fontawesome-webfont-50bbe9192697e791e2ee4ef73917aeb1b03e727dff08a1fc8d74f00e4aa812e1.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/fontawesome-webfont-50bbe9192697e791e2ee4ef73917aeb1b03e727dff08a1fc8d74f00e4aa812e1.eot.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/fontawesome-webfont-7dacf83f51179de8d7980a513e67ab3a08f2c6272bb5946df8fd77c0d1763b73.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/fontawesome-webfont-8e3586389bb4cd01b3f85bb3b622739bde6627f28bba63a020c223ca9cf1b9ae.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/fontawesome-webfont-8e3586389bb4cd01b3f85bb3b622739bde6627f28bba63a020c223ca9cf1b9ae.svg.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/fontawesome-webfont-adbc4f95eb6d7f2738959cf0ecbc374672fce47e856050a8e9791f457623ac2c.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/fontawesome-webfont-ae19e2e4c04f2b04bf030684c4c1db8faf5c8fe3ee03d1e0c409046608b38912.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/fontawesome-webfont-ae19e2e4c04f2b04bf030684c4c1db8faf5c8fe3ee03d1e0c409046608b38912.ttf.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/fonts/DINCondensed-Bold-becbf0ea05fe3c1d7868aaa5cdf32694ed123d32ec10b094e5c44f226c48c1ee.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/fonts/DINCondensed-Bold-becbf0ea05fe3c1d7868aaa5cdf32694ed123d32ec10b094e5c44f226c48c1ee.ttf.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/fonts/DINCondensed-Bold-c1d97fbc0ff7d1020017d6815dfda584df8528b60f2720e81b33c74d4ae1d2cb.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/fonts/DINPro-Black-5eb99eeb4454b4e1128af67d9fdad240a76faf958d60b5da89f1166eed78720d.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/fonts/DINPro-Black-5eb99eeb4454b4e1128af67d9fdad240a76faf958d60b5da89f1166eed78720d.eot.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/fonts/DINPro-Black-6a77e5f38993586c622c63512798eaba4e16e05b16f61cda90c5ad3355904eca.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/fonts/DINPro-Black-c0e311f4c2a73a1fe53b1d7dd5bd2c145aada297a1b7c4e814f38c651ed2a68b.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/fonts/DINPro-Black-c0e311f4c2a73a1fe53b1d7dd5bd2c145aada297a1b7c4e814f38c651ed2a68b.ttf.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/fonts/DINPro-Bold-0a6677813cbf7951ab1a03606e768554ad6d7705795af2ca1ab5c76285108e17.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/fonts/DINPro-Bold-0a6677813cbf7951ab1a03606e768554ad6d7705795af2ca1ab5c76285108e17.ttf.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/fonts/DINPro-Bold-0b0430827bba64698e902c59308722b581c941211046f465358e1b8c0f615468.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/fonts/DINPro-Bold-33e5cf30d912ddc5e7bd2c1c46c53d387e9691f2220d1d0ca51ed45dacdd74df.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/fonts/DINPro-Bold-33e5cf30d912ddc5e7bd2c1c46c53d387e9691f2220d1d0ca51ed45dacdd74df.eot.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/fonts/DINPro-Medium-0f138f27f68202410a22365a6a33088dae7d1b9f9f65a18c516561b1af714d8c.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/fonts/DINPro-Medium-202a11e8234d477e96bf6e53c3ce4980631b41316df15c41771fe1392fd914ce.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/fonts/DINPro-Medium-202a11e8234d477e96bf6e53c3ce4980631b41316df15c41771fe1392fd914ce.eot.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/fonts/DINPro-Medium-f576bb5378daff78f734121e8265d08526f847fb847fd3addca7847da50cbe50.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/fonts/DINPro-Medium-f576bb5378daff78f734121e8265d08526f847fb847fd3addca7847da50cbe50.ttf.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/fonts/VAGRoundedStd-Thin-4b96c243a05f3b8624c75cb2ad2b00371619d52b72900dd50e0ab39ceba57167.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/fonts/VAGRoundedStd-Thin-4b96c243a05f3b8624c75cb2ad2b00371619d52b72900dd50e0ab39ceba57167.eot.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/fonts/VAGRoundedStd-Thin-a1ce05607bb76ec909ddb9e183543e713014b1e1679c12c8a3755e8edfc5e849.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/fonts/VAGRoundedStd-Thin-a1ce05607bb76ec909ddb9e183543e713014b1e1679c12c8a3755e8edfc5e849.ttf.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/fonts/VAGRoundedStd-Thin-add5714b141d7576a10fa77da9af1d641c1d0c4df95cf3a257f4c34b2bb84dab.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/fonts/vaground-10990ba06f2933e28be73b5a0253ba6b2b2fcea9c5aaa40ee9fb86aa942703ad.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/fonts/vaground-3e99c80880ca7ca5719673936534f1413c9abf33f05810d2e23fb60115b5caa8.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/fonts/vaground-3e99c80880ca7ca5719673936534f1413c9abf33f05810d2e23fb60115b5caa8.svg.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/fonts/vaground-424c5b64baab222ce0d921b20c8020a80fd9f0f45a8a7ad18d9e1a0a7f28d71c.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/fonts/vaground-424c5b64baab222ce0d921b20c8020a80fd9f0f45a8a7ad18d9e1a0a7f28d71c.ttf.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/fonts/vaground-4a66ec0822e6e11e662ba5a35bb93aeb4a69120bc48ecd53562790ba1938b0c5.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/fonts/vaground-54aad5a8dc7a349eafc533c5561bf7c8a15f2a72ba36777148dd91c758c788f4.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/fonts/vaground-54aad5a8dc7a349eafc533c5561bf7c8a15f2a72ba36777148dd91c758c788f4.eot.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/ionicons-2ba7f20b1d8990e17a47fe3d88e4c766628aaa2baf1dd30fca0a0db59836f5f9.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/ionicons-2ba7f20b1d8990e17a47fe3d88e4c766628aaa2baf1dd30fca0a0db59836f5f9.ttf.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/ionicons-709f2789daaff440820ebb975d3ae409af45121bdec47e39e83523490b1bc0fc.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/ionicons-a4803d7bdeb478a5b9238fe74d8aaa98dafe2e8e68fccbd0e3f4dced823f27f0.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/ionicons-a4803d7bdeb478a5b9238fe74d8aaa98dafe2e8e68fccbd0e3f4dced823f27f0.eot.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/ionicons-a627d9068c1235d9b3c95c405eb6ecb64a290b159cf5e926c0d96d89b24cd5fc.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/ionicons-a627d9068c1235d9b3c95c405eb6ecb64a290b159cf5e926c0d96d89b24cd5fc.svg.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/ironman racetype 70 3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/modal_images/outlook_instructions1-e85ade956e205736ba5198a8f24f595ccea93dc293ea06fb5699b33d6f20a410.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/modal_images/outlook_instructions2-715903dc064cb3fe3332eecf0f816ae1dc87d6ba41f46544e9ed43382a7c8a15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/rails_admin/aristo/images/bg_fallback-bad53cee26694a42bdba717337e2de9f997ebf3ded300b8c3ff48ac5192c1903.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/rails_admin/aristo/images/icon_sprite-34a30806fcba43a2effc9739cb7a370a865199a7d38bfcbc7c2474ef3ff70ded.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/rails_admin/aristo/images/progress_bar-a2ed712d76dcffc7a06918cd389511bca2cf7bb91c12b1d865bf44c7b2c46289.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/rails_admin/aristo/images/slider_handles-4b523f3d1bd18af5fec23ec7d58ed85e4c7e8f4685fe85a8407e2d9017bf6484.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/rails_admin/aristo/images/ui-icons_222222_256x240-310ae73efc6774716f0a80ce2141565fddec51702330a8066fd5e220437ae321.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/rails_admin/aristo/images/ui-icons_454545_256x240-d59c6da436d1a19aa35bcbf2d400ad160f2b2568fbbfa2f9ebfc192d14025474.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/rails_admin/colorpicker/colorpicker_overlay-ba21ab85c59167b61af508e34a22ee344c97bb11454d287a47691fa2fb182856.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/rails_admin/colorpicker/colorpicker_select-980ae86d6aab751f6f67a1191d78c0fa54b533583456b905ec43b34d5806ee2d.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/rails_admin/colorpicker/custom_background-52967b595ae718ad95520b9cf2b22551fb8cb0d81a171db869b00d2b604b4976.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/rails_admin/colorpicker/custom_hex-4b1a7b08312edc3732cf30c7d8d5291abea41c64311c3d05d67a586cbe3dcf37.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/rails_admin/colorpicker/custom_hsb_b-7160b5fd5c5779102cb91f771b80ef2621dabe10bf06e8359deaefece831b58b.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/rails_admin/colorpicker/custom_hsb_h-df01edb80a710cdd9d9057201eaa682a8c86cd80ad6c6929f1d4a9182ad6aed3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/rails_admin/colorpicker/custom_hsb_s-9277f3fd9eb79baef2384f7b38968184fd40d631024149c7b41543b7796c0706.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/rails_admin/colorpicker/custom_indic-8ca62ee85015e67671f2312a2fead633740335f65e254d8f4c3ea29b99f62de7.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/rails_admin/colorpicker/custom_rgb_b-22f2da1810cd9da18a1f93418b8f45bd3cb676aa9790ad5e1aba37779fb3ac31.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/rails_admin/colorpicker/custom_rgb_g-8ab4d41c46fc26080b75eecc6f8c25d8f6db5264cf56ecc4993f86d100ebd71f.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/rails_admin/colorpicker/custom_rgb_r-54289ccad89df00514d84ba6d16d1a0abc0d61de95dcfc054bf2202e238a7cb6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/rails_admin/colorpicker/custom_submit-3a57bad878f6d608b998e36acefe2325d786d4631abeecc5d400ca5c062f5ce5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/rails_admin/colorpicker/select2-8ddf680d1a86d603653e43f694bbb6dc1010aa81f5c0c9c87181e10e064e503b.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/rails_admin/jquery.colorpicker-3a18b8912af93099a30d1cf8f47c1084f093d1d208863a218e28f098f64dbf78.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/rails_admin/jquery.colorpicker-3a18b8912af93099a30d1cf8f47c1084f093d1d208863a218e28f098f64dbf78.js.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/rails_admin/jquery.colorpicker-709a40f0e7d260a26770a6e10643100fdc3d38fec3b11959469210b3b86a01bd.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/rails_admin/jquery.colorpicker-709a40f0e7d260a26770a6e10643100fdc3d38fec3b11959469210b3b86a01bd.css.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/rails_admin/multiselect/icon_sprite-34a30806fcba43a2effc9739cb7a370a865199a7d38bfcbc7c2474ef3ff70ded.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/rails_admin/multiselect/ui-icon-circle-triangle-n-dark-bb53269e44173a496d2620bad201ca838a57b67c40b3439b5ce89345ef9e888b.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/rails_admin/multiselect/ui-icon-circle-triangle-n-light-e7daf3169259a9fd6b8177b8e89ff2b964cd3dababd580a46d7fb4eecc07763b.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/rails_admin/multiselect/ui-icon-circle-triangle-s-dark-2bf097798e2b1db766a16ff4f335d3fe94bd51f92dc2ddf47c8a370ba31189c0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/rails_admin/multiselect/ui-icon-circle-triangle-s-light-e1698d37f37f7db85ce6736810a34b1a229306be8a3f3be156fbaa47dd6cd160.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/rails_admin/rails_admin-31bfb5f7eeae669de11f42a20df007c7a3b0e5bcae5a71d9662523e7fc40db6f.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/rails_admin/rails_admin-31bfb5f7eeae669de11f42a20df007c7a3b0e5bcae5a71d9662523e7fc40db6f.css.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/rails_admin/rails_admin-a9f4cc3367ab24f67613abd5fa099e442aa861dc11a80a36cde8deafc21192e5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/rails_admin/rails_admin-a9f4cc3367ab24f67613abd5fa099e442aa861dc11a80a36cde8deafc21192e5.js.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/spinners/red_spinner-8a4b5cd9e256d9a3f2c2f53afaff44201d7a989de66d4140dfd98e65255d5094.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/spinners/red_spinner2-e7228e38a2889fdf5d8301fb63131bc1c2bc94d493e1a6682eb1ddcd3dc7b27b.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/spinners/red_spinner3-2298adc281fe82877d0d17a4bef71f6aebb5b76c06d76328e1529a68d57a4def.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/spinners/spinner-ee1c1ce09ccb228f99b01ac497e1253af55dd8d4234c352b9f4aff2bde09ea13.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/spinners/yellow_spinner-83a199c37f5bd9a7af07705b4fe1b1283bdcbcd4d2578ca315dd9fd5ab9805b6.gif" beforeDir="false" />
-    </list>
+    <list default="true" id="af023515-1f6d-4a0d-a6c8-192a7d68cc8d" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,6 +39,9 @@
           <entry key="RHTML" value="20" />
         </counts>
       </usages-collector>
+      <usages-collector id="statistics.js.language.service.starts" />
+      <usages-collector id="statistics.actions.runAnything" />
+      <usages-collector id="statistics.vcs.git.usages" />
     </session>
   </component>
   <component name="FileEditorManager">
@@ -184,8 +82,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/divisions/preview_card.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" selection-start-line="30" selection-end-line="30" />
+            <state relative-caret-position="105">
+              <caret line="7" column="29" lean-forward="true" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -291,15 +189,16 @@
       <updated>1511962660545</updated>
       <workItem from="1511962661870" duration="1673000" />
       <workItem from="1512026565085" duration="26000" />
-      <workItem from="1538412187285" duration="999000" />
+      <workItem from="1538412187285" duration="1745000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2698000" />
+    <option name="totallyTimeSpent" value="3444000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1987" y="27" width="1853" height="1053" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22558014" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -355,8 +254,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/divisions/preview_card.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        <state relative-caret-position="105">
+          <caret line="7" column="29" lean-forward="true" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
         </state>
       </provider>
     </entry>
