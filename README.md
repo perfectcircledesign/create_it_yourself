@@ -19,3 +19,4 @@ DEPLOY
 	1) Save spinner to /assets/images/spinners
 	2) Add code to application.css.scss
 
+tutorial website: https://www.djamware.com/post/5b74e54f80aca74669894413/ionic-4-and-angular-6-tutorial-firebase-realtime-crud-mobile-app

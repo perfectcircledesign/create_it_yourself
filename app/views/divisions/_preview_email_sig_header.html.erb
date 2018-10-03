@@ -1,6 +1,6 @@
     		
 
-<% if @company.slug == 'airschool43' %>
+<% if @company.slug == 'airschool43' || @company.slug == 'adendorff'%>
 
 	<%= image_tag(@company.company_logo.remote_url) %>
    	<h1> Email Signature Generator</h1><h2>WALA! Here’s your email signature! Please take a moment to make sure your details are correct. <br>If you’d like to make a change, select ‘Back to Input’. If you are happy, copy the email signature by following the <strong> instructions </strong> below.</h2>
