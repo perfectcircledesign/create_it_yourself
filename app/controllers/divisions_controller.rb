@@ -103,6 +103,8 @@ class DivisionsController < ApplicationController
   def generate
 
     puts 'GENERATE PARAMS::::: #{params}'
+
+    @params = params
     if session[:function] == 'business_card' or session[:function] == 'crew_card'
 
       @card_fields = CardField.where(function: session[:function]).joins(:divisions).where("division_id = ? ",@division.id)
