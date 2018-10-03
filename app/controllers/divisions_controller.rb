@@ -102,9 +102,6 @@ class DivisionsController < ApplicationController
 
   def generate
 
-    puts 'GENERATE PARAMS::::: #{params}'
-
-    @params = params
     if session[:function] == 'business_card' or session[:function] == 'crew_card'
 
       @card_fields = CardField.where(function: session[:function]).joins(:divisions).where("division_id = ? ",@division.id)
@@ -178,6 +175,11 @@ class DivisionsController < ApplicationController
         @email_sig_fields = EmailSigField.all
       end
       create_email_sig
+
+
+      puts "GENERATE PARAMS::::: #{params}"
+      puts "Session fields: #{session[:field_inputs]}"
+      @params = params
 
       File.write(@generated_email_sig_file.path, "#{@generated_email_sig}")
 
