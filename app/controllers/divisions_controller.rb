@@ -55,7 +55,7 @@ class DivisionsController < ApplicationController
             :template => 'divisions/create_pdf.html.erb',#, :show_as_html => true
               :page_height => "#{@card_front.height / 300.0 *  25.4}",
                   :page_width => "#{@card_front.width / 300.0 * 25.4}",
-                      margin:  { top: 10, bottom: 0, left: 0, right: 0 },
+                      margin:  { top: 5, bottom: 0, left: 5, right: 0 },
                         :save_to_file => Rails.root.join('tmp', "filename.pdf"),                                  
                           :show_as_html => false, :dpi => '300', :save_only => true    
 
