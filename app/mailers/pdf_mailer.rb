@@ -12,7 +12,7 @@ class PdfMailer < ApplicationMailer
   def airschool43(pdf, division, card_holder_name, card_holder_email, purchase_order_number)
       
       attachments['card.pdf'] = File.read(pdf) 
-      mail(:to => "khanyiso@perfectcircle.co.za", :subject => "Online Card Generator ", :body => "Good day\n\n43Airschool has requested business/crew cards for approval via the Online Card Generator, for #{card_holder_name}. Please find the card attached.\n\nThank you.\n\nRegards\n\nSimon Says Team")
+      mail(:to => "lindi@43airschool.com; attie@43airschool.com; vinca@perfectcircle.co.za", :subject => "Online Card Generator ", :body => "Good day\n\n43Airschool has requested business/crew cards for approval via the Online Card Generator, for #{card_holder_name}. Please find the card attached.\n\nThank you.\n\nRegards\n\nSimon Says Team")
       # mail(:to => "nicholas@perfectcircle.co.za", :subject => "Online Business Card Generator ", :body => "Good day\n\n#{division.name} has requested business cards for approval via the Online Business Card Generator, for #{card_holder_name}. The quantity and cost of the order corresponds to the Purchase Order Number (#{purchase_order_number}). From proof of receipt, the order will take 5 working days.\n\nThank you.\n\nRegards\n\nCoca-Cola Team")
   end
 
