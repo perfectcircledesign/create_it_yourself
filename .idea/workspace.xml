@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af023515-1f6d-4a0d-a6c8-192a7d68cc8d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/mailers/pdf_mailer.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/mailers/pdf_mailer.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,14 +46,14 @@
         <counts>
           <entry key="erb" value="133" />
           <entry key="md" value="19" />
-          <entry key="rb" value="298" />
+          <entry key="rb" value="301" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="19" />
           <entry key="RHTML" value="133" />
-          <entry key="Ruby" value="298" />
+          <entry key="Ruby" value="301" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -63,11 +63,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/mailers/pdf_mailer.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+            <state relative-caret-position="345">
+              <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -81,11 +81,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/divisions_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="449">
-              <caret line="49" column="11" lean-forward="true" selection-start-line="49" selection-start-column="11" selection-end-line="49" selection-end-column="11" />
+            <state relative-caret-position="28">
+              <caret line="53" column="40" lean-forward="true" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -186,8 +186,8 @@
         <option value="$PROJECT_DIR$/app/views/divisions/preview_email_sig.html.erb" />
         <option value="$PROJECT_DIR$/public/system/divisions/email_sig_templates/000/000/004/original/template.html" />
         <option value="$PROJECT_DIR$/app/views/divisions/_preview_email_sig_header.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/divisions_controller.rb" />
         <option value="$PROJECT_DIR$/app/mailers/pdf_mailer.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/divisions_controller.rb" />
       </list>
     </option>
   </component>
@@ -330,16 +330,15 @@
       <workItem from="1511962661870" duration="1673000" />
       <workItem from="1512026565085" duration="26000" />
       <workItem from="1538412187285" duration="10883000" />
-      <workItem from="1538489067798" duration="19160000" />
+      <workItem from="1538489067798" duration="20494000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31742000" />
+    <option name="totallyTimeSpent" value="33076000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1987" y="27" width="1853" height="1053" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1807879" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -479,17 +478,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/mailers/pdf_mailer.rb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/divisions_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+        <state relative-caret-position="28">
+          <caret line="53" column="40" lean-forward="true" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/divisions_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/mailers/pdf_mailer.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="49" column="11" lean-forward="true" selection-start-line="49" selection-start-column="11" selection-end-line="49" selection-end-column="11" />
+        <state relative-caret-position="345">
+          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
         </state>
       </provider>
     </entry>
