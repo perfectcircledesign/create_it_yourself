@@ -101,7 +101,7 @@
 
 
       <% if field.align == 'right' %>
-          <span id="<%= field.name.downcase.gsub(' ', '_') %>1" style= "<% if field.name.downcase.gsub(' ', '_') != 'work_phone' %>margin-right: 10pt;<%end %> <% if field.name.downcase.gsub(' ', '_') !='work_phone' and field.name.downcase.gsub(' ', '_') !='email' %>display: block; <%end %> <% if field.name.downcase.gsub(' ', '_') =='position' %>margin-bottom: 45px; <%end %> color: <%= field.colour %>; font-size: <%= field.size %>px; font-family: 'VagRoundedStdLight';" <% if preview == "false" %> style= "width: <%= (@card_front.width - field.x_pos)/300.0*2.54%>cm"; <% end %> >
+          <span id="<%= field.name.downcase.gsub(' ', '_') %>1" style= "<% if field.name.downcase.gsub(' ', '_') != 'work_phone' %>margin-right: 0pt;<%end %> <% if field.name.downcase.gsub(' ', '_') !='work_phone' and field.name.downcase.gsub(' ', '_') !='email' %>display: block; <%end %> <% if field.name.downcase.gsub(' ', '_') =='position' %>margin-bottom: 45px; <%end %> color: <%= field.colour %>; font-size: <%= field.size %>px; font-family: 'VagRoundedStdLight';" <% if preview == "false" %> style= "width: <%= (@card_front.width - field.x_pos)/300.0*2.54%>cm"; <% end %> >
       <%else %>
           <div class="<%= field.name.downcase.gsub(' ', '_') %>" <% if preview == "false" %> style= "width: <%= (@card_front.width - field.x_pos)/300.0*2.54%>cm"; <% end %> >
       <% end %>
