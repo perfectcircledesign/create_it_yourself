@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="af023515-1f6d-4a0d-a6c8-192a7d68cc8d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/views/divisions/_card_form_html.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/divisions/_card_form_html.html.erb" afterDir="false" />
-    </list>
+    <list default="true" id="af023515-1f6d-4a0d-a6c8-192a7d68cc8d" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +42,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="erb" value="1444" />
+          <entry key="erb" value="1448" />
           <entry key="md" value="19" />
           <entry key="rb" value="346" />
         </counts>
@@ -52,7 +50,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="19" />
-          <entry key="RHTML" value="1444" />
+          <entry key="RHTML" value="1448" />
           <entry key="Ruby" value="346" />
         </counts>
       </usages-collector>
@@ -121,8 +119,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/divisions/_card_form_html.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
-              <caret line="103" column="436" selection-start-line="103" selection-start-column="436" selection-end-line="103" selection-end-column="436" />
+            <state relative-caret-position="850">
+              <caret line="103" column="437" selection-start-line="103" selection-start-column="437" selection-end-line="103" selection-end-column="437" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#1;n#span#0;n#div#0;n#div#1;n#!!top" expanded="true" />
@@ -364,12 +362,12 @@
       <workItem from="1511962661870" duration="1673000" />
       <workItem from="1512026565085" duration="26000" />
       <workItem from="1538412187285" duration="10883000" />
-      <workItem from="1538489067798" duration="50817000" />
+      <workItem from="1538489067798" duration="51261000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63399000" />
+    <option name="totallyTimeSpent" value="63843000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1987" y="25" width="1853" height="1055" extended-state="6" />
@@ -552,8 +550,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/divisions/_card_form_html.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="103" column="436" selection-start-line="103" selection-start-column="436" selection-end-line="103" selection-end-column="436" />
+        <state relative-caret-position="850">
+          <caret line="103" column="437" selection-start-line="103" selection-start-column="437" selection-end-line="103" selection-end-column="437" />
           <folding>
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#1;n#span#0;n#div#0;n#div#1;n#!!top" expanded="true" />
