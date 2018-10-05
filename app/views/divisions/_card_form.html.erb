@@ -51,11 +51,8 @@
   </style>
 
 
-  <% if @company.name.downcase == 'adendorff'%>
-    <div class="bgimg" style="text-align: right; padding-top: 73px;">
-  <% else %>
-    <div class="bgimg">
-  <% end %>
+
+    <div class="bgimg" <% if @company.name.downcase == 'adendorff'%>  style="text-align: right; padding-top: 73px;" <%end %>>
     <% (@card_fields.where(page: 1).sort_by {|obj| obj.order}).each do |field| %>
       <%#raise%>
       <%# @division.business_card_fields.each do |field| %>
@@ -95,7 +92,7 @@
 
 
       <% if field.align == 'right' %>
-          <span style= "<% if field.name.downcase.gsub(' ', '_') != 'work_phone' %>margin-right: 46pt;<%end %> <% if field.name.downcase.gsub(' ', '_') !='work_phone' and field.name.downcase.gsub(' ', '_') !='email' %>display: block; <%end %> <% if field.name.downcase.gsub(' ', '_') =='position' %>margin-bottom: 45px; <%end %> color: <%= field.colour %>; font-size: <%= field.size %>px; font-family: 'VagRoundedStdLight';" <% if preview == "false" %> style= "width: <%= (@card_front.width - field.x_pos)/300.0*2.54%>cm"; <% end %> >
+          <span class="<%= field.name.downcase.gsub(' ', '_') %>" style= "<% if field.name.downcase.gsub(' ', '_') != 'work_phone' %>margin-right: 46pt;<%end %> <% if field.name.downcase.gsub(' ', '_') !='work_phone' and field.name.downcase.gsub(' ', '_') !='email' %>display: block; <%end %> <% if field.name.downcase.gsub(' ', '_') =='position' %>margin-bottom: 45px; <%end %> color: <%= field.colour %>; font-size: <%= field.size %>px; font-family: 'VagRoundedStdLight';" <% if preview == "false" %> style= "width: <%= (@card_front.width - field.x_pos)/300.0*2.54%>cm"; <% end %> >
       <%else %>
           <div class="<%= field.name.downcase.gsub(' ', '_') %>" <% if preview == "false" %> style= "width: <%= (@card_front.width - field.x_pos)/300.0*2.54%>cm"; <% end %> >
       <% end %>
