@@ -51,9 +51,18 @@
   </style>
 
 
+  <% if @division.name.downcase == 'adendorff'%>
+    <div class="bgimg" style="text-align: right; padding-top: 73px;">
 
-    <div class="bgimg" <% if @division.name.downcase == 'adendorff'%>  style="text-align: right; padding-top: 73px;" <%end %>>
-    <% (@card_fields.where(page: 1).sort_by {|obj| obj.order}).each do |field| %>
+      <% @the_loop = (@card_fields.where(page: 1).sort_by {|obj| obj.order}) %>
+  <% else %>
+    <div class="bgimg">
+      <% @the_loop = @card_fields.where(page: 1) %>
+  <%end %>
+
+      <% @the_loop.each do |field| %>
+
+
       <%#raise%>
       <%# @division.business_card_fields.each do |field| %>
       <style type="text/css">
@@ -84,7 +93,7 @@
           line-height: <%=((field.size.to_f)*zoom).to_s %>pt;}
 
         <% if field.name.downcase.gsub(' ', '_') == 'work_phone' and @division.name.downcase == 'adendorff' %>
-        #work_phone2::after{
+        #work_phone1::after{
           content: ' - ';
         }
         <%end %>
