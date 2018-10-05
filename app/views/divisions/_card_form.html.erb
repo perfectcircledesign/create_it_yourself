@@ -56,7 +56,7 @@
   <% else %>
     <div class="bgimg">
   <% end %>
-    <% @card_fields.where(page: 1).each do |field| %>
+    <% (@card_fields.where(page: 1).sort_by {|obj| obj.order}).each do |field| %>
       <%#raise%>
       <%# @division.business_card_fields.each do |field| %>
       <style type="text/css">
@@ -89,7 +89,7 @@
 
 
       <% if field.align == 'right' %>
-          <span style= "margin-right: 53pt; display: block; color: <%= field.colour %>; font-size: <%= field.size %>px; font-family: 'VagRoundedStdLight, sans-serif';" <% if preview == "false" %> style= "width: <%= (@card_front.width - field.x_pos)/300.0*2.54%>cm"; <% end %> >
+          <span style= "margin-right: 53pt; display: block; color: <%= field.colour %>; font-size: <%= field.size %>px; font-family: 'VagRoundedStdLight';" <% if preview == "false" %> style= "width: <%= (@card_front.width - field.x_pos)/300.0*2.54%>cm"; <% end %> >
       <%else %>
           <div class="<%= field.name.downcase.gsub(' ', '_') %>" <% if preview == "false" %> style= "width: <%= (@card_front.width - field.x_pos)/300.0*2.54%>cm"; <% end %> >
       <% end %>
