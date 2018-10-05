@@ -52,7 +52,7 @@
 
 
   <% if @division.name.downcase == 'adendorff'%>
-    <div class="bgimg" style="text-align: right; padding-top: 73px;">
+    <div class="bgimg">
 
       <% @the_loop = (@card_fields.where(page: 1).sort_by {|obj| obj.order}) %>
   <% else %>
