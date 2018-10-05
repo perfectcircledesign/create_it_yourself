@@ -85,7 +85,7 @@
 
 
       <% if field.align == 'right' %>
-          <span <% if preview == "false" %> style= "margin-right: 53pt; display: block; width: <%= (@card_front.width - field.x_pos)/300.0*2.54%>cm"; <% end %> >
+          <span style= "margin-right: 53pt; display: block;" <% if preview == "false" %> style= "width: <%= (@card_front.width - field.x_pos)/300.0*2.54%>cm"; <% end %> >
       <%else %>
           <div class="<%= field.name.downcase.gsub(' ', '_') %>" <% if preview == "false" %> style= "width: <%= (@card_front.width - field.x_pos)/300.0*2.54%>cm"; <% end %> >
       <% end %>
@@ -118,7 +118,7 @@
         </div>
       <%end %>
     <% end %>
-
+</div>
     <!-- BELOW WORKS (NON DYNAMIC) -->
     <% unless @division.card_images.where(function: session[:function]).where(user_upload: true).empty? %>
       <% @division.card_images.where(function: session[:function]).where(user_upload: true).each do |image| %>
