@@ -51,7 +51,7 @@
   </style>
 
 
-  <% if field.align == 'right' %>
+  <% if @card_fields.where(page: 1)[0].align == 'right' %>
     <div class="bgimg" style="text-align: right;">
   <% else %>
     <div class="bgimg">
