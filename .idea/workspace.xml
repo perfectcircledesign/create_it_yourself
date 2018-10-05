@@ -44,7 +44,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="erb" value="874" />
+          <entry key="erb" value="875" />
           <entry key="md" value="19" />
           <entry key="rb" value="346" />
         </counts>
@@ -52,7 +52,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="19" />
-          <entry key="RHTML" value="874" />
+          <entry key="RHTML" value="875" />
           <entry key="Ruby" value="346" />
         </counts>
       </usages-collector>
@@ -112,8 +112,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/divisions/_card_form.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="91" column="112" selection-start-line="91" selection-start-column="112" selection-end-line="91" selection-end-column="112" />
+            <state relative-caret-position="630">
+              <caret line="91" column="87" selection-start-line="91" selection-start-column="87" selection-end-line="91" selection-end-column="87" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#1;n#span#0;n#div#0;n#div#1;n#!!top" expanded="true" />
@@ -353,12 +353,12 @@
       <workItem from="1511962661870" duration="1673000" />
       <workItem from="1512026565085" duration="26000" />
       <workItem from="1538412187285" duration="10883000" />
-      <workItem from="1538489067798" duration="37877000" />
+      <workItem from="1538489067798" duration="38194000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50459000" />
+    <option name="totallyTimeSpent" value="50776000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1987" y="25" width="1853" height="1055" extended-state="6" />
@@ -391,6 +391,17 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/app/views/divisions/_card_form.html.erb</url>
+          <line>66</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Gemfile">
@@ -515,8 +526,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/divisions/_card_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="91" column="112" selection-start-line="91" selection-start-column="112" selection-end-line="91" selection-end-column="112" />
+        <state relative-caret-position="630">
+          <caret line="91" column="87" selection-start-line="91" selection-start-column="87" selection-end-line="91" selection-end-column="87" />
           <folding>
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#1;n#span#0;n#div#0;n#div#1;n#!!top" expanded="true" />

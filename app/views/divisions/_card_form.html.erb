@@ -89,7 +89,7 @@
 
 
       <% if field.align == 'right' %>
-          <span style= "margin-right: 53pt; display: block; color: <%= field.colour %> font-size: <%= field.size %>" <% if preview == "false" %> style= "width: <%= (@card_front.width - field.x_pos)/300.0*2.54%>cm"; <% end %> >
+          <span style= "margin-right: 53pt; display: block; color: <%= field.colour %>; font-size: <%= field.size %>;" <% if preview == "false" %> style= "width: <%= (@card_front.width - field.x_pos)/300.0*2.54%>cm"; <% end %> >
       <%else %>
           <div class="<%= field.name.downcase.gsub(' ', '_') %>" <% if preview == "false" %> style= "width: <%= (@card_front.width - field.x_pos)/300.0*2.54%>cm"; <% end %> >
       <% end %>
