@@ -32,7 +32,7 @@
 				</div><br><br>
 				<%end%> <!-- END OF FORM TAG -->
 			</div>
-			<%= render 'card_form', division: @division, preview: "true" %>
+			<%= render 'card_form_html', division: @division, preview: "true" %>
 			<div class="row form-input">
 				<br><br><%= link_to 'Back to Input', generate_division_path(@division,back:true), class: "btn-default3 #{@company.slug}-border", style: "margin-left: 0px" %>
 				<% if @company.slug != "coca-cola" %>
