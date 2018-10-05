@@ -51,7 +51,7 @@
   </style>
 
 
-  <% if @card_fields.where(page: 1)[0].align == 'right' %>
+  <% if @company.name.downcase == 'adendorff'%>
     <div class="bgimg" style="text-align: right; padding-top: 73px;">
   <% else %>
     <div class="bgimg">
@@ -85,6 +85,12 @@
         <% end  %>
 
           line-height: <%=((field.size.to_f)*zoom).to_s %>pt;}
+
+        <% if field.name.downcase.gsub(' ', '_') == 'work_phone' and @company.name.downcase == 'adendorff' %>
+        .work_phone::after{
+          content: ' - ';
+        }
+        <%end %>
       </style>
 
 
