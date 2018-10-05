@@ -89,7 +89,7 @@
 
 
       <% if field.align == 'right' %>
-          <span style= "<% if !field.name=='work_phone' %>margin-right: 53pt;<%end %> <% if field.name !='work_phone' and field.name !='email' %>display: block; <%end %> <% if field.name =='position' %>margin-bottom: 45px; <%end %> color: <%= field.colour %>; font-size: <%= field.size %>px; font-family: 'VagRoundedStdLight';" <% if preview == "false" %> style= "width: <%= (@card_front.width - field.x_pos)/300.0*2.54%>cm"; <% end %> >
+          <span style= "<% if field.name'Work Phone' %>margin-right: 53pt;<%end %> <% if field.name !='Work Phone' and field.name !='email' %>display: block; <%end %> <% if field.name =='Position' %>margin-bottom: 45px; <%end %> color: <%= field.colour %>; font-size: <%= field.size %>px; font-family: 'VagRoundedStdLight';" <% if preview == "false" %> style= "width: <%= (@card_front.width - field.x_pos)/300.0*2.54%>cm"; <% end %> >
       <%else %>
           <div class="<%= field.name.downcase.gsub(' ', '_') %>" <% if preview == "false" %> style= "width: <%= (@card_front.width - field.x_pos)/300.0*2.54%>cm"; <% end %> >
       <% end %>
