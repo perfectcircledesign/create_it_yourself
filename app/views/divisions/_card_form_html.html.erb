@@ -51,154 +51,114 @@
   </style>
 
 
-  <% if @division.name.downcase == 'adendorff'%>
-    <div class="bgimg" style="text-align: right; padding-top: 50px;">
+  <div class="bgimg">
+    <% @card_fields.where(page: 1).each do |field| %>
+      <%#raise%>
+      <%# @division.business_card_fields.each do |field| %>
+      <style type="text/css">
+        .<%= field.name.downcase.gsub(' ', '_') %>   {
 
-      <% @the_loop = (@card_fields.where(page: 1).sort_by {|obj| obj.order}) %>
-  <% else %>
-    <div class="bgimg">
-      <% @the_loop = @card_fields.where(page: 1) %>
-  <%end %>
+          <%unless field.font == nil%>font-family:<%=field.font.name%><%end%>;
+        <%# raise %>
+        <%if !field.align.empty? and !session[:field_inputs]["field_#{field.id}"].empty?%>
 
-  <% @the_loop.each do |field| %>
+        <%field.x_pos = field.x_pos - calc_string_width(field) if field.align=='center'%>
+        <%end%>
 
-
-    <%#raise%>
-    <%# @division.business_card_fields.each do |field| %>
-    <style type="text/css">
-      .<%= field.name.downcase.gsub(' ', '_') %>   {
-
-        <%unless field.font == nil%>font-family:<%=field.font.name%><%end%>;
-      <%# raise %>
-      <%if !field.align.empty? and !session[:field_inputs]["field_#{field.id}"].empty?%>
-
-      <%field.x_pos = field.x_pos - calc_string_width(field) if field.align=='center'%>
-      <%end%>
-
-        font-size: <%=((field.size).to_f*zoom).to_s %>pt;
-        color: <%=field.colour%>;
-        top: <%=field.y_pos/300.0*2.54*zoom %>cm;
-
-        font-weight: <%=field.weight%>;
-
-      <% if field.align == 'right' %>
-        display: block;
-        margin-right: 53pt;
-
-      <% else %>
-        left: <%=(field.x_pos)/300.0*2.54*zoom %>cm;
-        position: absolute;
-      <% end  %>
-
-        line-height: <%=((field.size.to_f)*zoom).to_s %>pt;}
-
-      <% if field.name.downcase.gsub(' ', '_') == 'work_phone' and @division.name.downcase == 'adendorff' %>
-      #work_phone1::after{
-        content: ' - ';
-      }
-      <%end %>
-
-
-      #qualification1::after{
-        content: '<br>'
-      }
-    </style>
-
-
-    <% if field.align == 'right' %>
-      <span id="<%= field.name.downcase.gsub(' ', '_') %>1" style= "<% if field.name.downcase.gsub(' ', '_') != 'work_phone' and field.name.downcase.gsub(' ', '_') != 'title' %>margin-right: 46pt;<%end %> <% if field.name.downcase.gsub(' ', '_') !='work_phone' and field.name.downcase.gsub(' ', '_') !='email' and field.name.downcase.gsub(' ', '_') !='title' and field.name.downcase.gsub(' ', '_') !='position'%>display: block; <%end %> <% if field.name.downcase.gsub(' ', '_') =='position' %>margin-bottom: 45px; <%end %><% if field.name.downcase.gsub(' ', '_') =='title' %>font-weight: bold; <%end %> color: <%= field.colour %>; font-size: <%= (field.size.to_i) + 7 %>pt; font-family: 'VagRoundedStdLight';  %>" <% if preview == "false" %> style= "width: <%= (@card_front.width - field.x_pos)/300.0*2.54%>cm"; <% end %> >
-    <%else %>
+          font-size: <%=((field.size).to_f*zoom).to_s %>pt;
+          color: <%=field.colour%>;
+          top: <%=field.y_pos/300.0*2.54*zoom %>cm;
+          left: <%=(field.x_pos)/300.0*2.54*zoom %>cm;
+          font-weight: <%=field.weight%>;
+          position: absolute;
+          line-height: <%=((field.size.to_f)*zoom).to_s %>pt;}
+      </style>
       <div class="<%= field.name.downcase.gsub(' ', '_') %>" <% if preview == "false" %> style= "width: <%= (@card_front.width - field.x_pos)/300.0*2.54%>cm"; <% end %> >
-    <% end %>
 
-    <!--TODO: REFACTOR THIS TO MAKE IT MORE OBVIOUS -->
-    <% unless session[:field_inputs]["field_#{field.id}"] == nil or session[:field_inputs]["field_#{field.id}"] == "" %>
-      <% unless field.prefix == nil or field.prefix == ""%>
-        <span style="width:<%=(7*zoom).to_s%>px; display: inline-block;">
+        <!--TODO: REFACTOR THIS TO MAKE IT MORE OBVIOUS -->
+        <% unless session[:field_inputs]["field_#{field.id}"] == nil or session[:field_inputs]["field_#{field.id}"] == "" %>
+          <% unless field.prefix == nil or field.prefix == ""%>
+            <span style="width:<%=(7*zoom).to_s%>px; display: inline-block;">
               <%= field.prefix %>
             </span>
-      <% end %>
-    <% end %>
-    <!-- UP TO HERE  -->
+          <% end %>
+        <% end %>
+        <!-- UP TO HERE  -->
 
-    <% if field.default == "" or field.default == nil%>
-      <%# raise %>
-      <%= session[:field_inputs]["field_#{field.id}"] %>
+        <% if field.default == "" or field.default == nil%>
+          <%# raise %>
+          <%= session[:field_inputs]["field_#{field.id}"] %>
 
-    <% elsif field.prefix? %>
-      <span style="width:<%=(7*zoom).to_s%>px; display: inline-block;">
+        <% elsif field.prefix? %>
+            <span style="width:<%=(7*zoom).to_s%>px; display: inline-block;">
             <%= field.prefix %>
             </span>
-      <%= field.default %>
-    <% else %>
-      <%= field.default %>
-    <% end %>
-    <% if field.align == 'right' %>
-      </span>
-    <%else %>
+          <%= field.default %>
+        <% else %>
+          <%= field.default %>
+        <% end %>
       </div>
-    <%end %>
-  <% end %>
-  </div>
-  <!-- BELOW WORKS (NON DYNAMIC) -->
-  <% unless @division.card_images.where(function: session[:function]).where(user_upload: true).empty? %>
-    <% @division.card_images.where(function: session[:function]).where(user_upload: true).each do |image| %>
+    <% end %>
+
+    <!-- BELOW WORKS (NON DYNAMIC) -->
+    <% unless @division.card_images.where(function: session[:function]).where(user_upload: true).empty? %>
+      <% @division.card_images.where(function: session[:function]).where(user_upload: true).each do |image| %>
+        <style type="text/css">
+          .clipzone{
+            position:  absolute;
+            top: <%=image.y_pos / 300.0 * 2.54 * zoom %>cm;
+            left: <%=image.x_pos / 300.0 * 2.54 * zoom %>cm;
+            height: <%=image.y_size / 300.0 * 2.54 * zoom %>cm;
+            width: <%=image.x_size / 300.0 * 2.54 * zoom %>cm;
+            overflow:hidden;
+          }
+          .clipped{
+            position: absolute;
+            height: <%= session[:y_res]/300*2.54 * zoom * zoom_user%>cm;
+            width: <%= session[:x_res]/300*2.54 * zoom * zoom_user%>cm;
+            top: <%=-session[:y_axis].to_f/300.0*2.54*zoom%>cm;
+            left: <%=-session[:x_axis].to_f/300.0*2.54*zoom%>cm;
+          }
+
+        </style>
+        <% if preview == 'true' %>
+          <div class="clipzone">
+            <img class="clipped" src="/assets/<%= session[:"image_#{image.id}"]%>"></img>
+
+
+          </div>
+        <%end%>
+        <%if preview == 'false' %>
+          <div class="clipzone">
+            <!-- <div class="clipped-pdf">  -->
+            <%pic = session[:"image_#{image.id}"] %>
+
+            <%Rails.env.production? ? image_path = "/app/public/assets/#{pic}" : image_path = "file:////home/nic/cOdin/PerfectCircle/create_it_yourself/public/assets/#{pic}"%>
+            <img class="clipped" src="<%=image_path%>"></img>
+          </div>
+        <% end %>
+      <%end%>
+    <%end%>
+
+
+    <!-- WATERMARK START -->
+    <!-- card_image(@card_front, preview) -->
+    <% if @division.card_images.where(function: session[:function]).where(user_upload: false).exists? %>
+      <% watermark = @division.card_images.where(function: session[:function]).where(user_upload: false).first %>
       <style type="text/css">
-        .clipzone{
-          position:  absolute;
-          top: <%=image.y_pos / 300.0 * 2.54 * zoom %>cm;
-          left: <%=image.x_pos / 300.0 * 2.54 * zoom %>cm;
-          height: <%=image.y_size / 300.0 * 2.54 * zoom %>cm;
-          width: <%=image.x_size / 300.0 * 2.54 * zoom %>cm;
+        .watermark{
+          position: relative;
+          top: <%=watermark.y_pos / 300.0 * 2.54 * zoom %>cm;
+          left: <%=watermark.x_pos / 300.0 * 2.54 * zoom %>cm;
+          height: <%=watermark.y_size / 300.0 * 2.54 * zoom %>cm;
+          width: <%=watermark.x_size / 300.0 * 2.54 * zoom %>cm;
           overflow:hidden;
         }
-        .clipped{
-          position: absolute;
-          height: <%= session[:y_res]/300*2.54 * zoom * zoom_user%>cm;
-          width: <%= session[:x_res]/300*2.54 * zoom * zoom_user%>cm;
-          top: <%=-session[:y_axis].to_f/300.0*2.54*zoom%>cm;
-          left: <%=-session[:x_axis].to_f/300.0*2.54*zoom%>cm;
-        }
-
       </style>
-      <% if preview == 'true' %>
-        <div class="clipzone">
-          <img class="clipped" src="/assets/<%= session[:"image_#{image.id}"]%>"></img>
-
-
-        </div>
-      <%end%>
-      <%if preview == 'false' %>
-        <div class="clipzone">
-          <!-- <div class="clipped-pdf">  -->
-          <%pic = session[:"image_#{image.id}"] %>
-
-          <%Rails.env.production? ? image_path = "/app/public/assets/#{pic}" : image_path = "file:////home/nic/cOdin/PerfectCircle/create_it_yourself/public/assets/#{pic}"%>
-          <img class="clipped" src="<%=image_path%>"></img>
-        </div>
-      <% end %>
-    <%end%>
-  <%end%>
-
-
-  <!-- WATERMARK START -->
-  <!-- card_image(@card_front, preview) -->
-  <% if @division.card_images.where(function: session[:function]).where(user_upload: false).exists? %>
-    <% watermark = @division.card_images.where(function: session[:function]).where(user_upload: false).first %>
-    <style type="text/css">
-      .watermark{
-        position: relative;
-        top: <%=watermark.y_pos / 300.0 * 2.54 * zoom %>cm;
-        left: <%=watermark.x_pos / 300.0 * 2.54 * zoom %>cm;
-        height: <%=watermark.y_size / 300.0 * 2.54 * zoom %>cm;
-        width: <%=watermark.x_size / 300.0 * 2.54 * zoom %>cm;
-        overflow:hidden;
-      }
-    </style>
-    <img class="watermark" src="<%= card_image(watermark.overlay_image, preview) %>"></img>
-  <% end %>
-  <!-- WATERMARK END -->
-  </span>
+      <img class="watermark" src="<%= card_image(watermark.overlay_image, preview) %>"></img>
+    <% end %>
+    <!-- WATERMARK END -->
+  </div>
 
   <!-- TODO: COPY bgimg CODE FOR TEXT PLACEMENT TO bgimg2. ADD .where(page1) TO DIFFERENTIATE -->
   <div class="bgimg2">

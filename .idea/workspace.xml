@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="af023515-1f6d-4a0d-a6c8-192a7d68cc8d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/divisions/_card_form_html.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/divisions/_card_form_html.html.erb" afterDir="false" />
-    </list>
+    <list default="true" id="af023515-1f6d-4a0d-a6c8-192a7d68cc8d" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +120,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/divisions/_card_form_html.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="405">
@@ -137,11 +134,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/divisions/_card_form.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="68" column="54" lean-forward="true" selection-start-line="68" selection-start-column="54" selection-end-line="68" selection-end-column="54" />
+            <state relative-caret-position="-345">
+              <caret line="92" column="21" lean-forward="true" selection-start-line="92" selection-start-column="21" selection-end-line="92" selection-end-column="21" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
               </folding>
@@ -334,12 +331,12 @@
       <workItem from="1512026565085" duration="26000" />
       <workItem from="1538412187285" duration="10883000" />
       <workItem from="1538489067798" duration="55358000" />
-      <workItem from="1538981401058" duration="6251000" />
+      <workItem from="1538981401058" duration="6881000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74191000" />
+    <option name="totallyTimeSpent" value="74821000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1987" y="25" width="1853" height="1055" extended-state="6" />
@@ -475,16 +472,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/divisions/_card_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="68" column="54" lean-forward="true" selection-start-line="68" selection-start-column="54" selection-end-line="68" selection-end-column="54" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
@@ -503,6 +490,16 @@
             <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#1;n#span#0;n#div#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#1;n#div#0;n#span#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/divisions/_card_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-345">
+          <caret line="92" column="21" lean-forward="true" selection-start-line="92" selection-start-column="21" selection-end-line="92" selection-end-column="21" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
