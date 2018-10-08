@@ -13,8 +13,8 @@ class PdfMailer < ApplicationMailer
   def airschool43(pdf, division, card_holder_name, card_holder_email, purchase_order_number)
       
       attachments['card.pdf'] = File.read(pdf) 
-      mail(:to => "lindi@43airschool.com; attie@43airschool.com; vinca@perfectcircle.co.za", :subject => "Online Card Generator ", :body => "Good day\n\n43Airschool has requested business/crew cards for approval via the Online Card Generator, for #{card_holder_name}. Please find the card attached.\n\nThank you.\n\nRegards\n\nSimon Says Team")
-      # mail(:to => "khanyiso@perfectcircle.co.za", :subject => "Online Card Generator ", :body => "Good day\n\n43Airschool has requested business/crew cards for approval via the Online Card Generator, for #{card_holder_name}. Please find the card attached.\n\nThank you.\n\nRegards\n\nSimon Says Team")
+      # mail(:to => "lindi@43airschool.com; attie@43airschool.com; vinca@perfectcircle.co.za", :subject => "Online Card Generator ", :body => "Good day\n\n43Airschool has requested business/crew cards for approval via the Online Card Generator, for #{card_holder_name}. Please find the card attached.\n\nThank you.\n\nRegards\n\nSimon Says Team")
+      mail(:to => "khanyiso@perfectcircle.co.za", :subject => "Online Card Generator ", :body => "Good day\n\n43Airschool has requested business/crew cards for approval via the Online Card Generator, for #{card_holder_name}. Please find the card attached.\n\nThank you.\n\nRegards\n\nSimon Says Team")
   end
 
   def adendorff(pdf, division, card_holder_name, card_holder_email, purchase_order_number)
