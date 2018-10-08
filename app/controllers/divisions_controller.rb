@@ -56,8 +56,8 @@ class DivisionsController < ApplicationController
           if @company.name.downcase == 'adendorff'
            render :pdf => "filename.pdf",
             :template => 'divisions/create_pdf.html.erb',#, :show_as_html => true
-              :page_height => "#{@card_front.height / 300.0 *  25.4}",
-                  :page_width => "#{@card_front.width / 300.0 * 25.4}",
+              :page_height => "6.485cm",
+                  :page_width => "12.483cm",
                     margin:  { top: 0, bottom: 3, left: 5, right: 0 },
                       :align => 'right',
                         :save_to_file => Rails.root.join('tmp', "filename.pdf"),                                  
