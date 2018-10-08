@@ -48,7 +48,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="erb" value="1595" />
+          <entry key="erb" value="1661" />
           <entry key="md" value="19" />
           <entry key="rb" value="529" />
           <entry key="scss" value="38" />
@@ -57,7 +57,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="19" />
-          <entry key="RHTML" value="1595" />
+          <entry key="RHTML" value="1661" />
           <entry key="Ruby" value="529" />
           <entry key="SCSS" value="38" />
         </counts>
@@ -122,8 +122,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/divisions/_card_form_html.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="134" column="80" selection-start-line="134" selection-start-column="80" selection-end-line="134" selection-end-column="80" />
+            <state relative-caret-position="225">
+              <caret line="105" lean-forward="true" selection-start-line="105" selection-end-line="105" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#!!top" expanded="true" />
@@ -337,12 +337,12 @@
       <workItem from="1512026565085" duration="26000" />
       <workItem from="1538412187285" duration="10883000" />
       <workItem from="1538489067798" duration="55358000" />
-      <workItem from="1538981401058" duration="8196000" />
+      <workItem from="1538981401058" duration="8441000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76136000" />
+    <option name="totallyTimeSpent" value="76381000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1987" y="25" width="1853" height="1055" extended-state="6" />
@@ -507,8 +507,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/divisions/_card_form_html.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="134" column="80" selection-start-line="134" selection-start-column="80" selection-end-line="134" selection-end-column="80" />
+        <state relative-caret-position="225">
+          <caret line="105" lean-forward="true" selection-start-line="105" selection-end-line="105" />
           <folding>
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#!!top" expanded="true" />
