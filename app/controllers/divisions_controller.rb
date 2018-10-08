@@ -94,7 +94,7 @@ class DivisionsController < ApplicationController
         else
           
         end
-        # redirect_to completed_job_division_path
+        redirect_to completed_job_division_path
     end
     #END OF CARD FUNCTION
     if session[:function] == 'email_sig'
