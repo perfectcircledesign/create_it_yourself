@@ -31,6 +31,7 @@
           <entry key="jpg" value="2" />
           <entry key="md" value="1" />
           <entry key="rb" value="2" />
+          <entry key="rnc" value="1" />
           <entry key="scss" value="1" />
         </counts>
       </usages-collector>
@@ -40,13 +41,14 @@
           <entry key="Image" value="2" />
           <entry key="Markdown" value="1" />
           <entry key="RHTML" value="11" />
+          <entry key="RNG Compact" value="1" />
           <entry key="Ruby" value="2" />
           <entry key="SCSS" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="erb" value="1554" />
+          <entry key="erb" value="1582" />
           <entry key="md" value="19" />
           <entry key="rb" value="529" />
           <entry key="scss" value="38" />
@@ -55,7 +57,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="19" />
-          <entry key="RHTML" value="1554" />
+          <entry key="RHTML" value="1582" />
           <entry key="Ruby" value="529" />
           <entry key="SCSS" value="38" />
         </counts>
@@ -95,11 +97,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/divisions/_completed_card_header.html.erb">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/divisions/completed_card.html.erb">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
@@ -125,11 +122,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/divisions/_card_form_html.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="116" column="73" lean-forward="true" selection-start-line="116" selection-start-column="73" selection-end-line="116" selection-end-column="73" />
+            <state relative-caret-position="270">
+              <caret line="108" column="414" selection-start-line="108" selection-start-column="414" selection-end-line="108" selection-end-column="414" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#1;n#span#0;n#div#0;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#span#0;n#div#0;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#div#0;n#span#0;n#div#0;n#div#1;n#!!top" expanded="true" />
@@ -183,6 +179,7 @@
       <find>container</find>
       <find>if</find>
       <find>content</find>
+      <find>position</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -339,12 +336,12 @@
       <workItem from="1512026565085" duration="26000" />
       <workItem from="1538412187285" duration="10883000" />
       <workItem from="1538489067798" duration="55358000" />
-      <workItem from="1538981401058" duration="7624000" />
+      <workItem from="1538981401058" duration="7886000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75564000" />
+    <option name="totallyTimeSpent" value="75826000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1987" y="25" width="1853" height="1055" extended-state="6" />
@@ -500,13 +497,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/rubymine.jar!/resources/html5-schema/html5/common.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="195" column="18" selection-start-line="195" selection-start-column="18" selection-end-line="195" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/divisions/_card_form_html.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="116" column="73" lean-forward="true" selection-start-line="116" selection-start-column="73" selection-end-line="116" selection-end-column="73" />
+        <state relative-caret-position="270">
+          <caret line="108" column="414" selection-start-line="108" selection-start-column="414" selection-end-line="108" selection-end-column="414" />
           <folding>
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#1;n#span#0;n#div#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#span#0;n#div#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#div#0;n#span#0;n#div#0;n#div#1;n#!!top" expanded="true" />
