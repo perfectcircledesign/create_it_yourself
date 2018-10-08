@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="af023515-1f6d-4a0d-a6c8-192a7d68cc8d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/mailers/pdf_mailer.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/mailers/pdf_mailer.rb" afterDir="false" />
-    </list>
+    <list default="true" id="af023515-1f6d-4a0d-a6c8-192a7d68cc8d" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,11 +63,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/mailers/pdf_mailer.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="96" selection-start-line="19" selection-start-column="96" selection-end-line="19" selection-end-column="96" />
+            <state>
+              <caret column="15" selection-start-column="6" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -83,11 +81,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/divisions_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="71" column="13" selection-start-line="71" selection-start-column="13" selection-end-line="71" selection-end-column="13" />
+            <state relative-caret-position="1100">
+              <caret line="90" column="88" selection-start-line="90" selection-start-column="71" selection-end-line="90" selection-end-column="88" />
             </state>
           </provider>
         </entry>
@@ -156,13 +154,14 @@
       <find>preview</find>
       <find>The views and opinions expressed in this message are those of the individual sender</find>
       <find>def preview</find>
-      <find>PdfMailer</find>
       <find>@file2</find>
       <find>div class</find>
       <find>colour</find>
       <find>render 'card_form'</find>
       <find>@compant</find>
       <find>render 'card_form_html'</find>
+      <find>adendorff</find>
+      <find>PdfMailer</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -347,12 +346,12 @@
       <workItem from="1512026565085" duration="26000" />
       <workItem from="1538412187285" duration="10883000" />
       <workItem from="1538489067798" duration="55358000" />
-      <workItem from="1538981401058" duration="756000" />
+      <workItem from="1538981401058" duration="1270000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68696000" />
+    <option name="totallyTimeSpent" value="69210000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1987" y="25" width="1853" height="1055" extended-state="6" />
@@ -498,17 +497,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/divisions_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/mailers/pdf_mailer.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="71" column="13" selection-start-line="71" selection-start-column="13" selection-end-line="71" selection-end-column="13" />
+        <state>
+          <caret column="15" selection-start-column="6" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/mailers/pdf_mailer.rb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/divisions_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="96" selection-start-line="19" selection-start-column="96" selection-end-line="19" selection-end-column="96" />
+        <state relative-caret-position="1100">
+          <caret line="90" column="88" selection-start-line="90" selection-start-column="71" selection-end-line="90" selection-end-column="88" />
         </state>
       </provider>
     </entry>
