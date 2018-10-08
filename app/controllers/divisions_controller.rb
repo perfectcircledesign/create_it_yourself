@@ -28,7 +28,7 @@ class DivisionsController < ApplicationController
 
       @card_fields = CardField.where(function: session[:function]).joins(:divisions).where("division_id = ? ",@division.id)
 
-      puts "CARD FIELDS!!!!!!!!!!!!!#{@card_fields.inspect}"
+      puts "CARD FIELDS params!!!!!!!!!!!!!#{params}"
         #THIS HAS TO BE CLEANED UP
         if @card_fields.where(name: "Associate Name").exists?
           card_holder_name = params[:"#{@card_fields.where(name: "Associate Name").last.id}"]
@@ -57,7 +57,7 @@ class DivisionsController < ApplicationController
             :template => 'divisions/create_pdf.html.erb',#, :show_as_html => true
               :page_height => "#{@card_front.height / 300.0 *  25.4}",
                   :page_width => "#{@card_front.width / 300.0 * 25.4}",
-                      margin:  { top: 6, bottom: 3, left: 3, right: 0 },
+                      margin:  { top: 5, bottom: 3, left: 1, right: 1 },
                       :align => 'right',
                         :save_to_file => Rails.root.join('tmp', "filename.pdf"),                                  
                           :show_as_html => false, :dpi => '300', :save_only => true    
