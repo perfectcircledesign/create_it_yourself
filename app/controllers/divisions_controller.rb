@@ -28,7 +28,7 @@ class DivisionsController < ApplicationController
 
       @card_fields = CardField.where(function: session[:function]).joins(:divisions).where("division_id = ? ",@division.id)
 
-      puts "CARD FIELDS!!!!!!!!!!!!!#{@card_fields}"
+      puts "CARD FIELDS!!!!!!!!!!!!!#{@card_fields.inspect}"
         #THIS HAS TO BE CLEANED UP
         if @card_fields.where(name: "Associate Name").exists?
           card_holder_name = params[:"#{@card_fields.where(name: "Associate Name").last.id}"]
