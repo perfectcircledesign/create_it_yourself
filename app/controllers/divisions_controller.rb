@@ -52,12 +52,13 @@ class DivisionsController < ApplicationController
         #END CONCAT
 
 
+      #create specific pdf for adendorf because its fields are right aligned
           if @company.name.downcase == 'adendorff'
            render :pdf => "filename.pdf",
             :template => 'divisions/create_pdf.html.erb',#, :show_as_html => true
-              :page_height => "#{@card_front.height / 300.0 *  20.4}",
-                  :page_width => "#{@card_front.width / 300.0 * 20.4}",
-                      margin:  { top: 5, bottom: 3, left: 1, right: 1 },
+              :page_height => "#{@card_front.height / 300.0 *  35.4}",
+                  :page_width => "#{@card_front.width / 300.0 * 35.4}",
+                      margin:  { top: 5, bottom: 3, left: 2, right: 0 },
                       :align => 'right',
                         :save_to_file => Rails.root.join('tmp', "filename.pdf"),                                  
                             :show_as_html => false, :dpi => '300', :save_only => true
