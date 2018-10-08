@@ -9,9 +9,14 @@
     </div>
   <% end %>
 
-  <% h = @card_front.height/300.0*2.54%>
-  <% w = @card_front.width/300.0*2.54%>
+  <%if @company.name.downcase == 'adendorff' %>
+    <% h = '6.485cm'%>
+    <% w = "12.483cm"%>
 
+  <%else %>
+    <% h = @card_front.height/300.0*2.54%>
+    <% w = @card_front.width/300.0*2.54%>
+  <%end %>
   <% zoom_user = session[:scale].to_f %>
 
   <% if preview == "true" %>
