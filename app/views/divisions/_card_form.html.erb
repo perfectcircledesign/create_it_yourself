@@ -12,7 +12,7 @@
   <%if @company.name.downcase == 'adendorff' %>
     <% h = 6.485%>
     <% w = 12.483%>
-  
+
   <%else %>
     <% h = @card_front.height/300.0*2.54%>
     <% w = @card_front.width/300.0*2.54%>
@@ -37,7 +37,7 @@
     }
     .bgimg2{
       background-image: url("<%= card_image(@card_back, preview) %>");
-      height: 8.485cm;
+      height: <%= 8.485*zoom %> cm;
       width: <%= w*zoom %>cm;
       background-size: cover;
       position:relative;
