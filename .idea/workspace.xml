@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af023515-1f6d-4a0d-a6c8-192a7d68cc8d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/controllers/divisions_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/divisions_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/mailers/pdf_mailer.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/mailers/pdf_mailer.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/divisions/_card_form_html.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/divisions/_card_form_html.html.erb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,7 +48,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="erb" value="1821" />
+          <entry key="erb" value="1824" />
           <entry key="md" value="19" />
           <entry key="rb" value="1108" />
           <entry key="scss" value="38" />
@@ -58,7 +57,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="19" />
-          <entry key="RHTML" value="1821" />
+          <entry key="RHTML" value="1824" />
           <entry key="Ruby" value="1108" />
           <entry key="SCSS" value="38" />
         </counts>
@@ -88,11 +87,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/divisions_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="63" column="49" selection-start-line="63" selection-start-column="49" selection-end-line="63" selection-end-column="49" />
+            <state relative-caret-position="456">
+              <caret line="85" selection-start-line="85" selection-end-line="85" />
             </state>
           </provider>
         </entry>
@@ -120,11 +119,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/divisions/_card_form_html.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1860">
-              <caret line="124" column="29" selection-start-line="124" selection-start-column="29" selection-end-line="124" selection-end-column="29" />
+            <state relative-caret-position="356">
+              <caret line="111" column="120" lean-forward="true" selection-start-line="111" selection-start-column="120" selection-end-line="111" selection-end-column="120" />
+              <folding>
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -188,10 +190,10 @@
         <option value="$PROJECT_DIR$/app/views/divisions/_preview_email_sig_header.html.erb" />
         <option value="$PROJECT_DIR$/app/views/divisions/preview_card.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css.scss" />
-        <option value="$PROJECT_DIR$/app/views/divisions/_card_form_html.html.erb" />
         <option value="$PROJECT_DIR$/app/views/divisions/_card_form.html.erb" />
         <option value="$PROJECT_DIR$/app/mailers/pdf_mailer.rb" />
         <option value="$PROJECT_DIR$/app/controllers/divisions_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/divisions/_card_form_html.html.erb" />
       </list>
     </option>
   </component>
@@ -218,73 +220,6 @@
             <path>
               <item name="create_it_yourself" type="b2602c69:ProjectViewProjectNode" />
               <item name="create_it_yourself" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="create_it_yourself" type="b2602c69:ProjectViewProjectNode" />
-              <item name="create_it_yourself" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="create_it_yourself" type="b2602c69:ProjectViewProjectNode" />
-              <item name="create_it_yourself" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="create_it_yourself" type="b2602c69:ProjectViewProjectNode" />
-              <item name="create_it_yourself" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="stylesheets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="create_it_yourself" type="b2602c69:ProjectViewProjectNode" />
-              <item name="create_it_yourself" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="channels" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="create_it_yourself" type="b2602c69:ProjectViewProjectNode" />
-              <item name="create_it_yourself" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="channels" type="462c0819:PsiDirectoryNode" />
-              <item name="application_cable" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="create_it_yourself" type="b2602c69:ProjectViewProjectNode" />
-              <item name="create_it_yourself" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="create_it_yourself" type="b2602c69:ProjectViewProjectNode" />
-              <item name="create_it_yourself" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="helpers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="create_it_yourself" type="b2602c69:ProjectViewProjectNode" />
-              <item name="create_it_yourself" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="mailers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="create_it_yourself" type="b2602c69:ProjectViewProjectNode" />
-              <item name="create_it_yourself" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="create_it_yourself" type="b2602c69:ProjectViewProjectNode" />
-              <item name="create_it_yourself" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="divisions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="create_it_yourself" type="b2602c69:ProjectViewProjectNode" />
-              <item name="create_it_yourself" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -334,7 +269,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94796000" />
+    <option name="totallyTimeSpent" value="95045000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1987" y="25" width="1853" height="1055" extended-state="6" />
@@ -449,13 +384,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/divisions/_card_form_html.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1860">
-          <caret line="124" column="29" selection-start-line="124" selection-start-column="29" selection-end-line="124" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/divisions/completed_card.html.erb">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -496,8 +424,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/divisions_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="63" column="49" selection-start-line="63" selection-start-column="49" selection-end-line="63" selection-end-column="49" />
+        <state relative-caret-position="456">
+          <caret line="85" selection-start-line="85" selection-end-line="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/divisions/_card_form_html.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="111" column="120" lean-forward="true" selection-start-line="111" selection-start-column="120" selection-end-line="111" selection-end-column="120" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
