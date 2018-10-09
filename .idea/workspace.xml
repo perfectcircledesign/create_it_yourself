@@ -177,6 +177,7 @@
       <find>76</find>
       <find>image</find>
       <find>content</find>
+      <find>40pt</find>
       <find>margin-top</find>
     </findStrings>
   </component>
