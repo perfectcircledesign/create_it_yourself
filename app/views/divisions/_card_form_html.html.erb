@@ -93,9 +93,11 @@
         line-height: <%=((field.size.to_f)*zoom).to_s %>pt;}
 
       <% if field.name.downcase.gsub(' ', '_') == 'work_phone' and @division.name.downcase == 'adendorff' %>
-      #work_phone1::after{
-        content: ' - ';
-      }
+        <% unless field.prefix == nil or field.prefix == ""%>
+        #work_phone1::after{
+          content: ' - ';
+        }
+        <%end %>
       <%end %>
 
     </style>
