@@ -28,7 +28,7 @@ class DivisionsController < ApplicationController
 
       @card_fields = CardField.where(function: session[:function]).joins(:divisions).where("division_id = ? ",@division.id)
 
-      puts "CARD FIELDS params!!!!!!!!!!!!!#{params}"
+      puts "CARD FIELDS params!!!!!!!!!!!!!#{params["40"]}"
         #THIS HAS TO BE CLEANED UP
         if @card_fields.where(name: "Associate Name").exists?
           card_holder_name = params[:"#{@card_fields.where(name: "Associate Name").last.id}"]
@@ -90,7 +90,8 @@ class DivisionsController < ApplicationController
           #raise
           PdfMailer.airschool43(@file2.path,@division, card_holder_name, card_holder_email, purchase_order_number).deliver 
         elsif @company.slug == 'adendorff'
-          PdfMailer.adendorff(@file2.path,@division, card_holder_name, card_holder_email, purchase_order_number).deliver
+          adendorff_card_holder_email = params["40"]
+          PdfMailer.adendorff(@file2.path,@division, card_holder_name, adendorff_card_holder_email, purchase_order_number).deliver
         else
           
         end
