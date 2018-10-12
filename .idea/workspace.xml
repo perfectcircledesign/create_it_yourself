@@ -46,7 +46,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="erb" value="1891" />
+          <entry key="erb" value="1895" />
           <entry key="md" value="19" />
           <entry key="rb" value="1118" />
           <entry key="scss" value="38" />
@@ -55,7 +55,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="19" />
-          <entry key="RHTML" value="1891" />
+          <entry key="RHTML" value="1895" />
           <entry key="Ruby" value="1118" />
           <entry key="SCSS" value="38" />
         </counts>
@@ -111,8 +111,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/divisions/_card_form_html.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="106" column="68" lean-forward="true" selection-start-line="106" selection-start-column="68" selection-end-line="106" selection-end-column="68" />
+            <state relative-caret-position="221">
+              <caret line="94" column="11" selection-start-line="94" selection-start-column="11" selection-end-line="94" selection-end-column="11" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#1;n#span#0;n#div#0;n#div#1;n#!!top" expanded="true" />
@@ -202,10 +202,10 @@
         <option value="$PROJECT_DIR$/app/views/divisions/_preview_email_sig_header.html.erb" />
         <option value="$PROJECT_DIR$/app/views/divisions/preview_card.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css.scss" />
-        <option value="$PROJECT_DIR$/app/views/divisions/_card_form_html.html.erb" />
         <option value="$PROJECT_DIR$/app/views/divisions/_card_form.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/divisions_controller.rb" />
         <option value="$PROJECT_DIR$/app/mailers/pdf_mailer.rb" />
+        <option value="$PROJECT_DIR$/app/views/divisions/_card_form_html.html.erb" />
       </list>
     </option>
   </component>
@@ -298,7 +298,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104890000" />
+    <option name="totallyTimeSpent" value="105494000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1987" y="25" width="1853" height="1055" extended-state="6" />
@@ -467,8 +467,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/divisions/_card_form_html.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="106" column="68" lean-forward="true" selection-start-line="106" selection-start-column="68" selection-end-line="106" selection-end-column="68" />
+        <state relative-caret-position="221">
+          <caret line="94" column="11" selection-start-line="94" selection-start-column="11" selection-end-line="94" selection-end-column="11" />
           <folding>
             <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#1;n#span#0;n#div#0;n#div#1;n#!!top" expanded="true" />
