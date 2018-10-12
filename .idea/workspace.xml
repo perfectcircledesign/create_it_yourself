@@ -50,7 +50,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="erb" value="2200" />
+          <entry key="erb" value="2201" />
           <entry key="md" value="19" />
           <entry key="rb" value="1118" />
           <entry key="scss" value="38" />
@@ -59,7 +59,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="19" />
-          <entry key="RHTML" value="2200" />
+          <entry key="RHTML" value="2201" />
           <entry key="Ruby" value="1118" />
           <entry key="SCSS" value="38" />
         </counts>
@@ -115,9 +115,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/divisions/_card_form_html.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="107" column="82" selection-start-line="107" selection-start-column="82" selection-end-line="107" selection-end-column="82" />
+            <state relative-caret-position="240">
+              <caret line="96" selection-start-line="96" selection-end-line="100" selection-end-column="17" />
               <folding>
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#1;n#span#0;n#div#0;n#div#1;n#!!top" expanded="true" />
               </folding>
             </state>
@@ -127,8 +128,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/divisions/_card_form.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="107" lean-forward="true" selection-start-line="107" selection-end-line="107" />
+            <state relative-caret-position="503">
+              <caret line="101" column="30" lean-forward="true" selection-start-line="101" selection-start-column="30" selection-end-line="101" selection-end-column="30" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#!!top" expanded="true" />
               </folding>
@@ -291,12 +292,12 @@
       <workItem from="1538489067798" duration="55358000" />
       <workItem from="1538981401058" duration="24976000" />
       <workItem from="1539264735266" duration="2210000" />
-      <workItem from="1539341807480" duration="3918000" />
+      <workItem from="1539341807480" duration="4540000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118029000" />
+    <option name="totallyTimeSpent" value="118651000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1987" y="25" width="1853" height="1055" extended-state="6" />
@@ -490,9 +491,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/divisions/_card_form_html.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="107" column="82" selection-start-line="107" selection-start-column="82" selection-end-line="107" selection-end-column="82" />
+        <state relative-caret-position="240">
+          <caret line="96" selection-start-line="96" selection-end-line="100" selection-end-column="17" />
           <folding>
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#1;n#span#0;n#div#0;n#div#1;n#!!top" expanded="true" />
           </folding>
         </state>
@@ -500,8 +502,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/divisions/_card_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="107" lean-forward="true" selection-start-line="107" selection-end-line="107" />
+        <state relative-caret-position="503">
+          <caret line="101" column="30" lean-forward="true" selection-start-line="101" selection-start-column="30" selection-end-line="101" selection-end-column="30" />
           <folding>
             <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#!!top" expanded="true" />
           </folding>
