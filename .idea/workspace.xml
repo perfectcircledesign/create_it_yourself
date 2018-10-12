@@ -48,7 +48,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="erb" value="1899" />
+          <entry key="erb" value="1916" />
           <entry key="md" value="19" />
           <entry key="rb" value="1118" />
           <entry key="scss" value="38" />
@@ -57,7 +57,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="19" />
-          <entry key="RHTML" value="1899" />
+          <entry key="RHTML" value="1916" />
           <entry key="Ruby" value="1118" />
           <entry key="SCSS" value="38" />
         </counts>
@@ -113,9 +113,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/divisions/_card_form_html.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="106" column="805" lean-forward="true" selection-start-line="106" selection-start-column="805" selection-end-line="106" selection-end-column="805" />
+            <state relative-caret-position="531">
+              <caret line="100" column="15" lean-forward="true" selection-start-line="100" selection-start-column="15" selection-end-line="100" selection-end-column="15" />
               <folding>
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#1;n#span#0;n#div#0;n#div#1;n#!!top" expanded="true" />
               </folding>
             </state>
@@ -188,6 +189,7 @@
       <find>margin-top</find>
       <find>font</find>
       <find>after</find>
+      <find>%&gt;</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -299,13 +301,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107061000" />
+    <option name="totallyTimeSpent" value="110176000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1987" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20075554" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15002698" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -468,9 +470,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/divisions/_card_form_html.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="106" column="805" lean-forward="true" selection-start-line="106" selection-start-column="805" selection-end-line="106" selection-end-column="805" />
+        <state relative-caret-position="531">
+          <caret line="100" column="15" lean-forward="true" selection-start-line="100" selection-start-column="15" selection-end-line="100" selection-end-column="15" />
           <folding>
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#1;n#span#0;n#div#0;n#div#1;n#!!top" expanded="true" />
           </folding>
         </state>
