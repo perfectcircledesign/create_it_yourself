@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="af023515-1f6d-4a0d-a6c8-192a7d68cc8d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/divisions_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/divisions_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/divisions/_card_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/divisions/_card_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/divisions/_card_form_html.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/divisions/_card_form_html.html.erb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,17 +51,19 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="erb" value="2225" />
+          <entry key="erb" value="2231" />
           <entry key="md" value="19" />
-          <entry key="rb" value="1118" />
+          <entry key="rb" value="1126" />
           <entry key="scss" value="38" />
+          <entry key="txt" value="37" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="19" />
-          <entry key="RHTML" value="2225" />
-          <entry key="Ruby" value="1118" />
+          <entry key="PLAIN_TEXT" value="37" />
+          <entry key="RHTML" value="2231" />
+          <entry key="Ruby" value="1126" />
           <entry key="SCSS" value="38" />
         </counts>
       </usages-collector>
@@ -81,11 +83,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/divisions_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1560">
-              <caret line="104" selection-start-line="104" selection-end-line="104" />
+            <state relative-caret-position="191">
+              <caret line="63" column="49" selection-start-line="63" selection-start-column="49" selection-end-line="63" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -116,8 +118,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/divisions/_card_form_html.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="107" column="828" selection-start-line="107" selection-start-column="828" selection-end-line="107" selection-end-column="828" />
+            <state relative-caret-position="120">
+              <caret line="112" lean-forward="true" selection-start-line="112" selection-end-line="112" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#1;n#span#0;n#div#0;n#div#1;n#!!top" expanded="true" />
@@ -126,11 +128,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/divisions/_card_form.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="111" column="298" lean-forward="true" selection-start-line="111" selection-start-column="298" selection-end-line="111" selection-end-column="298" />
+            <state relative-caret-position="168">
+              <caret line="111" column="300" selection-start-line="111" selection-start-column="300" selection-end-line="111" selection-end-column="300" />
             </state>
           </provider>
         </entry>
@@ -166,7 +168,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>marlene</find>
       <find>enter your purchase</find>
       <find>preview</find>
       <find>The views and opinions expressed in this message are those of the individual sender</find>
@@ -194,11 +195,17 @@
       <find>color</find>
       <find>%&gt; color</find>
       <find>font</find>
-      <find>margin-top</find>
       <find>font-family</find>
+      <find>font-fami;y</find>
+      <find>margin-top</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Khanyiso &lt;khanyiso@perfectcircle.co.za&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -211,10 +218,10 @@
         <option value="$PROJECT_DIR$/app/views/divisions/_preview_email_sig_header.html.erb" />
         <option value="$PROJECT_DIR$/app/views/divisions/preview_card.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css.scss" />
-        <option value="$PROJECT_DIR$/app/controllers/divisions_controller.rb" />
         <option value="$PROJECT_DIR$/app/mailers/pdf_mailer.rb" />
         <option value="$PROJECT_DIR$/app/views/divisions/_card_form_html.html.erb" />
         <option value="$PROJECT_DIR$/app/views/divisions/_card_form.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/divisions_controller.rb" />
       </list>
     </option>
   </component>
@@ -291,12 +298,12 @@
       <workItem from="1538489067798" duration="55358000" />
       <workItem from="1538981401058" duration="24976000" />
       <workItem from="1539264735266" duration="2210000" />
-      <workItem from="1539341807480" duration="7121000" />
+      <workItem from="1539341807480" duration="7908000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121232000" />
+    <option name="totallyTimeSpent" value="122019000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1987" y="25" width="1853" height="1055" extended-state="6" />
@@ -361,6 +368,11 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="static image spacing" />
+    <MESSAGE value="extra %&gt;" />
+    <option name="LAST_COMMIT_MESSAGE" value="extra %&gt;" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Gemfile">
@@ -436,13 +448,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/divisions_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1560">
-          <caret line="104" selection-start-line="104" selection-end-line="104" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/divisions/completed_card.html.erb">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -490,8 +495,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/divisions/_card_form_html.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="107" column="828" selection-start-line="107" selection-start-column="828" selection-end-line="107" selection-end-column="828" />
+        <state relative-caret-position="120">
+          <caret line="112" lean-forward="true" selection-start-line="112" selection-end-line="112" />
           <folding>
             <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#1;n#span#0;n#div#0;n#div#1;n#!!top" expanded="true" />
@@ -501,8 +506,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/divisions/_card_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="111" column="298" lean-forward="true" selection-start-line="111" selection-start-column="298" selection-end-line="111" selection-end-column="298" />
+        <state relative-caret-position="168">
+          <caret line="111" column="300" selection-start-line="111" selection-start-column="300" selection-end-line="111" selection-end-column="300" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/divisions_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="63" column="49" selection-start-line="63" selection-start-column="49" selection-end-line="63" selection-end-column="49" />
         </state>
       </provider>
     </entry>
