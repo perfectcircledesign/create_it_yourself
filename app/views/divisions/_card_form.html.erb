@@ -57,7 +57,7 @@
 
 
   <% if @division.name.downcase == 'adendorff'%>
-    <div class="bgimg" style="text-align: right; padding-top: 62pt;">
+    <div class="bgimg" style="text-align: right; padding-top: 68pt;">
 
       <% @the_loop = (@card_fields.where(page: 1).sort_by {|obj| obj.order}) %>
   <% else %>
@@ -112,7 +112,7 @@
       <span id="<%= field.name.downcase.gsub(' ', '_') %>1"
             style= "font-family: '<%= field.font.name %>';
                 <% if field.name.downcase.gsub(' ', '_') !='work_phone' or field.name.downcase.gsub(' ', '_') !='email' or field.name.downcase.gsub(' ', '_') !='title' or field.name.downcase.gsub(' ', '_') != 'work_fax'%>display: block; <%end %>
-                <% if field.name.downcase.gsub(' ', '_') != 'work_phone'%>margin-right: 58pt;<%end %>
+                <% if field.name.downcase.gsub(' ', '_') != 'work_phone'%>margin-right: 54pt;<%end %>
                 <% if field.name.downcase.gsub(' ', '_') == 'work_phone' %>display: inline; <%end %>
                 <% if field.name.downcase.gsub(' ', '_') == 'work_fax' %>display: inline-block; <%end %>
                 <% if field.name.downcase.gsub(' ', '_') == 'mobile_phone' %>display: inline-block; margin-right: 0;<%end %>
