@@ -108,7 +108,7 @@
 
 
 
-    <% if field.align == 'right' %>
+    <% if field.align == 'right' and @division.name.downcase == 'adendorff' %>
       <span id="<%= field.name.downcase.gsub(' ', '_') %>1"
             style= "font-family: '<%= field.font.name %>';
                 <% if field.name.downcase.gsub(' ', '_') !='work_phone' or field.name.downcase.gsub(' ', '_') !='email' or field.name.downcase.gsub(' ', '_') !='title' or field.name.downcase.gsub(' ', '_') != 'work_fax'%>display: block; <%end %>
@@ -118,8 +118,9 @@
                 <% if field.name.downcase.gsub(' ', '_') == 'mobile_phone' %>display: inline-block; margin-right: 3pt;<%end %>
                 <% if field.name.downcase.gsub(' ', '_') == 'email' %>display: inline-block;<%end %>
 
-                <% if field.name.downcase.gsub(' ', '_') =='qualification' %>margin-bottom: 26pt; display: inline-block; margin-top: 2pt<%end %>
-                <% if field.name.downcase.gsub(' ', '_') =='title' %>margin-right: 2pt; font-weight: bold; display: inline-block; margin-top: 2pt<%end %>
+
+                <% if field.name.downcase.gsub(' ', '_') =='qualification' %>margin-bottom: 26pt; display: inline-block; margin-top: 2pt;<%end %>
+                <% if field.name.downcase.gsub(' ', '_') =='title' %>margin-right: 2pt; font-weight: bold; display: inline-block; margin-top: 2pt;<%end %>
                 color: <%= field.colour %>; font-size: <%= (field.size.to_i) %>pt;"
             <% if preview == "false" %> style= "width: <%= (@card_front.width - field.x_pos)/300.0*2.54%>cm"; <% end %> >
 
@@ -130,8 +131,8 @@
     <!--TODO: REFACTOR THIS TO MAKE IT MORE OBVIOUS -->
     <% unless session[:field_inputs]["field_#{field.id}"] == nil or session[:field_inputs]["field_#{field.id}"] == "" %>
       <% unless field.prefix == nil or field.prefix == ""%>
-        <span style="width:<%=(7*zoom).to_s%>px; display: inline-block; color: #6f6f6c;">
-              <%= field.prefix %>&nbsp;
+        <span style="width:<%=(7*zoom).to_s%>px; display: inline-block; <% if  @division.name.downcase == 'adendorff'%>color: #6f6f6c; width: auto;<% end %>">
+              <%= field.prefix %>
             </span>
       <% end %>
     <% end %>
@@ -142,8 +143,8 @@
       <%= session[:field_inputs]["field_#{field.id}"] %>
 
     <% elsif field.prefix? %>
-      <span style="width:<%=(7*zoom).to_s%>px; display: inline-block; color: #6f6f6c;">
-            <%= field.prefix %>&nbsp;
+      <span style="width:<%=(7*zoom).to_s%>px; display: inline-block; <% if  @division.name.downcase == 'adendorff'%>color: #6f6f6c; width: auto;<% end %>">
+            <%= field.prefix %>
             </span>
       <%= field.default %>
     <% else %>
