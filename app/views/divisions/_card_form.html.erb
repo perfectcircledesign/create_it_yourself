@@ -99,7 +99,7 @@
 
         <% if field.name.downcase.gsub(' ', '_') == 'work_phone' and @division.name.downcase == 'adendorff' %>
         <% unless session[:field_inputs]["field_#{field.id}"] == ""%>
-          #work_phone1::after{
+          #mobile_phone1::after{
             content: ' - ';
           }
         <% end %>
@@ -112,7 +112,7 @@
       <span id="<%= field.name.downcase.gsub(' ', '_') %>1"
             style= "font-family: '<%= field.font.name %>';
                 <% if field.name.downcase.gsub(' ', '_') !='work_phone' or field.name.downcase.gsub(' ', '_') !='email' or field.name.downcase.gsub(' ', '_') !='title' or field.name.downcase.gsub(' ', '_') != 'work_fax'%>display: block; <%end %>
-                <% if field.name.downcase.gsub(' ', '_') != 'work_phone'%>margin-right: 50pt;<%end %>
+                <% if field.name.downcase.gsub(' ', '_') != 'work_phone'%>margin-right: 45pt;<%end %>
                 <% if field.name.downcase.gsub(' ', '_') == 'work_phone' %>display: inline; <%end %>
                 <% if field.name.downcase.gsub(' ', '_') == 'work_fax' %>display: inline-block; <%end %>
                 <% if field.name.downcase.gsub(' ', '_') == 'mobile_phone' %>display: inline-block; margin-right: 0;<%end %>
@@ -130,7 +130,7 @@
     <!--TODO: REFACTOR THIS TO MAKE IT MORE OBVIOUS -->
     <% unless session[:field_inputs]["field_#{field.id}"] == nil or session[:field_inputs]["field_#{field.id}"] == "" %>
       <% unless field.prefix == nil or field.prefix == ""%>
-        <span style="width:<%=(7*zoom).to_s%>px; display: inline-block;">
+        <span style="width:<%=(7*zoom).to_s%>px; display: inline-block; font-weight: bold; color: #6f6f6c;">
               <%= field.prefix %>
             </span>
       <% end %>
@@ -142,7 +142,7 @@
       <%= session[:field_inputs]["field_#{field.id}"] %>
 
     <% elsif field.prefix? %>
-      <span style="width:<%=(7*zoom).to_s%>px; display: inline-block;">
+      <span style="width:<%=(7*zoom).to_s%>px; display: inline-block; font-weight: bold; color: #6f6f6c;">
             <%= field.prefix %>
             </span>
       <%= field.default %>
