@@ -119,7 +119,7 @@
                 <% if field.name.downcase.gsub(' ', '_') == 'email' %>display: inline-block;<%end %>
 
 
-                <% if field.name.downcase.gsub(' ', '_') =='qualification' %>margin-bottom: 26pt; display: inline-block; margin-top: 2pt;<%end %>
+                <% if field.name.downcase.gsub(' ', '_') =='qualification' %>margin-bottom: 25pt; display: inline-block; margin-top: 2pt;<%end %>
                 <% if field.name.downcase.gsub(' ', '_') =='title' %>margin-right: 2pt; font-weight: bold; display: inline-block; margin-top: 2pt;<%end %>
                 color: <%= field.colour %>; font-size: <%= (field.size.to_i) %>pt;"
             <% if preview == "false" %> style= "width: <%= (@card_front.width - field.x_pos)/300.0*2.54%>cm"; <% end %> >
