@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af023515-1f6d-4a0d-a6c8-192a7d68cc8d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/controllers/divisions_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/divisions_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -88,8 +88,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/divisions_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="63" column="50" selection-start-line="63" selection-start-column="45" selection-end-line="63" selection-end-column="50" />
+            <state relative-caret-position="70">
+              <caret line="62" column="114" lean-forward="true" selection-start-line="62" selection-start-column="114" selection-end-line="62" selection-end-column="114" />
             </state>
           </provider>
         </entry>
@@ -253,7 +253,38 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="create_it_yourself" type="b2602c69:ProjectViewProjectNode" />
+              <item name="create_it_yourself" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="create_it_yourself" type="b2602c69:ProjectViewProjectNode" />
+              <item name="create_it_yourself" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="create_it_yourself" type="b2602c69:ProjectViewProjectNode" />
+              <item name="create_it_yourself" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="create_it_yourself" type="b2602c69:ProjectViewProjectNode" />
+              <item name="create_it_yourself" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -295,7 +326,7 @@
       <workItem from="1539264735266" duration="2210000" />
       <workItem from="1539341807480" duration="13352000" />
       <workItem from="1539698781772" duration="4553000" />
-      <workItem from="1539765966416" duration="8902000" />
+      <workItem from="1539765966416" duration="10755000" />
     </task>
     <task id="LOCAL-00001" summary="static spacing">
       <created>1539589421225</created>
@@ -329,13 +360,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140918000" />
+    <option name="totallyTimeSpent" value="142771000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1987" y="25" width="1853" height="1055" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.15002698" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3291959" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -345,7 +375,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.21691974" />
+      <window_info anchor="bottom" id="Version Control" order="7" visible="true" weight="0.21691974" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info active="true" anchor="bottom" id="Messages" order="10" visible="true" weight="0.32984293" />
@@ -556,8 +586,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/divisions_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="63" column="50" selection-start-line="63" selection-start-column="45" selection-end-line="63" selection-end-column="50" />
+        <state relative-caret-position="70">
+          <caret line="62" column="114" lean-forward="true" selection-start-line="62" selection-start-column="114" selection-end-line="62" selection-end-column="114" />
         </state>
       </provider>
     </entry>
