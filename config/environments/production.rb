@@ -27,7 +27,8 @@ Rails.application.configure do
   config.assets.compile = false
 
   # Ensure that all assets are precompiled
-  config.assets.precompile += [ '*.css', '*.js', '*.jpg', '*.png' ]
+  config.assets.precompile += [ 'bootstrap.min.css', 'jquery.guillotine.css',
+  'application.css.scss','jquery.guillotine.js','application.js','bootstrap.min.js','cable.js','images.js']
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
