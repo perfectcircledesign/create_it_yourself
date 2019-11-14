@@ -27,7 +27,7 @@ Rails.application.configure do
   config.assets.compile = false
 
   # Ensure that all assets are precompiled
-  config.assets.precompile += [ '*.css', '*.scss', '*.js', '*.jpg', '*.png' ]
+  config.assets.precompile += [ '*.css', '*.js', '*.jpg', '*.png' ]
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
