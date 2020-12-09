@@ -26,7 +26,6 @@ class PdfMailer < ApplicationMailer
   end
 
 
-
   # def email_simon_says(pdf, print_number )
 		# attachments['test.pdf'] = File.read(pdf) 
 		# mail(:to => "gauragaura@gmail.com", :subject => "Business Card", :body => "Hi Janneke, Please print #{print_number} of the attached business cards. Thanks :)")
