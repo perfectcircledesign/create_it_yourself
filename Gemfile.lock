@@ -1,8 +1,8 @@
 GIT
-  remote: git://github.com/mshibuya/remotipart.git
-  revision: e08ea9a3aa8db9a8b2b97b6c9e7b078ed08915f2
+  remote: https://github.com/mshibuya/remotipart.git
+  revision: a1860d64aef484047bc1ef50e2f19ef2480eacf9
   specs:
-    remotipart (1.4.2)
+    remotipart (1.4.4)
 
 GEM
   remote: https://rubygems.org/
@@ -65,7 +65,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    concurrent-ruby (1.0.5)
+    concurrent-ruby (1.1.10)
     crass (1.0.4)
     debug_inspector (0.0.3)
     devise (4.5.0)
@@ -107,12 +107,12 @@ GEM
     formatador (0.2.5)
     friendly_id (5.2.4)
       activerecord (>= 4.0.0)
-    globalid (0.4.1)
-      activesupport (>= 4.2.0)
+    globalid (1.0.1)
+      activesupport (>= 5.0)
     haml (5.0.4)
       temple (>= 0.8.0)
       tilt
-    i18n (1.1.0)
+    i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     ionicons-rails (2.0.0)
     ipaddress (0.8.3)
@@ -149,10 +149,12 @@ GEM
     mime-types (3.2.2)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2018.0812)
-    mimemagic (0.3.2)
+    mimemagic (0.3.10)
+      nokogiri (~> 1)
+      rake
     mini_mime (1.0.1)
     mini_portile2 (2.3.0)
-    minitest (5.11.3)
+    minitest (5.17.0)
     multi_json (1.13.1)
     nested_form (0.3.2)
     nio4r (2.3.1)
@@ -252,7 +254,7 @@ GEM
     turbolinks (5.2.0)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
-    tzinfo (1.2.5)
+    tzinfo (1.2.10)
       thread_safe (~> 0.1)
     uglifier (4.1.19)
       execjs (>= 0.3.0, < 3)
